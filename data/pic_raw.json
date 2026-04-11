@@ -1,0 +1,2332 @@
+[
+  {
+    "PIC Take Over Ticket": "",
+    "NOP": "NOP MAGELANG",
+    "Total Takeover": "",
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0,
+    "MTTO (Min)": 42.187436279995104,
+    "MTTR (Hour)": 3.4882079206886454
+  },
+  {
+    "PIC Take Over Ticket": "Abdul Gofar",
+    "NOP": "NOP MAGELANG",
+    "Total Takeover": 1561,
+    "Total Visit": 1341,
+    "Total Backup": "",
+    "Sum of Score Ticket": 558.3999999999976,
+    "MTTO (Min)": 69.12390561605805,
+    "MTTR (Hour)": 13.349422387203207
+  },
+  {
+    "PIC Take Over Ticket": "Abul Aiman Alfalahi",
+    "NOP": "NOP MAGELANG",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 15.950000000000001,
+    "MTTR (Hour)": 2.281111111111111
+  },
+  {
+    "PIC Take Over Ticket": "Adhi Irmanto",
+    "NOP": "NOP MAGELANG",
+    "Total Takeover": 738,
+    "Total Visit": 207,
+    "Total Backup": 148,
+    "Sum of Score Ticket": 224.7000000000005,
+    "MTTO (Min)": 46.46899277326106,
+    "MTTR (Hour)": 3.2842673327278202
+  },
+  {
+    "PIC Take Over Ticket": "Agus Hariawan",
+    "NOP": "NOP MAGELANG",
+    "Total Takeover": 572,
+    "Total Visit": 217,
+    "Total Backup": "",
+    "Sum of Score Ticket": 122.30000000000055,
+    "MTTO (Min)": 47.578001165501185,
+    "MTTR (Hour)": 6.14057368214776
+  },
+  {
+    "PIC Take Over Ticket": "Agus Setiawan",
+    "NOP": "NOP MAGELANG",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 60.31666666666667,
+    "MTTR (Hour)": 52.345277777777774
+  },
+  {
+    "PIC Take Over Ticket": "Ali imron rosyadi",
+    "NOP": "NOP MAGELANG",
+    "Total Takeover": 281,
+    "Total Visit": 24,
+    "Total Backup": "",
+    "Sum of Score Ticket": 35.299999999999976,
+    "MTTO (Min)": 74.99300118623964,
+    "MTTR (Hour)": 14.480580357142841
+  },
+  {
+    "PIC Take Over Ticket": "Andrik Aprianto",
+    "NOP": "NOP MAGELANG",
+    "Total Takeover": 146,
+    "Total Visit": 2,
+    "Total Backup": "",
+    "Sum of Score Ticket": 15.199999999999987,
+    "MTTO (Min)": 48.56666666666669,
+    "MTTR (Hour)": 25.437009132420062
+  },
+  {
+    "PIC Take Over Ticket": "Aris Setyawan",
+    "NOP": "NOP MAGELANG",
+    "Total Takeover": 394,
+    "Total Visit": 90,
+    "Total Backup": "",
+    "Sum of Score Ticket": 66.39999999999998,
+    "MTTO (Min)": 53.60114213197969,
+    "MTTR (Hour)": 13.192629723632267
+  },
+  {
+    "PIC Take Over Ticket": "Arwanto",
+    "NOP": "NOP MAGELANG",
+    "Total Takeover": 297,
+    "Total Visit": 65,
+    "Total Backup": "",
+    "Sum of Score Ticket": 49.1999999999999,
+    "MTTO (Min)": 59.21228956228955,
+    "MTTR (Hour)": 13.221874048706237
+  },
+  {
+    "PIC Take Over Ticket": "BAGAS ADITYA",
+    "NOP": "NOP MAGELANG",
+    "Total Takeover": 346,
+    "Total Visit": 60,
+    "Total Backup": 2,
+    "Sum of Score Ticket": 53.79999999999991,
+    "MTTO (Min)": 65.2799132947977,
+    "MTTR (Hour)": 13.829629897238275
+  },
+  {
+    "PIC Take Over Ticket": "Budiyanto",
+    "NOP": "NOP MAGELANG",
+    "Total Takeover": 463,
+    "Total Visit": 144,
+    "Total Backup": "",
+    "Sum of Score Ticket": 89.5,
+    "MTTO (Min)": 58.64078473722104,
+    "MTTR (Hour)": 10.867912147505432
+  },
+  {
+    "PIC Take Over Ticket": "Dony Satrio Herlambang",
+    "NOP": "NOP MAGELANG",
+    "Total Takeover": 246,
+    "Total Visit": 42,
+    "Total Backup": "",
+    "Sum of Score Ticket": 37.199999999999946,
+    "MTTO (Min)": 55.42662601626017,
+    "MTTR (Hour)": 14.979154245709136
+  },
+  {
+    "PIC Take Over Ticket": "Edwin salafudin",
+    "NOP": "NOP MAGELANG",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 60.5,
+    "MTTR (Hour)": 10.970277777777778
+  },
+  {
+    "PIC Take Over Ticket": "Eko Prasetyo",
+    "NOP": "NOP MAGELANG",
+    "Total Takeover": 824,
+    "Total Visit": 459,
+    "Total Backup": 88,
+    "Sum of Score Ticket": 272.9000000000017,
+    "MTTO (Min)": 72.13203883495144,
+    "MTTR (Hour)": 4.900506674757288
+  },
+  {
+    "PIC Take Over Ticket": "Fimby Rohayatno",
+    "NOP": "NOP MAGELANG",
+    "Total Takeover": 560,
+    "Total Visit": 261,
+    "Total Backup": 10,
+    "Sum of Score Ticket": 140.30000000000058,
+    "MTTO (Min)": 48.831636904761886,
+    "MTTR (Hour)": 7.391646329365082
+  },
+  {
+    "PIC Take Over Ticket": "Fujo Astianto",
+    "NOP": "NOP MAGELANG",
+    "Total Takeover": 487,
+    "Total Visit": 189,
+    "Total Backup": "",
+    "Sum of Score Ticket": 105.40000000000036,
+    "MTTO (Min)": 57.67895277207391,
+    "MTTR (Hour)": 12.791805840748346
+  },
+  {
+    "PIC Take Over Ticket": "Hendra Setiawan",
+    "NOP": "NOP MAGELANG",
+    "Total Takeover": 8,
+    "Total Visit": 4,
+    "Total Backup": 2,
+    "Sum of Score Ticket": 3.2,
+    "MTTO (Min)": 192.2666666666667,
+    "MTTR (Hour)": 23.572430555555552
+  },
+  {
+    "PIC Take Over Ticket": "Heri Siswanto",
+    "NOP": "NOP MAGELANG",
+    "Total Takeover": 350,
+    "Total Visit": 25,
+    "Total Backup": 8,
+    "Sum of Score Ticket": 47.300000000000004,
+    "MTTO (Min)": 57.42028571428564,
+    "MTTR (Hour)": 11.162003968253964
+  },
+  {
+    "PIC Take Over Ticket": "Joko suparyono",
+    "NOP": "NOP MAGELANG",
+    "Total Takeover": 645,
+    "Total Visit": 383,
+    "Total Backup": 82,
+    "Sum of Score Ticket": 228.60000000000076,
+    "MTTO (Min)": 81.33015503875977,
+    "MTTR (Hour)": 7.423702263694488
+  },
+  {
+    "PIC Take Over Ticket": "Khasanudin",
+    "NOP": "NOP MAGELANG",
+    "Total Takeover": 270,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 27.000000000000004,
+    "MTTO (Min)": 73.51006172839509,
+    "MTTR (Hour)": 16.147127572016448
+  },
+  {
+    "PIC Take Over Ticket": "Kusmedi",
+    "NOP": "NOP MAGELANG",
+    "Total Takeover": 334,
+    "Total Visit": 12,
+    "Total Backup": 6,
+    "Sum of Score Ticket": 40.60000000000002,
+    "MTTO (Min)": 48.313822355289396,
+    "MTTR (Hour)": 12.46175731869594
+  },
+  {
+    "PIC Take Over Ticket": "Mifbachul munir",
+    "NOP": "NOP MAGELANG",
+    "Total Takeover": 495,
+    "Total Visit": 165,
+    "Total Backup": "",
+    "Sum of Score Ticket": 99.00000000000021,
+    "MTTO (Min)": 50.775084175084125,
+    "MTTR (Hour)": 9.996474186307507
+  },
+  {
+    "PIC Take Over Ticket": "Mochamad Riskon Nawawi",
+    "NOP": "NOP MAGELANG",
+    "Total Takeover": 186,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 18.6,
+    "MTTO (Min)": 64.69856630824376,
+    "MTTR (Hour)": 16.034489247311832
+  },
+  {
+    "PIC Take Over Ticket": "MUHAMMAD KHOERUDIN",
+    "NOP": "NOP MAGELANG",
+    "Total Takeover": 819,
+    "Total Visit": 323,
+    "Total Backup": 103,
+    "Sum of Score Ticket": 240.60000000000136,
+    "MTTO (Min)": 52.80030525030525,
+    "MTTR (Hour)": 3.5845661634706922
+  },
+  {
+    "PIC Take Over Ticket": "Mulyadi",
+    "NOP": "NOP MAGELANG",
+    "Total Takeover": 602,
+    "Total Visit": 373,
+    "Total Backup": 81,
+    "Sum of Score Ticket": 220.70000000000093,
+    "MTTO (Min)": 54.36788482834994,
+    "MTTR (Hour)": 4.046821759259253
+  },
+  {
+    "PIC Take Over Ticket": "Parman",
+    "NOP": "NOP MAGELANG",
+    "Total Takeover": 285,
+    "Total Visit": 95,
+    "Total Backup": 2,
+    "Sum of Score Ticket": 58.19999999999986,
+    "MTTO (Min)": 143.9568421052631,
+    "MTTR (Hour)": 16.299389671361507
+  },
+  {
+    "PIC Take Over Ticket": "Rizkon",
+    "NOP": "NOP MAGELANG",
+    "Total Takeover": 138,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 13.8,
+    "MTTO (Min)": 60.59613526570051,
+    "MTTR (Hour)": 11.390102124183006
+  },
+  {
+    "PIC Take Over Ticket": "Sigit Aditya Saputra",
+    "NOP": "NOP MAGELANG",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 15.766666666666667,
+    "MTTR (Hour)": 1.63
+  },
+  {
+    "PIC Take Over Ticket": "Tri Wahyu Widiyanto",
+    "NOP": "NOP MAGELANG",
+    "Total Takeover": 207,
+    "Total Visit": 42,
+    "Total Backup": "",
+    "Sum of Score Ticket": 33.299999999999926,
+    "MTTO (Min)": 46.26449275362315,
+    "MTTR (Hour)": 8.02516557197592
+  },
+  {
+    "PIC Take Over Ticket": "Triyadi",
+    "NOP": "NOP MAGELANG",
+    "Total Takeover": 532,
+    "Total Visit": 347,
+    "Total Backup": 143,
+    "Sum of Score Ticket": 243.10000000000034,
+    "MTTO (Min)": 47.82117794486219,
+    "MTTR (Hour)": 5.285882414369253
+  },
+  {
+    "PIC Take Over Ticket": "Wahyu dwi setioaji",
+    "NOP": "NOP MAGELANG",
+    "Total Takeover": 349,
+    "Total Visit": 82,
+    "Total Backup": 4,
+    "Sum of Score Ticket": 61.89999999999995,
+    "MTTO (Min)": 88.30687679083088,
+    "MTTR (Hour)": 12.682216618635923
+  },
+  {
+    "PIC Take Over Ticket": "",
+    "NOP": "NOP PEKALONGAN",
+    "Total Takeover": "",
+    "Total Visit": "",
+    "Total Backup": 6,
+    "Sum of Score Ticket": 3.6,
+    "MTTO (Min)": 56.80776797989808,
+    "MTTR (Hour)": 5.216001452432816
+  },
+  {
+    "PIC Take Over Ticket": "Abdul Rosyid",
+    "NOP": "NOP PEKALONGAN",
+    "Total Takeover": 714,
+    "Total Visit": 380,
+    "Total Backup": "",
+    "Sum of Score Ticket": 185.40000000000168,
+    "MTTO (Min)": 73.6141690009338,
+    "MTTR (Hour)": 9.836048299001256
+  },
+  {
+    "PIC Take Over Ticket": "Abul Aiman Alfalahi",
+    "NOP": "NOP PEKALONGAN",
+    "Total Takeover": 312,
+    "Total Visit": 115,
+    "Total Backup": "",
+    "Sum of Score Ticket": 65.69999999999986,
+    "MTTO (Min)": 57.605502136752165,
+    "MTTR (Hour)": 11.859029117541969
+  },
+  {
+    "PIC Take Over Ticket": "adinugroho",
+    "NOP": "NOP PEKALONGAN",
+    "Total Takeover": 4,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.4,
+    "MTTO (Min)": 40.46666666666667,
+    "MTTR (Hour)": 3.1849999999999996
+  },
+  {
+    "PIC Take Over Ticket": "Ahmad Fahrurozi",
+    "NOP": "NOP PEKALONGAN",
+    "Total Takeover": 489,
+    "Total Visit": 184,
+    "Total Backup": 122,
+    "Sum of Score Ticket": 177.30000000000004,
+    "MTTO (Min)": 88.14219495569195,
+    "MTTR (Hour)": 6.11280106793911
+  },
+  {
+    "PIC Take Over Ticket": "Andri Triawan",
+    "NOP": "NOP PEKALONGAN",
+    "Total Takeover": 300,
+    "Total Visit": 46,
+    "Total Backup": "",
+    "Sum of Score Ticket": 43.79999999999994,
+    "MTTO (Min)": 140.18661111111115,
+    "MTTR (Hour)": 19.12202487841376
+  },
+  {
+    "PIC Take Over Ticket": "Arif Widyanto",
+    "NOP": "NOP PEKALONGAN",
+    "Total Takeover": 434,
+    "Total Visit": 163,
+    "Total Backup": 71,
+    "Sum of Score Ticket": 134.89999999999995,
+    "MTTO (Min)": 41.15775729646698,
+    "MTTR (Hour)": 4.164470686123912
+  },
+  {
+    "PIC Take Over Ticket": "Aris pria prayogi",
+    "NOP": "NOP PEKALONGAN",
+    "Total Takeover": 271,
+    "Total Visit": 85,
+    "Total Backup": "",
+    "Sum of Score Ticket": 52.59999999999989,
+    "MTTO (Min)": 92.65215252152531,
+    "MTTR (Hour)": 17.730053300533005
+  },
+  {
+    "PIC Take Over Ticket": "Arno Andrianto",
+    "NOP": "NOP PEKALONGAN",
+    "Total Takeover": 583,
+    "Total Visit": 206,
+    "Total Backup": 98,
+    "Sum of Score Ticket": 178.90000000000032,
+    "MTTO (Min)": 62.937964551172165,
+    "MTTR (Hour)": 6.072848770726142
+  },
+  {
+    "PIC Take Over Ticket": "Diva Salsabila",
+    "NOP": "NOP PEKALONGAN",
+    "Total Takeover": 244,
+    "Total Visit": 14,
+    "Total Backup": "",
+    "Sum of Score Ticket": 28.59999999999997,
+    "MTTO (Min)": 187.86243169398898,
+    "MTTR (Hour)": 20.67167122040071
+  },
+  {
+    "PIC Take Over Ticket": "Gemah Mulyono",
+    "NOP": "NOP PEKALONGAN",
+    "Total Takeover": 128,
+    "Total Visit": 8,
+    "Total Backup": "",
+    "Sum of Score Ticket": 15.199999999999985,
+    "MTTO (Min)": 328.13203125000024,
+    "MTTR (Hour)": 25.84757161458332
+  },
+  {
+    "PIC Take Over Ticket": "Hanif efendi",
+    "NOP": "NOP PEKALONGAN",
+    "Total Takeover": 367,
+    "Total Visit": 124,
+    "Total Backup": 6,
+    "Sum of Score Ticket": 77.5,
+    "MTTO (Min)": 59.27543142597638,
+    "MTTR (Hour)": 12.261105006105003
+  },
+  {
+    "PIC Take Over Ticket": "Hendri Irawan",
+    "NOP": "NOP PEKALONGAN",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 10.05,
+    "MTTR (Hour)": 43.689166666666665
+  },
+  {
+    "PIC Take Over Ticket": "Imam Rois Maulana",
+    "NOP": "NOP PEKALONGAN",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 16.483333333333334,
+    "MTTR (Hour)": 3.679722222222222
+  },
+  {
+    "PIC Take Over Ticket": "Joko suparyono",
+    "NOP": "NOP PEKALONGAN",
+    "Total Takeover": 6,
+    "Total Visit": 4,
+    "Total Backup": 4,
+    "Sum of Score Ticket": 4.2,
+    "MTTO (Min)": 623.6222222222221,
+    "MTTR (Hour)": 21.753888888888884
+  },
+  {
+    "PIC Take Over Ticket": "Luki Setiawan",
+    "NOP": "NOP PEKALONGAN",
+    "Total Takeover": 80,
+    "Total Visit": 2,
+    "Total Backup": "",
+    "Sum of Score Ticket": 8.599999999999996,
+    "MTTO (Min)": 48.249583333333355,
+    "MTTR (Hour)": 16.55572916666667
+  },
+  {
+    "PIC Take Over Ticket": "M. Akhdaan Ghilman Faza",
+    "NOP": "NOP PEKALONGAN",
+    "Total Takeover": 18,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 1.8000000000000003,
+    "MTTO (Min)": 48.07592592592592,
+    "MTTR (Hour)": 14.145740740740738
+  },
+  {
+    "PIC Take Over Ticket": "M. Ulwi Ghozi",
+    "NOP": "NOP PEKALONGAN",
+    "Total Takeover": 773,
+    "Total Visit": 190,
+    "Total Backup": 91,
+    "Sum of Score Ticket": 188.900000000001,
+    "MTTO (Min)": 120.51755066839151,
+    "MTTR (Hour)": 4.545289698020518
+  },
+  {
+    "PIC Take Over Ticket": "Maulana Ma'ruf",
+    "NOP": "NOP PEKALONGAN",
+    "Total Takeover": 457,
+    "Total Visit": 168,
+    "Total Backup": "",
+    "Sum of Score Ticket": 96.10000000000034,
+    "MTTO (Min)": 139.19638949671776,
+    "MTTR (Hour)": 16.289040238268914
+  },
+  {
+    "PIC Take Over Ticket": "MOH SAEFUDIN YUHRI",
+    "NOP": "NOP PEKALONGAN",
+    "Total Takeover": 6,
+    "Total Visit": 6,
+    "Total Backup": 6,
+    "Sum of Score Ticket": 6,
+    "MTTO (Min)": 619.3444444444444,
+    "MTTR (Hour)": 21.874907407407406
+  },
+  {
+    "PIC Take Over Ticket": "Mokhamad Mardiyanto",
+    "NOP": "NOP PEKALONGAN",
+    "Total Takeover": 700,
+    "Total Visit": 266,
+    "Total Backup": 124,
+    "Sum of Score Ticket": 224.20000000000073,
+    "MTTO (Min)": 62.98254761904754,
+    "MTTR (Hour)": 5.929056437389777
+  },
+  {
+    "PIC Take Over Ticket": "Muhamad Zubaidin",
+    "NOP": "NOP PEKALONGAN",
+    "Total Takeover": 614,
+    "Total Visit": 229,
+    "Total Backup": 12,
+    "Sum of Score Ticket": 137.30000000000086,
+    "MTTO (Min)": 80.19239956568944,
+    "MTTR (Hour)": 11.931424745824247
+  },
+  {
+    "PIC Take Over Ticket": "Muhammad Fariz",
+    "NOP": "NOP PEKALONGAN",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 73.56666666666666,
+    "MTTR (Hour)": 64.86333333333333
+  },
+  {
+    "PIC Take Over Ticket": "Muhammad Rozy",
+    "NOP": "NOP PEKALONGAN",
+    "Total Takeover": 4,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.4,
+    "MTTO (Min)": 16.125,
+    "MTTR (Hour)": 2.116111111111111
+  },
+  {
+    "PIC Take Over Ticket": "Muhammad Zulianto",
+    "NOP": "NOP PEKALONGAN",
+    "Total Takeover": 14,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 1.4000000000000004,
+    "MTTO (Min)": 48.159523809523805,
+    "MTTR (Hour)": 10.908095238095237
+  },
+  {
+    "PIC Take Over Ticket": "Noor Darmawan",
+    "NOP": "NOP PEKALONGAN",
+    "Total Takeover": 423,
+    "Total Visit": 137,
+    "Total Backup": "",
+    "Sum of Score Ticket": 83.40000000000015,
+    "MTTO (Min)": 86.744208037825,
+    "MTTR (Hour)": 14.5963304439191
+  },
+  {
+    "PIC Take Over Ticket": "Rahadi",
+    "NOP": "NOP PEKALONGAN",
+    "Total Takeover": 4,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.4,
+    "MTTO (Min)": 30.308333333333334,
+    "MTTR (Hour)": 2.7737499999999997
+  },
+  {
+    "PIC Take Over Ticket": "Sigit Aditya Saputra",
+    "NOP": "NOP PEKALONGAN",
+    "Total Takeover": 252,
+    "Total Visit": 97,
+    "Total Backup": "",
+    "Sum of Score Ticket": 54.29999999999985,
+    "MTTO (Min)": 68.27361111111115,
+    "MTTR (Hour)": 13.340125055334209
+  },
+  {
+    "PIC Take Over Ticket": "Sutanto",
+    "NOP": "NOP PEKALONGAN",
+    "Total Takeover": 256,
+    "Total Visit": 67,
+    "Total Backup": "",
+    "Sum of Score Ticket": 45.699999999999925,
+    "MTTO (Min)": 78.01373697916667,
+    "MTTR (Hour)": 17.656993464052302
+  },
+  {
+    "PIC Take Over Ticket": "Suwartono",
+    "NOP": "NOP PEKALONGAN",
+    "Total Takeover": 10,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.9999999999999999,
+    "MTTO (Min)": 46.233333333333334,
+    "MTTR (Hour)": 2.6851666666666665
+  },
+  {
+    "PIC Take Over Ticket": "Syamsul Hadi",
+    "NOP": "NOP PEKALONGAN",
+    "Total Takeover": 541,
+    "Total Visit": 196,
+    "Total Backup": "",
+    "Sum of Score Ticket": 112.90000000000065,
+    "MTTO (Min)": 82.19778188539745,
+    "MTTR (Hour)": 12.4241163032191
+  },
+  {
+    "PIC Take Over Ticket": "Taroni",
+    "NOP": "NOP PEKALONGAN",
+    "Total Takeover": 403,
+    "Total Visit": 72,
+    "Total Backup": 30,
+    "Sum of Score Ticket": 79.90000000000012,
+    "MTTO (Min)": 43.597890818858545,
+    "MTTR (Hour)": 4.137735732009927
+  },
+  {
+    "PIC Take Over Ticket": "Triyadi",
+    "NOP": "NOP PEKALONGAN",
+    "Total Takeover": 2,
+    "Total Visit": 2,
+    "Total Backup": 2,
+    "Sum of Score Ticket": 2,
+    "MTTO (Min)": 30.1,
+    "MTTR (Hour)": 92.98527777777777
+  },
+  {
+    "PIC Take Over Ticket": "Untung Triono",
+    "NOP": "NOP PEKALONGAN",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 30.45,
+    "MTTR (Hour)": 4.629166666666666
+  },
+  {
+    "PIC Take Over Ticket": "Widoyo",
+    "NOP": "NOP PEKALONGAN",
+    "Total Takeover": 412,
+    "Total Visit": 98,
+    "Total Backup": "",
+    "Sum of Score Ticket": 70.60000000000004,
+    "MTTO (Min)": 56.800606796116455,
+    "MTTR (Hour)": 14.497406055690716
+  },
+  {
+    "PIC Take Over Ticket": "Yudi Mahendra",
+    "NOP": "NOP PEKALONGAN",
+    "Total Takeover": 327,
+    "Total Visit": 194,
+    "Total Backup": "",
+    "Sum of Score Ticket": 90.90000000000019,
+    "MTTO (Min)": 56.83149847094802,
+    "MTTR (Hour)": 11.638752123683306
+  },
+  {
+    "PIC Take Over Ticket": "Zuliyanto",
+    "NOP": "NOP PEKALONGAN",
+    "Total Takeover": 276,
+    "Total Visit": 49,
+    "Total Backup": "",
+    "Sum of Score Ticket": 42.29999999999991,
+    "MTTO (Min)": 289.197342995169,
+    "MTTR (Hour)": 18.758466139497163
+  },
+  {
+    "PIC Take Over Ticket": "",
+    "NOP": "NOP PURWOKERTO",
+    "Total Takeover": "",
+    "Total Visit": "",
+    "Total Backup": 2,
+    "Sum of Score Ticket": 1.2,
+    "MTTO (Min)": 39.20331491712678,
+    "MTTR (Hour)": 3.947394331424037
+  },
+  {
+    "PIC Take Over Ticket": "Abdul Aziz",
+    "NOP": "NOP PURWOKERTO",
+    "Total Takeover": 222,
+    "Total Visit": 19,
+    "Total Backup": "",
+    "Sum of Score Ticket": 27.899999999999967,
+    "MTTO (Min)": 54.256306306306314,
+    "MTTR (Hour)": 11.822122019279554
+  },
+  {
+    "PIC Take Over Ticket": "adinugroho",
+    "NOP": "NOP PURWOKERTO",
+    "Total Takeover": 807,
+    "Total Visit": 286,
+    "Total Backup": 158,
+    "Sum of Score Ticket": 261.300000000001,
+    "MTTO (Min)": 50.1230896323833,
+    "MTTR (Hour)": 3.0031388197899367
+  },
+  {
+    "PIC Take Over Ticket": "Agung Sedayu",
+    "NOP": "NOP PURWOKERTO",
+    "Total Takeover": 327,
+    "Total Visit": 12,
+    "Total Backup": "",
+    "Sum of Score Ticket": 36.30000000000002,
+    "MTTO (Min)": 142.03129459734944,
+    "MTTR (Hour)": 10.349591049382715
+  },
+  {
+    "PIC Take Over Ticket": "Ahmad Mukhid",
+    "NOP": "NOP PURWOKERTO",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 60.1,
+    "MTTR (Hour)": 1.3530555555555555
+  },
+  {
+    "PIC Take Over Ticket": "Ahmad Walim",
+    "NOP": "NOP PURWOKERTO",
+    "Total Takeover": 1,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.1,
+    "MTTO (Min)": 60.38333333333333,
+    "MTTR (Hour)": 1.4813888888888889
+  },
+  {
+    "PIC Take Over Ticket": "ARIF EKA PRASETYO",
+    "NOP": "NOP PURWOKERTO",
+    "Total Takeover": 271,
+    "Total Visit": 4,
+    "Total Backup": "",
+    "Sum of Score Ticket": 28.30000000000004,
+    "MTTO (Min)": 59.06801968019674,
+    "MTTR (Hour)": 6.298474279835385
+  },
+  {
+    "PIC Take Over Ticket": "Arif Sufangat",
+    "NOP": "NOP PURWOKERTO",
+    "Total Takeover": 458,
+    "Total Visit": 188,
+    "Total Backup": 94,
+    "Sum of Score Ticket": 158.59999999999997,
+    "MTTO (Min)": 66.64044011544014,
+    "MTTR (Hour)": 3.784787724405628
+  },
+  {
+    "PIC Take Over Ticket": "Aswariadi",
+    "NOP": "NOP PURWOKERTO",
+    "Total Takeover": 415,
+    "Total Visit": 203,
+    "Total Backup": 2,
+    "Sum of Score Ticket": 103.60000000000036,
+    "MTTO (Min)": 55.35975903614456,
+    "MTTR (Hour)": 8.812468985976265
+  },
+  {
+    "PIC Take Over Ticket": "BUDI SETYONO",
+    "NOP": "NOP PURWOKERTO",
+    "Total Takeover": 1,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.1,
+    "MTTO (Min)": 20.183333333333334,
+    "MTTR (Hour)": 3.0727777777777776
+  },
+  {
+    "PIC Take Over Ticket": "Dedi Siswoyo",
+    "NOP": "NOP PURWOKERTO",
+    "Total Takeover": 287,
+    "Total Visit": 23,
+    "Total Backup": 6,
+    "Sum of Score Ticket": 39.19999999999996,
+    "MTTO (Min)": 82.12392566782805,
+    "MTTR (Hour)": 10.57717136150234
+  },
+  {
+    "PIC Take Over Ticket": "Duwi Andi Hermawan",
+    "NOP": "NOP PURWOKERTO",
+    "Total Takeover": 470,
+    "Total Visit": 134,
+    "Total Backup": 81,
+    "Sum of Score Ticket": 135.8,
+    "MTTO (Min)": 38.33195035460992,
+    "MTTR (Hour)": 2.7809259259259242
+  },
+  {
+    "PIC Take Over Ticket": "Edi Rusdiyana",
+    "NOP": "NOP PURWOKERTO",
+    "Total Takeover": 223,
+    "Total Visit": 8,
+    "Total Backup": "",
+    "Sum of Score Ticket": 24.69999999999999,
+    "MTTO (Min)": 61.07212257100143,
+    "MTTR (Hour)": 14.98723353443942
+  },
+  {
+    "PIC Take Over Ticket": "Edi Rusnadi",
+    "NOP": "NOP PURWOKERTO",
+    "Total Takeover": 69,
+    "Total Visit": 20,
+    "Total Backup": 20,
+    "Sum of Score Ticket": 24.9,
+    "MTTO (Min)": 43.28260869565216,
+    "MTTR (Hour)": 7.294508856682767
+  },
+  {
+    "PIC Take Over Ticket": "Eriq tri wibowo",
+    "NOP": "NOP PURWOKERTO",
+    "Total Takeover": 3,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.30000000000000004,
+    "MTTO (Min)": 47.455555555555556,
+    "MTTR (Hour)": 24.934907407407405
+  },
+  {
+    "PIC Take Over Ticket": "Heriy Susanto",
+    "NOP": "NOP PURWOKERTO",
+    "Total Takeover": 283,
+    "Total Visit": 27,
+    "Total Backup": 2,
+    "Sum of Score Ticket": 37.599999999999966,
+    "MTTO (Min)": 46.109776207302694,
+    "MTTR (Hour)": 8.041802120141343
+  },
+  {
+    "PIC Take Over Ticket": "Imam Rois Maulana",
+    "NOP": "NOP PURWOKERTO",
+    "Total Takeover": 248,
+    "Total Visit": 198,
+    "Total Backup": "",
+    "Sum of Score Ticket": 84.20000000000013,
+    "MTTO (Min)": 36.06061827956993,
+    "MTTR (Hour)": 2.218482302867384
+  },
+  {
+    "PIC Take Over Ticket": "Iqbal Maulana",
+    "NOP": "NOP PURWOKERTO",
+    "Total Takeover": 7,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.7,
+    "MTTO (Min)": 150.0261904761905,
+    "MTTR (Hour)": 19.705436507936504
+  },
+  {
+    "PIC Take Over Ticket": "Jaenuri",
+    "NOP": "NOP PURWOKERTO",
+    "Total Takeover": 213,
+    "Total Visit": 4,
+    "Total Backup": "",
+    "Sum of Score Ticket": 22.49999999999997,
+    "MTTO (Min)": 114.38646322378715,
+    "MTTR (Hour)": 16.209618055555573
+  },
+  {
+    "PIC Take Over Ticket": "Rahadi",
+    "NOP": "NOP PURWOKERTO",
+    "Total Takeover": 543,
+    "Total Visit": 218,
+    "Total Backup": 157,
+    "Sum of Score Ticket": 213.9,
+    "MTTO (Min)": 39.12440147329653,
+    "MTTR (Hour)": 3.0815120593692007
+  },
+  {
+    "PIC Take Over Ticket": "SARTONO",
+    "NOP": "NOP PURWOKERTO",
+    "Total Takeover": 211,
+    "Total Visit": 14,
+    "Total Backup": 4,
+    "Sum of Score Ticket": 27.69999999999998,
+    "MTTO (Min)": 65.5915481832543,
+    "MTTR (Hour)": 8.61111645299145
+  },
+  {
+    "PIC Take Over Ticket": "SETYA RUSFIDA",
+    "NOP": "NOP PURWOKERTO",
+    "Total Takeover": 350,
+    "Total Visit": 124,
+    "Total Backup": "",
+    "Sum of Score Ticket": 72.19999999999999,
+    "MTTO (Min)": 64.45338095238094,
+    "MTTR (Hour)": 10.832935025542787
+  },
+  {
+    "PIC Take Over Ticket": "Sidik Kurniawan",
+    "NOP": "NOP PURWOKERTO",
+    "Total Takeover": 252,
+    "Total Visit": 16,
+    "Total Backup": "",
+    "Sum of Score Ticket": 29.999999999999975,
+    "MTTO (Min)": 89.41382275132275,
+    "MTTR (Hour)": 10.821735008818342
+  },
+  {
+    "PIC Take Over Ticket": "Slamet Sunaryo",
+    "NOP": "NOP PURWOKERTO",
+    "Total Takeover": 264,
+    "Total Visit": 20,
+    "Total Backup": "",
+    "Sum of Score Ticket": 32.39999999999998,
+    "MTTO (Min)": 54.609280303030346,
+    "MTTR (Hour)": 7.7026802374893935
+  },
+  {
+    "PIC Take Over Ticket": "Sukartono",
+    "NOP": "NOP PURWOKERTO",
+    "Total Takeover": 357,
+    "Total Visit": 4,
+    "Total Backup": "",
+    "Sum of Score Ticket": 36.90000000000005,
+    "MTTO (Min)": 112.16909430438841,
+    "MTTR (Hour)": 11.22067044381492
+  },
+  {
+    "PIC Take Over Ticket": "Suradi nugroho",
+    "NOP": "NOP PURWOKERTO",
+    "Total Takeover": 327,
+    "Total Visit": 71,
+    "Total Backup": "",
+    "Sum of Score Ticket": 53.999999999999915,
+    "MTTO (Min)": 53.256880733944946,
+    "MTTR (Hour)": 7.853515678254946
+  },
+  {
+    "PIC Take Over Ticket": "Sutiyon",
+    "NOP": "NOP PURWOKERTO",
+    "Total Takeover": 208,
+    "Total Visit": 14,
+    "Total Backup": 8,
+    "Sum of Score Ticket": 29.79999999999997,
+    "MTTO (Min)": 148.45032051282033,
+    "MTTR (Hour)": 16.715682697623002
+  },
+  {
+    "PIC Take Over Ticket": "Taryono",
+    "NOP": "NOP PURWOKERTO",
+    "Total Takeover": 340,
+    "Total Visit": 98,
+    "Total Backup": 74,
+    "Sum of Score Ticket": 107.79999999999998,
+    "MTTO (Min)": 42.64313725490198,
+    "MTTR (Hour)": 4.13397764628534
+  },
+  {
+    "PIC Take Over Ticket": "Teguh prasetyo",
+    "NOP": "NOP PURWOKERTO",
+    "Total Takeover": 154,
+    "Total Visit": 7,
+    "Total Backup": 2,
+    "Sum of Score Ticket": 18.69999999999999,
+    "MTTO (Min)": 60.16731601731602,
+    "MTTR (Hour)": 13.092576252723315
+  },
+  {
+    "PIC Take Over Ticket": "Untung Triono",
+    "NOP": "NOP PURWOKERTO",
+    "Total Takeover": 788,
+    "Total Visit": 330,
+    "Total Backup": 172,
+    "Sum of Score Ticket": 281.0000000000009,
+    "MTTO (Min)": 46.59818104906941,
+    "MTTR (Hour)": 3.1070425878684778
+  },
+  {
+    "PIC Take Over Ticket": "Widoyo",
+    "NOP": "NOP PURWOKERTO",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 20.516666666666666,
+    "MTTR (Hour)": 5.773888888888889
+  },
+  {
+    "PIC Take Over Ticket": "Yuli Kusmaryanto",
+    "NOP": "NOP PURWOKERTO",
+    "Total Takeover": 45,
+    "Total Visit": 5,
+    "Total Backup": "",
+    "Sum of Score Ticket": 6.0000000000000036,
+    "MTTO (Min)": 108.0196296296296,
+    "MTTR (Hour)": 11.2554012345679
+  },
+  {
+    "PIC Take Over Ticket": "",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": "",
+    "Total Visit": "",
+    "Total Backup": 3,
+    "Sum of Score Ticket": 1.7999999999999998,
+    "MTTO (Min)": 39.243209876543546,
+    "MTTR (Hour)": 4.036926798020823
+  },
+  {
+    "PIC Take Over Ticket": "Abdul Gofar",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 30.3,
+    "MTTR (Hour)": 12.821666666666665
+  },
+  {
+    "PIC Take Over Ticket": "Abdul Rokhim",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 529,
+    "Total Visit": 478,
+    "Total Backup": 253,
+    "Sum of Score Ticket": 348.10000000000025,
+    "MTTO (Min)": 52.59076874606177,
+    "MTTR (Hour)": 4.862984248616429
+  },
+  {
+    "PIC Take Over Ticket": "Abul Aiman Alfalahi",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 30.166666666666668,
+    "MTTR (Hour)": 4.916666666666666
+  },
+  {
+    "PIC Take Over Ticket": "Agung satyo prabowo",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 30.46666666666667,
+    "MTTR (Hour)": 23.646666666666665
+  },
+  {
+    "PIC Take Over Ticket": "Agung Tri Kurniawan",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 30.366666666666667,
+    "MTTR (Hour)": 11.646944444444443
+  },
+  {
+    "PIC Take Over Ticket": "Agus Hariawan",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 30.066666666666666,
+    "MTTR (Hour)": 8.7675
+  },
+  {
+    "PIC Take Over Ticket": "Agus Setiawan",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 3,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.30000000000000004,
+    "MTTO (Min)": 40.483333333333334,
+    "MTTR (Hour)": 23.646666666666665
+  },
+  {
+    "PIC Take Over Ticket": "Ahmad Mukhid",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 94,
+    "Total Visit": 70,
+    "Total Backup": "",
+    "Sum of Score Ticket": 30.39999999999996,
+    "MTTO (Min)": 89.14397163120574,
+    "MTTR (Hour)": 8.316401515151513
+  },
+  {
+    "PIC Take Over Ticket": "Andi Purwanto",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 154,
+    "Total Visit": 67,
+    "Total Backup": 2,
+    "Sum of Score Ticket": 36.699999999999925,
+    "MTTO (Min)": 52.92857142857144,
+    "MTTR (Hour)": 10.09010782163743
+  },
+  {
+    "PIC Take Over Ticket": "Aris Setyawan",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 2,
+    "Total Visit": 2,
+    "Total Backup": 2,
+    "Sum of Score Ticket": 2,
+    "MTTO (Min)": 20.366666666666667,
+    "MTTR (Hour)": 16.356666666666666
+  },
+  {
+    "PIC Take Over Ticket": "Chahyo Prayogo",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 30.133333333333333,
+    "MTTR (Hour)": 3.2808333333333333
+  },
+  {
+    "PIC Take Over Ticket": "Darwi",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 466,
+    "Total Visit": 275,
+    "Total Backup": 211,
+    "Sum of Score Ticket": 255.6999999999999,
+    "MTTO (Min)": 58.280400572246066,
+    "MTTR (Hour)": 4.3205338164251215
+  },
+  {
+    "PIC Take Over Ticket": "Denny Susanto",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 34,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 3.4000000000000017,
+    "MTTO (Min)": 64.73725490196081,
+    "MTTR (Hour)": 9.428660130718953
+  },
+  {
+    "PIC Take Over Ticket": "EDI PRASETYA",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 30.3,
+    "MTTR (Hour)": 12.821666666666665
+  },
+  {
+    "PIC Take Over Ticket": "Edwin salafudin",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 99,
+    "Total Visit": 77,
+    "Total Backup": "",
+    "Sum of Score Ticket": 32.99999999999995,
+    "MTTO (Min)": 53.49191919191919,
+    "MTTR (Hour)": 5.376986714975846
+  },
+  {
+    "PIC Take Over Ticket": "Eko Santoso",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 238,
+    "Total Visit": 217,
+    "Total Backup": "",
+    "Sum of Score Ticket": 88.90000000000019,
+    "MTTO (Min)": 51.574719887955126,
+    "MTTR (Hour)": 9.912228564180623
+  },
+  {
+    "PIC Take Over Ticket": "Eko Yulianto",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 20.316666666666666,
+    "MTTR (Hour)": 3.0863888888888886
+  },
+  {
+    "PIC Take Over Ticket": "Endra Adi Wijaya",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 161,
+    "Total Visit": 81,
+    "Total Backup": 4,
+    "Sum of Score Ticket": 42.79999999999992,
+    "MTTO (Min)": 43.24699792960666,
+    "MTTR (Hour)": 6.266299226441629
+  },
+  {
+    "PIC Take Over Ticket": "Fachrul Arifin Hadiwasito",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 108,
+    "Total Visit": 77,
+    "Total Backup": 2,
+    "Sum of Score Ticket": 35.09999999999995,
+    "MTTO (Min)": 160.30632716049388,
+    "MTTR (Hour)": 17.87015795206972
+  },
+  {
+    "PIC Take Over Ticket": "Fajar Sulistiyono",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 30.233333333333334,
+    "MTTR (Hour)": 11.324722222222222
+  },
+  {
+    "PIC Take Over Ticket": "Gemah Mulyono",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 30.366666666666667,
+    "MTTR (Hour)": 11.646944444444443
+  },
+  {
+    "PIC Take Over Ticket": "Hadi Purwanto",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 415,
+    "Total Visit": 278,
+    "Total Backup": 2,
+    "Sum of Score Ticket": 126.10000000000066,
+    "MTTO (Min)": 60.71401606425701,
+    "MTTR (Hour)": 8.988820470717021
+  },
+  {
+    "PIC Take Over Ticket": "Hananto",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 172,
+    "Total Visit": 70,
+    "Total Backup": 2,
+    "Sum of Score Ticket": 39.39999999999991,
+    "MTTO (Min)": 49.09176356589147,
+    "MTTR (Hour)": 10.172203815261044
+  },
+  {
+    "PIC Take Over Ticket": "Hardiyanto",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 30.083333333333336,
+    "MTTR (Hour)": 2.5172222222222222
+  },
+  {
+    "PIC Take Over Ticket": "Hendra Setiawan",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 378,
+    "Total Visit": 316,
+    "Total Backup": 112,
+    "Sum of Score Ticket": 199.80000000000018,
+    "MTTO (Min)": 54.63871252204588,
+    "MTTR (Hour)": 3.878905360886496
+  },
+  {
+    "PIC Take Over Ticket": "Heri Afandi",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 13,
+    "Total Visit": 9,
+    "Total Backup": "",
+    "Sum of Score Ticket": 3.9999999999999996,
+    "MTTO (Min)": 19.707692307692305,
+    "MTTR (Hour)": 1.8160042735042732
+  },
+  {
+    "PIC Take Over Ticket": "Irawan budiarto",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 206,
+    "Total Visit": 67,
+    "Total Backup": "",
+    "Sum of Score Ticket": 40.69999999999988,
+    "MTTO (Min)": 40.582686084142416,
+    "MTTR (Hour)": 7.990596446700511
+  },
+  {
+    "PIC Take Over Ticket": "Joko Pramujo",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 150,
+    "Total Visit": 100,
+    "Total Backup": 4,
+    "Sum of Score Ticket": 47.39999999999991,
+    "MTTO (Min)": 45.14577777777778,
+    "MTTR (Hour)": 8.836821839080457
+  },
+  {
+    "PIC Take Over Ticket": "Joko suparyono",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 6,
+    "Total Visit": 4,
+    "Total Backup": 2,
+    "Sum of Score Ticket": 3,
+    "MTTO (Min)": 389.31111111111113,
+    "MTTR (Hour)": 13.82074074074074
+  },
+  {
+    "PIC Take Over Ticket": "La Ode Asri",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 20.183333333333334,
+    "MTTR (Hour)": 3.5263888888888886
+  },
+  {
+    "PIC Take Over Ticket": "Luki Setiawan",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 20.05,
+    "MTTR (Hour)": 4.539722222222222
+  },
+  {
+    "PIC Take Over Ticket": "M Annas Fajrin",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 217,
+    "Total Visit": 168,
+    "Total Backup": 2,
+    "Sum of Score Ticket": 73.29999999999994,
+    "MTTO (Min)": 58.234562211981554,
+    "MTTR (Hour)": 8.291352713178293
+  },
+  {
+    "PIC Take Over Ticket": "Mat shodiq",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 388,
+    "Total Visit": 330,
+    "Total Backup": 105,
+    "Sum of Score Ticket": 200.8000000000003,
+    "MTTO (Min)": 57.58694158075601,
+    "MTTR (Hour)": 5.4962709080047825
+  },
+  {
+    "PIC Take Over Ticket": "MOH SAEFUDIN YUHRI",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 452,
+    "Total Visit": 401,
+    "Total Backup": 108,
+    "Sum of Score Ticket": 230.30000000000067,
+    "MTTO (Min)": 49.91253687315639,
+    "MTTR (Hour)": 2.95447640117994
+  },
+  {
+    "PIC Take Over Ticket": "muh rodhi",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 136,
+    "Total Visit": 114,
+    "Total Backup": "",
+    "Sum of Score Ticket": 47.7999999999999,
+    "MTTO (Min)": 71.54019607843138,
+    "MTTR (Hour)": 19.132299635701287
+  },
+  {
+    "PIC Take Over Ticket": "Muhammad Rozy",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 30.283333333333335,
+    "MTTR (Hour)": 12.821666666666665
+  },
+  {
+    "PIC Take Over Ticket": "Muhammad Zaenal Arifin",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 30.3,
+    "MTTR (Hour)": 12.821666666666665
+  },
+  {
+    "PIC Take Over Ticket": "Muhammad Zulianto",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 30.183333333333334,
+    "MTTR (Hour)": 4.916666666666666
+  },
+  {
+    "PIC Take Over Ticket": "Nasrul Kottimah",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 30.483333333333334,
+    "MTTR (Hour)": 3.628611111111111
+  },
+  {
+    "PIC Take Over Ticket": "Ninung Hardiyanto",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 323,
+    "Total Visit": 280,
+    "Total Backup": "",
+    "Sum of Score Ticket": 116.30000000000058,
+    "MTTO (Min)": 58.63782249742007,
+    "MTTR (Hour)": 9.485774760383382
+  },
+  {
+    "PIC Take Over Ticket": "Nursoleh",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 150,
+    "Total Visit": 111,
+    "Total Backup": "",
+    "Sum of Score Ticket": 48.2999999999999,
+    "MTTO (Min)": 65.46522222222225,
+    "MTTR (Hour)": 7.973882893685054
+  },
+  {
+    "PIC Take Over Ticket": "Onie Chandra Suminar",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 20.133333333333333,
+    "MTTR (Hour)": 1.6877777777777776
+  },
+  {
+    "PIC Take Over Ticket": "Rudi Widianto",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 150,
+    "Total Visit": 137,
+    "Total Backup": "",
+    "Sum of Score Ticket": 56.099999999999866,
+    "MTTO (Min)": 36.207,
+    "MTTR (Hour)": 8.092906885758993
+  },
+  {
+    "PIC Take Over Ticket": "Safri Samsudin",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 203,
+    "Total Visit": 108,
+    "Total Backup": "",
+    "Sum of Score Ticket": 52.69999999999986,
+    "MTTO (Min)": 84.67224958949097,
+    "MTTR (Hour)": 11.167193732193734
+  },
+  {
+    "PIC Take Over Ticket": "Sanuwan",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 20.316666666666666,
+    "MTTR (Hour)": 3.0863888888888886
+  },
+  {
+    "PIC Take Over Ticket": "Septyan Dwi Purnomo",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 715,
+    "Total Visit": 126,
+    "Total Backup": 124,
+    "Sum of Score Ticket": 183.70000000000056,
+    "MTTO (Min)": 45.72552447552447,
+    "MTTR (Hour)": 3.973245181006119
+  },
+  {
+    "PIC Take Over Ticket": "Sony Hairu yudha",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 30.066666666666666,
+    "MTTR (Hour)": 8.7675
+  },
+  {
+    "PIC Take Over Ticket": "Sunaryo Utomo SE.",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 3,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.30000000000000004,
+    "MTTO (Min)": 40.18888888888889,
+    "MTTR (Hour)": 6.351759259259258
+  },
+  {
+    "PIC Take Over Ticket": "Supardi",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 441,
+    "Total Visit": 433,
+    "Total Backup": "",
+    "Sum of Score Ticket": 174.0000000000014,
+    "MTTO (Min)": 43.1679138321995,
+    "MTTR (Hour)": 8.623122037914698
+  },
+  {
+    "PIC Take Over Ticket": "Suprayitno",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 30.133333333333333,
+    "MTTR (Hour)": 3.2808333333333333
+  },
+  {
+    "PIC Take Over Ticket": "Supriyadi",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 337,
+    "Total Visit": 34,
+    "Total Backup": 4,
+    "Sum of Score Ticket": 46.30000000000012,
+    "MTTO (Min)": 58.629228486646895,
+    "MTTR (Hour)": 8.33757135575943
+  },
+  {
+    "PIC Take Over Ticket": "Supriyono",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 132,
+    "Total Visit": 85,
+    "Total Backup": 2,
+    "Sum of Score Ticket": 39.899999999999935,
+    "MTTO (Min)": 111.52007575757582,
+    "MTTR (Hour)": 9.324428374655646
+  },
+  {
+    "PIC Take Over Ticket": "Sutanto",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 30.46666666666667,
+    "MTTR (Hour)": 23.646666666666665
+  },
+  {
+    "PIC Take Over Ticket": "Suwarno",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 334,
+    "Total Visit": 131,
+    "Total Backup": 97,
+    "Sum of Score Ticket": 130.89999999999998,
+    "MTTO (Min)": 52.09196606786426,
+    "MTTR (Hour)": 3.263646872920825
+  },
+  {
+    "PIC Take Over Ticket": "TRI SETYO AJI NUGROHO",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 30.46666666666667,
+    "MTTR (Hour)": 23.646666666666665
+  },
+  {
+    "PIC Take Over Ticket": "Triyadi",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 2,
+    "Total Visit": 2,
+    "Total Backup": 2,
+    "Sum of Score Ticket": 2,
+    "MTTO (Min)": 30.483333333333334,
+    "MTTR (Hour)": 18.8875
+  },
+  {
+    "PIC Take Over Ticket": "uly asmara huda",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 30.366666666666667,
+    "MTTR (Hour)": 11.646944444444443
+  },
+  {
+    "PIC Take Over Ticket": "Yayak triyanto",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 414,
+    "Total Visit": 282,
+    "Total Backup": 91,
+    "Sum of Score Ticket": 180.60000000000016,
+    "MTTO (Min)": 43.66602254428346,
+    "MTTR (Hour)": 4.595369189342405
+  },
+  {
+    "PIC Take Over Ticket": "Yuda Eko Pratama",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 198,
+    "Total Visit": 172,
+    "Total Backup": 2,
+    "Sum of Score Ticket": 72.59999999999994,
+    "MTTO (Min)": 61.33021885521887,
+    "MTTR (Hour)": 10.240862727807173
+  },
+  {
+    "PIC Take Over Ticket": "Yudi Mahendra",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 1,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.1,
+    "MTTO (Min)": 10.266666666666667,
+    "MTTR (Hour)": 0.3977777777777778
+  },
+  {
+    "PIC Take Over Ticket": "Yuni Pamela",
+    "NOP": "NOP SEMARANG",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 30.383333333333333,
+    "MTTR (Hour)": 4.069999999999999
+  },
+  {
+    "PIC Take Over Ticket": "",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": 2,
+    "Sum of Score Ticket": 1.4,
+    "MTTO (Min)": 35.26474894777393,
+    "MTTR (Hour)": 2.8784968443479557
+  },
+  {
+    "PIC Take Over Ticket": "Adhi Darmawan",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 20,
+    "Total Visit": 6,
+    "Total Backup": "",
+    "Sum of Score Ticket": 3.7999999999999994,
+    "MTTO (Min)": 142.47833333333338,
+    "MTTR (Hour)": 8.70747222222222
+  },
+  {
+    "PIC Take Over Ticket": "Adi Candra Alim",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 144,
+    "Total Visit": 12,
+    "Total Backup": "",
+    "Sum of Score Ticket": 17.999999999999982,
+    "MTTO (Min)": 43.999884259259275,
+    "MTTR (Hour)": 6.225667466027174
+  },
+  {
+    "PIC Take Over Ticket": "Aditya",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 503,
+    "Total Visit": 236,
+    "Total Backup": 82,
+    "Sum of Score Ticket": 170.3000000000003,
+    "MTTO (Min)": 31.2076872100729,
+    "MTTR (Hour)": 2.3753324318233036
+  },
+  {
+    "PIC Take Over Ticket": "Agung Kristiawan",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 1,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.1,
+    "MTTO (Min)": 280.23333333333335,
+    "MTTR (Hour)": ""
+  },
+  {
+    "PIC Take Over Ticket": "Ahmad Allamin",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 288,
+    "Total Visit": 92,
+    "Total Backup": "",
+    "Sum of Score Ticket": 56.39999999999989,
+    "MTTO (Min)": 54.208217592592604,
+    "MTTR (Hour)": 11.457869363929145
+  },
+  {
+    "PIC Take Over Ticket": "Andika distya",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 289,
+    "Total Visit": 96,
+    "Total Backup": 2,
+    "Sum of Score Ticket": 58.89999999999986,
+    "MTTO (Min)": 43.19348327566318,
+    "MTTR (Hour)": 7.325923232323234
+  },
+  {
+    "PIC Take Over Ticket": "Ari Wiyanto",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 270,
+    "Total Visit": 60,
+    "Total Backup": "",
+    "Sum of Score Ticket": 44.99999999999993,
+    "MTTO (Min)": 84.27709876543213,
+    "MTTR (Hour)": 9.391932773109245
+  },
+  {
+    "PIC Take Over Ticket": "Bagus Tri Gunawan",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 283,
+    "Total Visit": 106,
+    "Total Backup": "",
+    "Sum of Score Ticket": 60.09999999999985,
+    "MTTO (Min)": 57.214840989399356,
+    "MTTR (Hour)": 6.835381161236425
+  },
+  {
+    "PIC Take Over Ticket": "BUDI SETYONO",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 497,
+    "Total Visit": 320,
+    "Total Backup": 183,
+    "Sum of Score Ticket": 255.49999999999994,
+    "MTTO (Min)": 39.92407780013409,
+    "MTTR (Hour)": 3.272946810908271
+  },
+  {
+    "PIC Take Over Ticket": "Budi Widayat",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 655,
+    "Total Visit": 426,
+    "Total Backup": 58,
+    "Sum of Score Ticket": 228.10000000000142,
+    "MTTO (Min)": 70.19218829516535,
+    "MTTR (Hour)": 3.445540980795613
+  },
+  {
+    "PIC Take Over Ticket": "Chandra Nova Prasetya Adhitya Pamungkas",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 222,
+    "Total Visit": 30,
+    "Total Backup": "",
+    "Sum of Score Ticket": 31.19999999999997,
+    "MTTO (Min)": 78.41163663663663,
+    "MTTR (Hour)": 9.089040011514102
+  },
+  {
+    "PIC Take Over Ticket": "Dwi Ariyanto",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 326,
+    "Total Visit": 103,
+    "Total Backup": "",
+    "Sum of Score Ticket": 63.499999999999865,
+    "MTTO (Min)": 50.88077709611455,
+    "MTTR (Hour)": 7.072443365695798
+  },
+  {
+    "PIC Take Over Ticket": "Dwi Haryanto",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 400,
+    "Total Visit": 204,
+    "Total Backup": 66,
+    "Sum of Score Ticket": 140.8,
+    "MTTO (Min)": 38.50795644891125,
+    "MTTR (Hour)": 3.2973547979797964
+  },
+  {
+    "PIC Take Over Ticket": "Efendi nugroho",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 457,
+    "Total Visit": 281,
+    "Total Backup": 72,
+    "Sum of Score Ticket": 173.20000000000033,
+    "MTTO (Min)": 41.929686360321014,
+    "MTTR (Hour)": 3.4827274957076257
+  },
+  {
+    "PIC Take Over Ticket": "Eko Sanyoto",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 158,
+    "Total Visit": 58,
+    "Total Backup": 4,
+    "Sum of Score Ticket": 35.59999999999994,
+    "MTTO (Min)": 38.647151898734194,
+    "MTTR (Hour)": 3.081711182336182
+  },
+  {
+    "PIC Take Over Ticket": "GOODTOMO",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 13,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 1.3,
+    "MTTO (Min)": 83.28974358974361,
+    "MTTR (Hour)": 5.90818376068376
+  },
+  {
+    "PIC Take Over Ticket": "Hanif efendi",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 20.366666666666667,
+    "MTTR (Hour)": 4.320555555555555
+  },
+  {
+    "PIC Take Over Ticket": "Hardiyanto",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 209,
+    "Total Visit": 113,
+    "Total Backup": "",
+    "Sum of Score Ticket": 54.79999999999986,
+    "MTTO (Min)": 44.12511961722489,
+    "MTTR (Hour)": 7.5990186125211485
+  },
+  {
+    "PIC Take Over Ticket": "Hariyono",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 206,
+    "Total Visit": 71,
+    "Total Backup": 14,
+    "Sum of Score Ticket": 50.299999999999926,
+    "MTTO (Min)": 134.74207119741095,
+    "MTTR (Hour)": 7.24753742084053
+  },
+  {
+    "PIC Take Over Ticket": "Heriy Susanto",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 16.35,
+    "MTTR (Hour)": 2.5630555555555556
+  },
+  {
+    "PIC Take Over Ticket": "Iskhas Mudi",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 544,
+    "Total Visit": 269,
+    "Total Backup": 79,
+    "Sum of Score Ticket": 182.5000000000005,
+    "MTTO (Min)": 38.49849877450982,
+    "MTTR (Hour)": 4.745533162721263
+  },
+  {
+    "PIC Take Over Ticket": "Joko Budi Haryono",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 222,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 22.20000000000002,
+    "MTTO (Min)": 31.365840840840857,
+    "MTTR (Hour)": 3.679778287461774
+  },
+  {
+    "PIC Take Over Ticket": "La Ode Asri",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 335,
+    "Total Visit": 244,
+    "Total Backup": 93,
+    "Sum of Score Ticket": 162.4999999999999,
+    "MTTO (Min)": 61.378805970149216,
+    "MTTR (Hour)": 2.950213546880213
+  },
+  {
+    "PIC Take Over Ticket": "Moh Faizin",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 311,
+    "Total Visit": 66,
+    "Total Backup": 34,
+    "Sum of Score Ticket": 71.29999999999998,
+    "MTTO (Min)": 33.238585209003205,
+    "MTTR (Hour)": 3.838984547461369
+  },
+  {
+    "PIC Take Over Ticket": "Oky Saktiawan",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 350,
+    "Total Visit": 93,
+    "Total Backup": "",
+    "Sum of Score Ticket": 62.899999999999864,
+    "MTTO (Min)": 73.46999999999991,
+    "MTTR (Hour)": 8.893343095491659
+  },
+  {
+    "PIC Take Over Ticket": "Onie Chandra Suminar",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 89,
+    "Total Visit": 26,
+    "Total Backup": "",
+    "Sum of Score Ticket": 16.7,
+    "MTTO (Min)": 34.40505617977528,
+    "MTTR (Hour)": 4.1857727920227905
+  },
+  {
+    "PIC Take Over Ticket": "Paidi",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 149,
+    "Total Visit": 48,
+    "Total Backup": 14,
+    "Sum of Score Ticket": 37.699999999999974,
+    "MTTO (Min)": 45.4602908277405,
+    "MTTR (Hour)": 4.48595093268451
+  },
+  {
+    "PIC Take Over Ticket": "Priyo Sutomo",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 162,
+    "Total Visit": 72,
+    "Total Backup": "",
+    "Sum of Score Ticket": 37.799999999999926,
+    "MTTO (Min)": 55.52006172839506,
+    "MTTR (Hour)": 8.172561111111113
+  },
+  {
+    "PIC Take Over Ticket": "Purwanto",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 2,
+    "Total Visit": 2,
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.8,
+    "MTTO (Min)": 19.283333333333335,
+    "MTTR (Hour)": 5.1002777777777775
+  },
+  {
+    "PIC Take Over Ticket": "Qodarudin Robbani",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 343,
+    "Total Visit": 158,
+    "Total Backup": "",
+    "Sum of Score Ticket": 81.70000000000009,
+    "MTTO (Min)": 55.47978620019434,
+    "MTTR (Hour)": 11.438977954144624
+  },
+  {
+    "PIC Take Over Ticket": "Rizki Apriyanto",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 436,
+    "Total Visit": 102,
+    "Total Backup": 30,
+    "Sum of Score Ticket": 92.19999999999999,
+    "MTTO (Min)": 61.169227828746145,
+    "MTTR (Hour)": 4.0166270783848
+  },
+  {
+    "PIC Take Over Ticket": "Sadikul Ilham",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 392,
+    "Total Visit": 277,
+    "Total Backup": "",
+    "Sum of Score Ticket": 122.30000000000065,
+    "MTTO (Min)": 53.25276360544219,
+    "MTTR (Hour)": 7.1925366876310255
+  },
+  {
+    "PIC Take Over Ticket": "Sriyanto",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 262,
+    "Total Visit": 128,
+    "Total Backup": "",
+    "Sum of Score Ticket": 64.59999999999982,
+    "MTTO (Min)": 36.41157760814249,
+    "MTTR (Hour)": 4.205944010416665
+  },
+  {
+    "PIC Take Over Ticket": "Sumedi Bayu Wibowo",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 134,
+    "Total Visit": 34,
+    "Total Backup": "",
+    "Sum of Score Ticket": 23.59999999999997,
+    "MTTO (Min)": 42.30534825870646,
+    "MTTR (Hour)": 6.148680555555557
+  },
+  {
+    "PIC Take Over Ticket": "Suprayitno",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 60.41666666666667,
+    "MTTR (Hour)": 7.766388888888889
+  },
+  {
+    "PIC Take Over Ticket": "Teguh arfianto",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 641,
+    "Total Visit": 417,
+    "Total Backup": 56,
+    "Sum of Score Ticket": 222.80000000000135,
+    "MTTO (Min)": 42.076209048361896,
+    "MTTR (Hour)": 3.001898443029016
+  },
+  {
+    "PIC Take Over Ticket": "TIRTA BANGUN AJI",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 60.29166666666667,
+    "MTTR (Hour)": ""
+  },
+  {
+    "PIC Take Over Ticket": "Tri Heri suseno",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 413,
+    "Total Visit": 137,
+    "Total Backup": 107,
+    "Sum of Score Ticket": 146.60000000000002,
+    "MTTO (Min)": 39.44245359160613,
+    "MTTR (Hour)": 3.2477234447161076
+  },
+  {
+    "PIC Take Over Ticket": "Wahyu febrianto",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 234,
+    "Total Visit": 46,
+    "Total Backup": "",
+    "Sum of Score Ticket": 37.19999999999994,
+    "MTTO (Min)": 60.38176638176643,
+    "MTTR (Hour)": 10.1326334422658
+  },
+  {
+    "PIC Take Over Ticket": "YANUARIFIN",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 314,
+    "Total Visit": 98,
+    "Total Backup": "",
+    "Sum of Score Ticket": 60.799999999999876,
+    "MTTO (Min)": 88.23354564755827,
+    "MTTR (Hour)": 14.023487103174604
+  },
+  {
+    "PIC Take Over Ticket": "Yuni Pamela",
+    "NOP": "NOP SURAKARTA",
+    "Total Takeover": 133,
+    "Total Visit": 53,
+    "Total Backup": "",
+    "Sum of Score Ticket": 29.199999999999957,
+    "MTTO (Min)": 41.33959899749375,
+    "MTTR (Hour)": 5.383712737127373
+  },
+  {
+    "PIC Take Over Ticket": "",
+    "NOP": "NOP YOGYAKARTA",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 36.61327873114923,
+    "MTTR (Hour)": 2.4098310446254616
+  },
+  {
+    "PIC Take Over Ticket": "ADI IRAWAN",
+    "NOP": "NOP YOGYAKARTA",
+    "Total Takeover": 509,
+    "Total Visit": 288,
+    "Total Backup": 294,
+    "Sum of Score Ticket": 313.70000000000005,
+    "MTTO (Min)": 42.559004584151936,
+    "MTTR (Hour)": 2.6198658051689847
+  },
+  {
+    "PIC Take Over Ticket": "AGUNG SETIAWAN",
+    "NOP": "NOP YOGYAKARTA",
+    "Total Takeover": 225,
+    "Total Visit": 81,
+    "Total Backup": "",
+    "Sum of Score Ticket": 46.79999999999986,
+    "MTTO (Min)": 60.4525925925926,
+    "MTTR (Hour)": 9.185924564270149
+  },
+  {
+    "PIC Take Over Ticket": "AIWAN SETYOBUDI",
+    "NOP": "NOP YOGYAKARTA",
+    "Total Takeover": 510,
+    "Total Visit": 247,
+    "Total Backup": 146,
+    "Sum of Score Ticket": 212.7,
+    "MTTO (Min)": 48.76479658792649,
+    "MTTR (Hour)": 3.2128404139433533
+  },
+  {
+    "PIC Take Over Ticket": "ALEX PRIYAMBODO",
+    "NOP": "NOP YOGYAKARTA",
+    "Total Takeover": 241,
+    "Total Visit": 171,
+    "Total Backup": "",
+    "Sum of Score Ticket": 75.39999999999996,
+    "MTTO (Min)": 96.55905947441208,
+    "MTTR (Hour)": 12.068369408369405
+  },
+  {
+    "PIC Take Over Ticket": "APRIYANA FAJAR NUGROHO",
+    "NOP": "NOP YOGYAKARTA",
+    "Total Takeover": 170,
+    "Total Visit": 54,
+    "Total Backup": "",
+    "Sum of Score Ticket": 33.19999999999993,
+    "MTTO (Min)": 57.15921568627456,
+    "MTTR (Hour)": 10.373140385894876
+  },
+  {
+    "PIC Take Over Ticket": "ARDIAN SEP NUR GUMILANG R",
+    "NOP": "NOP YOGYAKARTA",
+    "Total Takeover": 640,
+    "Total Visit": 371,
+    "Total Backup": 257,
+    "Sum of Score Ticket": 329.50000000000006,
+    "MTTO (Min)": 46.38330729166664,
+    "MTTR (Hour)": 2.525955520393807
+  },
+  {
+    "PIC Take Over Ticket": "ARIF KURNIAWAN",
+    "NOP": "NOP YOGYAKARTA",
+    "Total Takeover": 570,
+    "Total Visit": 381,
+    "Total Backup": 199,
+    "Sum of Score Ticket": 290.7000000000002,
+    "MTTO (Min)": 31.607573099415166,
+    "MTTR (Hour)": 2.463726608187132
+  },
+  {
+    "PIC Take Over Ticket": "ARIS CAHYONO",
+    "NOP": "NOP YOGYAKARTA",
+    "Total Takeover": 526,
+    "Total Visit": 404,
+    "Total Backup": "",
+    "Sum of Score Ticket": 173.8000000000012,
+    "MTTO (Min)": 74.28637515842834,
+    "MTTR (Hour)": 10.186811500216175
+  },
+  {
+    "PIC Take Over Ticket": "DANANG RISMANTO",
+    "NOP": "NOP YOGYAKARTA",
+    "Total Takeover": 227,
+    "Total Visit": 90,
+    "Total Backup": 2,
+    "Sum of Score Ticket": 50.89999999999986,
+    "MTTO (Min)": 54.090014684287816,
+    "MTTR (Hour)": 8.57500896057348
+  },
+  {
+    "PIC Take Over Ticket": "DEDI SETYOMURTI",
+    "NOP": "NOP YOGYAKARTA",
+    "Total Takeover": 447,
+    "Total Visit": 290,
+    "Total Backup": 116,
+    "Sum of Score Ticket": 201.3000000000001,
+    "MTTO (Min)": 39.629082774049195,
+    "MTTR (Hour)": 2.9071111111111105
+  },
+  {
+    "PIC Take Over Ticket": "Dedi Siswoyo",
+    "NOP": "NOP YOGYAKARTA",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 20.166666666666668,
+    "MTTR (Hour)": 3.5927777777777776
+  },
+  {
+    "PIC Take Over Ticket": "EDI PRASETYA",
+    "NOP": "NOP YOGYAKARTA",
+    "Total Takeover": 15,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 1.5000000000000002,
+    "MTTO (Min)": 33.620000000000005,
+    "MTTR (Hour)": 3.852166666666667
+  },
+  {
+    "PIC Take Over Ticket": "ERFAN BUDI RIYANTO",
+    "NOP": "NOP YOGYAKARTA",
+    "Total Takeover": 188,
+    "Total Visit": 123,
+    "Total Backup": 2,
+    "Sum of Score Ticket": 56.899999999999864,
+    "MTTO (Min)": 70.84822695035466,
+    "MTTR (Hour)": 8.632774725274725
+  },
+  {
+    "PIC Take Over Ticket": "GALIH WAHYU LINTANG",
+    "NOP": "NOP YOGYAKARTA",
+    "Total Takeover": 119,
+    "Total Visit": 34,
+    "Total Backup": "",
+    "Sum of Score Ticket": 22.09999999999997,
+    "MTTO (Min)": 242.34509803921574,
+    "MTTR (Hour)": 15.612827827827832
+  },
+  {
+    "PIC Take Over Ticket": "GANANG PRACOYO DEWO",
+    "NOP": "NOP YOGYAKARTA",
+    "Total Takeover": 361,
+    "Total Visit": 339,
+    "Total Backup": "",
+    "Sum of Score Ticket": 137.79999999999995,
+    "MTTO (Min)": 49.87220683287167,
+    "MTTR (Hour)": 7.104331597222219
+  },
+  {
+    "PIC Take Over Ticket": "HAFIS HANAFI",
+    "NOP": "NOP YOGYAKARTA",
+    "Total Takeover": 138,
+    "Total Visit": 69,
+    "Total Backup": "",
+    "Sum of Score Ticket": 34.499999999999936,
+    "MTTO (Min)": 40.94384057971015,
+    "MTTR (Hour)": 7.869950617283951
+  },
+  {
+    "PIC Take Over Ticket": "Hendri Irawan",
+    "NOP": "NOP YOGYAKARTA",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 30.316666666666666,
+    "MTTR (Hour)": 1.3499999999999999
+  },
+  {
+    "PIC Take Over Ticket": "HENDRY DWI KRISTIANTO",
+    "NOP": "NOP YOGYAKARTA",
+    "Total Takeover": 198,
+    "Total Visit": 127,
+    "Total Backup": "",
+    "Sum of Score Ticket": 57.89999999999993,
+    "MTTO (Min)": 100.12062289562303,
+    "MTTR (Hour)": 12.109901620370373
+  },
+  {
+    "PIC Take Over Ticket": "HENRI SYAIFUDIN AHMAD",
+    "NOP": "NOP YOGYAKARTA",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 20.366666666666667,
+    "MTTR (Hour)": 7.071666666666666
+  },
+  {
+    "PIC Take Over Ticket": "MEI KARUNIYAWAN",
+    "NOP": "NOP YOGYAKARTA",
+    "Total Takeover": 242,
+    "Total Visit": 180,
+    "Total Backup": "",
+    "Sum of Score Ticket": 78.20000000000002,
+    "MTTO (Min)": 43.564669421487565,
+    "MTTR (Hour)": 9.806637931034478
+  },
+  {
+    "PIC Take Over Ticket": "Nasrul Kottimah",
+    "NOP": "NOP YOGYAKARTA",
+    "Total Takeover": 2,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 0.2,
+    "MTTO (Min)": 30.383333333333333,
+    "MTTR (Hour)": 2.0875
+  },
+  {
+    "PIC Take Over Ticket": "NUR HIDAYAT",
+    "NOP": "NOP YOGYAKARTA",
+    "Total Takeover": 473,
+    "Total Visit": 325,
+    "Total Backup": "",
+    "Sum of Score Ticket": 144.80000000000078,
+    "MTTO (Min)": 56.919344608879456,
+    "MTTR (Hour)": 9.337437334297423
+  },
+  {
+    "PIC Take Over Ticket": "RUDI HARTONO",
+    "NOP": "NOP YOGYAKARTA",
+    "Total Takeover": 117,
+    "Total Visit": 59,
+    "Total Backup": "",
+    "Sum of Score Ticket": 29.399999999999956,
+    "MTTO (Min)": 42.272364672364695,
+    "MTTR (Hour)": 12.09848290598291
+  },
+  {
+    "PIC Take Over Ticket": "SUNU SUPRIYANA",
+    "NOP": "NOP YOGYAKARTA",
+    "Total Takeover": 168,
+    "Total Visit": 84,
+    "Total Backup": 2,
+    "Sum of Score Ticket": 43.1999999999999,
+    "MTTO (Min)": 144.11805555555557,
+    "MTTR (Hour)": 14.324175033467201
+  },
+  {
+    "PIC Take Over Ticket": "TIRTA BANGUN AJI",
+    "NOP": "NOP YOGYAKARTA",
+    "Total Takeover": 190,
+    "Total Visit": 78,
+    "Total Backup": "",
+    "Sum of Score Ticket": 42.399999999999906,
+    "MTTO (Min)": 46.90552631578948,
+    "MTTR (Hour)": 7.13292572463768
+  },
+  {
+    "PIC Take Over Ticket": "TRI SETYO AJI NUGROHO",
+    "NOP": "NOP YOGYAKARTA",
+    "Total Takeover": 12,
+    "Total Visit": "",
+    "Total Backup": "",
+    "Sum of Score Ticket": 1.2,
+    "MTTO (Min)": 21.82777777777778,
+    "MTTR (Hour)": 1.8960185185185188
+  },
+  {
+    "PIC Take Over Ticket": "WINARTO",
+    "NOP": "NOP YOGYAKARTA",
+    "Total Takeover": 477,
+    "Total Visit": 312,
+    "Total Backup": 130,
+    "Sum of Score Ticket": 219.30000000000013,
+    "MTTO (Min)": 48.50925925925929,
+    "MTTR (Hour)": 2.745826315789475
+  }
+]
