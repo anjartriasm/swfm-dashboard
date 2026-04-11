@@ -1,0 +1,132 @@
+[
+  {
+    "NOP": "NOP MAGELANG",
+    "Severity": "Critical",
+    "Total Ticket": 681
+  },
+  {
+    "NOP": "NOP PEKALONGAN",
+    "Severity": "Critical",
+    "Total Ticket": 996
+  },
+  {
+    "NOP": "NOP PURWOKERTO",
+    "Severity": "Critical",
+    "Total Ticket": 913
+  },
+  {
+    "NOP": "NOP SEMARANG",
+    "Severity": "Critical",
+    "Total Ticket": 1174
+  },
+  {
+    "NOP": "NOP SURAKARTA",
+    "Severity": "Critical",
+    "Total Ticket": 896
+  },
+  {
+    "NOP": "NOP YOGYAKARTA",
+    "Severity": "Critical",
+    "Total Ticket": 524
+  },
+  {
+    "NOP": "NOP SEMARANG",
+    "Severity": "High",
+    "Total Ticket": 2
+  },
+  {
+    "NOP": "NOP MAGELANG",
+    "Severity": "Low",
+    "Total Ticket": 7247
+  },
+  {
+    "NOP": "NOP PEKALONGAN",
+    "Severity": "Low",
+    "Total Ticket": 6147
+  },
+  {
+    "NOP": "NOP PURWOKERTO",
+    "Severity": "Low",
+    "Total Ticket": 3956
+  },
+  {
+    "NOP": "NOP SEMARANG",
+    "Severity": "Low",
+    "Total Ticket": 5540
+  },
+  {
+    "NOP": "NOP SURAKARTA",
+    "Severity": "Low",
+    "Total Ticket": 6061
+  },
+  {
+    "NOP": "NOP YOGYAKARTA",
+    "Severity": "Low",
+    "Total Ticket": 3866
+  },
+  {
+    "NOP": "NOP MAGELANG",
+    "Severity": "Major",
+    "Total Ticket": 1170
+  },
+  {
+    "NOP": "NOP PEKALONGAN",
+    "Severity": "Major",
+    "Total Ticket": 1597
+  },
+  {
+    "NOP": "NOP PURWOKERTO",
+    "Severity": "Major",
+    "Total Ticket": 1453
+  },
+  {
+    "NOP": "NOP SEMARANG",
+    "Severity": "Major",
+    "Total Ticket": 2724
+  },
+  {
+    "NOP": "NOP SURAKARTA",
+    "Severity": "Major",
+    "Total Ticket": 2553
+  },
+  {
+    "NOP": "NOP YOGYAKARTA",
+    "Severity": "Major",
+    "Total Ticket": 1568
+  },
+  {
+    "NOP": "NOP SEMARANG",
+    "Severity": "Medium",
+    "Total Ticket": 30
+  },
+  {
+    "NOP": "NOP MAGELANG",
+    "Severity": "Minor",
+    "Total Ticket": 8407
+  },
+  {
+    "NOP": "NOP PEKALONGAN",
+    "Severity": "Minor",
+    "Total Ticket": 7795
+  },
+  {
+    "NOP": "NOP PURWOKERTO",
+    "Severity": "Minor",
+    "Total Ticket": 7079
+  },
+  {
+    "NOP": "NOP SEMARANG",
+    "Severity": "Minor",
+    "Total Ticket": 9897
+  },
+  {
+    "NOP": "NOP SURAKARTA",
+    "Severity": "Minor",
+    "Total Ticket": 12151
+  },
+  {
+    "NOP": "NOP YOGYAKARTA",
+    "Severity": "Minor",
+    "Total Ticket": 7191
+  }
+]
