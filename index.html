@@ -22,6 +22,21 @@
 }
 body{font-family:'Segoe UI',sans-serif;background:var(--bg-main);color:var(--text-main);min-height:100vh;}
 
+.nav-pages{
+  background:#0d0f1a;padding:0 28px;
+  display:flex;gap:4px;
+  border-bottom:1px solid var(--border);
+}
+.nav-btn{
+  padding:12px 20px;font-size:12px;
+  color:var(--text-muted);cursor:pointer;
+  border:none;background:none;
+  border-bottom:2px solid transparent;
+  transition:all .2s;text-decoration:none;
+  display:flex;align-items:center;gap:6px;
+}
+.nav-btn:hover{color:var(--text-main);}
+.nav-btn.active{color:var(--blue);border-bottom-color:var(--blue);}
 /* HEADER */
 .header{
   background:linear-gradient(135deg,#0a1628 0%,#0d1f3c 50%,#0a1628 100%);
@@ -237,7 +252,12 @@ select:hover,select:focus{border-color:var(--blue);box-shadow:0 0 0 2px rgba(0,1
 </style>
 </head>
 <body>
-
+<!-- NAV PAGES -->
+<div class="nav-pages">
+  <a href="index.html" class="nav-btn active">📊 Overview & KPI</a>
+  <a href="page2.html" class="nav-btn">👤 Performance PIC</a>
+  <a href="page3.html" class="nav-btn">🗺️ Peta Sebaran</a>
+</div>
 <!-- HEADER -->
 <div class="header">
   <div class="header-left">
