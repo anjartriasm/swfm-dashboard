@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SWFM Dashboard — Overview</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg-main:#0d0f1a;
+  --bg-card:#13162a;
+  --bg-card2:#1a1d2e;
+  --border:#232640;
+  --blue:#0078D4;
+  --green:#00c96e;
+  --yellow:#f7c948;
+  --red:#ff4d4d;
+  --purple:#a259ff;
+  --text-main:#e8eaf6;
+  --text-muted:#6b7280;
+}
+body{font-family:'Segoe UI',sans-serif;background:var(--bg-main);color:var(--text-main);min-height:100vh;}
+
+/* HEADER */
+.header{
+  background:linear-gradient(135deg,#0a1628 0%,#0d1f3c 50%,#0a1628 100%);
+  padding:16px 28px;display:flex;align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid rgba(0,120,212,0.3);
+  position:sticky;top:0;z-index:100;
+}
+.header-left{display:flex;align-items:center;gap:14px;}
+.logo{
+  width:42px;height:42px;
+  background:linear-gradient(135deg,#0078D4,#00c96e);
+  border-radius:10px;display:flex;align-items:center;
+  justify-content:center;font-size:18px;font-weight:900;
+  color:#fff;box-shadow:0 4px 15px rgba(0,120,212,0.4);
+}
+.header-title h1{
+  font-size:18px;font-weight:700;
+  background:linear-gradient(90deg,#fff,#4da6ff);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.header-title p{font-size:11px;color:var(--text-muted);margin-top:2px;}
+.header-right{display:flex;gap:8px;align-items:center;}
+.badge{
+  background:rgba(255,255,255,0.05);
+  border:1px solid var(--border);
+  padding:5px 12px;border-radius:20px;
+  font-size:11px;color:#aaa;
+}
+.live-badge{
+  background:rgba(0,201,110,0.1);
+  border:1px solid rgba(0,201,110,0.3);
+  padding:5px 12px;border-radius:20px;
+  font-size:11px;color:var(--green);
+  display:flex;align-items:center;gap:6px;
+}
+.live-dot{
+  width:7px;height:7px;background:var(--green);
+  border-radius:50%;animation:pulse 1.5s infinite;
+}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(1.5);}}
+
+/* SLICER */
+.slicer-bar{
+  background:rgba(19,22,42,0.98);
+  padding:10px 28px;display:flex;
+  gap:10px;align-items:center;
+  border-bottom:1px solid var(--border);
+  flex-wrap:wrap;position:sticky;top:57px;z-index:99;
+}
+.slicer-group{display:flex;align-items:center;gap:6px;}
+.slicer-group label{
+  font-size:10px;color:var(--text-muted);
+  text-transform:uppercase;letter-spacing:.8px;
+}
+select{
+  background:var(--bg-card2);color:var(--text-main);
+  border:1px solid var(--border);border-radius:8px;
+  padding:5px 24px 5px 10px;font-size:12px;
+  cursor:pointer;outline:none;transition:all .2s;
+  appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 6px center;
+}
+select:hover,select:focus{border-color:var(--blue);box-shadow:0 0 0 2px rgba(0,120,212,.2);}
+.slicer-divider{width:1px;height:24px;background:var(--border);margin:0 4px;}
+.btn-reset{
+  background:rgba(255,77,77,0.1);border:1px solid rgba(255,77,77,0.3);
+  color:var(--red);padding:5px 12px;border-radius:8px;
+  font-size:11px;cursor:pointer;transition:all .2s;
+}
+.btn-reset:hover{background:rgba(255,77,77,0.2);}
+
+/* MAIN */
+.main{padding:20px 28px;display:flex;flex-direction:column;gap:16px;}
+
+/* KPI */
+.kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.kpi-card{
+  background:var(--bg-card);border-radius:14px;
+  padding:18px 20px;border:1px solid var(--border);
+  position:relative;overflow:hidden;cursor:pointer;
+  transition:transform .2s,box-shadow .2s,border-color .2s;
+}
+.kpi-card:hover{transform:translateY(-4px);}
+.kpi-card.blue:hover  {border-color:var(--blue);  box-shadow:0 12px 40px rgba(0,120,212,.25);}
+.kpi-card.yellow:hover{border-color:var(--yellow); box-shadow:0 12px 40px rgba(247,201,72,.25);}
+.kpi-card.green:hover {border-color:var(--green);  box-shadow:0 12px 40px rgba(0,201,110,.25);}
+.kpi-card.red:hover   {border-color:var(--red);    box-shadow:0 12px 40px rgba(255,77,77,.25);}
+.kpi-card::after{
+  content:'';position:absolute;top:-40px;right:-40px;
+  width:100px;height:100px;border-radius:50%;opacity:.06;
+}
+.kpi-card.blue::after  {background:var(--blue);}
+.kpi-card.yellow::after{background:var(--yellow);}
+.kpi-card.green::after {background:var(--green);}
+.kpi-card.red::after   {background:var(--red);}
+.kpi-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;}
+.kpi-icon-wrap{
+  width:40px;height:40px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;font-size:18px;
+}
+.blue   .kpi-icon-wrap{background:rgba(0,120,212,.15);}
+.yellow .kpi-icon-wrap{background:rgba(247,201,72,.15);}
+.green  .kpi-icon-wrap{background:rgba(0,201,110,.15);}
+.red    .kpi-icon-wrap{background:rgba(255,77,77,.15);}
+.kpi-trend-badge{font-size:10px;padding:3px 8px;border-radius:10px;font-weight:600;}
+.trend-up  {background:rgba(0,201,110,.15);color:var(--green);}
+.trend-down{background:rgba(255,77,77,.15); color:var(--red);}
+.kpi-value{font-size:30px;font-weight:800;letter-spacing:-1px;line-height:1;margin-bottom:4px;}
+.blue   .kpi-value{color:#4da6ff;}
+.yellow .kpi-value{color:var(--yellow);}
+.green  .kpi-value{color:var(--green);}
+.red    .kpi-value{color:var(--red);}
+.kpi-label{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.8px;}
+.kpi-bar{margin-top:12px;height:3px;background:var(--border);border-radius:2px;overflow:hidden;}
+.kpi-bar-fill{height:100%;border-radius:2px;transition:width 1s ease;}
+.blue   .kpi-bar-fill{background:var(--blue);}
+.yellow .kpi-bar-fill{background:var(--yellow);}
+.green  .kpi-bar-fill{background:var(--green);}
+.red    .kpi-bar-fill{background:var(--red);}
+
+/* CHART ROW */
+.chart-row{display:grid;grid-template-columns:2fr 1fr;gap:14px;}
+.chart-card{
+  background:var(--bg-card);border-radius:14px;
+  padding:20px 22px;border:1px solid var(--border);
+}
+.card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;}
+.card-title{
+  display:flex;align-items:center;gap:8px;
+  font-size:12px;color:var(--text-muted);
+  text-transform:uppercase;letter-spacing:.8px;font-weight:600;
+}
+.card-dot{width:8px;height:8px;border-radius:50%;}
+.card-badge{
+  font-size:10px;padding:3px 8px;border-radius:6px;
+  background:rgba(255,255,255,.05);color:var(--text-muted);
+  border:1px solid var(--border);
+}
+
+/* BOTTOM */
+.bottom-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+
+/* NOP CHART */
+.nop-chart-row{display:grid;grid-template-columns:1fr;gap:14px;}
+
+/* METRIC */
+.metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:4px;}
+.metric-card{
+  background:var(--bg-card2);border-radius:10px;
+  padding:14px 12px;text-align:center;
+  border:1px solid var(--border);
+  transition:transform .2s,border-color .2s;
+  position:relative;overflow:hidden;
+}
+.metric-card:hover{transform:translateY(-2px);border-color:rgba(0,120,212,.4);}
+.metric-card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;}
+.metric-card:nth-child(1)::before{background:var(--blue);}
+.metric-card:nth-child(2)::before{background:var(--red);}
+.metric-card:nth-child(3)::before{background:var(--purple);}
+.metric-card:nth-child(4)::before{background:var(--green);}
+.metric-card:nth-child(5)::before{background:var(--red);}
+.metric-card:nth-child(6)::before{background:var(--yellow);}
+.m-icon {font-size:18px;margin-bottom:6px;}
+.m-label{font-size:9px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px;}
+.m-value{font-size:22px;font-weight:800;color:var(--blue);}
+.m-unit {font-size:9px;color:var(--text-muted);margin-top:3px;}
+
+/* NOP TABLE */
+.nop-table{width:100%;border-collapse:collapse;font-size:12px;}
+.nop-table th{
+  padding:8px 12px;text-align:left;
+  font-size:10px;color:var(--text-muted);
+  text-transform:uppercase;letter-spacing:.8px;
+  border-bottom:1px solid var(--border);
+}
+.nop-table td{
+  padding:8px 12px;border-bottom:1px solid rgba(35,38,64,.5);
+  transition:background .15s;
+}
+.nop-table tr:hover td{background:rgba(0,120,212,.06);}
+.nop-table tr:last-child td{border-bottom:none;}
+.pill{
+  padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;
+}
+.pill-blue  {background:rgba(0,120,212,.15);color:#4da6ff;}
+.pill-green {background:rgba(0,201,110,.15);color:var(--green);}
+.pill-yellow{background:rgba(247,201,72,.15);color:var(--yellow);}
+.pill-red   {background:rgba(255,77,77,.15); color:var(--red);}
+
+.echart   {width:100%;height:260px;}
+.echart-sm{width:100%;height:220px;}
+.echart-xs{width:100%;height:180px;}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+  .kpi-row{grid-template-columns:repeat(2,1fr);}
+  .chart-row,.bottom-row{grid-template-columns:1fr;}
+}
+@media(max-width:600px){
+  .kpi-row{grid-template-columns:1fr;}
+  .main{padding:14px;}
+  .metric-grid{grid-template-columns:repeat(2,1fr);}
+}
+
+/* FOOTER */
+.footer{
+  text-align:center;padding:14px;
+  color:var(--text-muted);font-size:11px;
+  border-top:1px solid var(--border);margin-top:4px;
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-left">
+    <div class="logo">SW</div>
+    <div class="header-title">
+      <h1>SWFM Dashboard</h1>
+      <p>Smart Workforce Management — Overview & KPI</p>
+    </div>
+  </div>
+  <div class="header-right">
+    <span class="live-badge"><span class="live-dot"></span>Live Data</span>
+    <span class="badge" id="hdr-period">📅 2026</span>
+    <span class="badge" id="hdr-nop">🏢 All NOP</span>
+  </div>
+</div>
+
+<!-- SLICER -->
+<div class="slicer-bar">
+  <div class="slicer-group">
+    <label>NOP</label>
+    <select id="sl-nop" onchange="applyFilter()">
+      <option value="all">Semua NOP</option>
+    </select>
+  </div>
+  <div class="slicer-divider"></div>
+  <div class="slicer-group">
+    <label>Bulan</label>
+    <select id="sl-month" onchange="applyFilter()">
+      <option value="all">Semua Bulan</option>
+    </select>
+  </div>
+  <div class="slicer-divider"></div>
+  <div class="slicer-group">
+    <label>Severity</label>
+    <select id="sl-severity" onchange="applyFilter()">
+      <option value="all">Semua</option>
+    </select>
+  </div>
+  <div class="slicer-divider"></div>
+  <button class="btn-reset" onclick="resetFilter()">↺ Reset</button>
+</div>
+
+<!-- MAIN -->
+<div class="main" id="mainContent" style="display:none;">
+
+  <!-- KPI CARDS -->
+  <div class="kpi-row">
+    <div class="kpi-card blue">
+      <div class="kpi-top">
+        <div class="kpi-icon-wrap">🎫</div>
+        <span class="kpi-trend-badge trend-up" id="tr-ticket">—</span>
+      </div>
+      <div class="kpi-value" id="kpi-ticket">—</div>
+      <div class="kpi-label">Total Ticket</div>
+      <div class="kpi-bar"><div class="kpi-bar-fill" id="bar-ticket" style="width:0%"></div></div>
+    </div>
+    <div class="kpi-card yellow">
+      <div class="kpi-top">
+        <div class="kpi-icon-wrap">🔄</div>
+        <span class="kpi-trend-badge trend-up" id="tr-takeover">—</span>
+      </div>
+      <div class="kpi-value" id="kpi-takeover">—</div>
+      <div class="kpi-label">Total Takeover</div>
+      <div class="kpi-bar"><div class="kpi-bar-fill" id="bar-takeover" style="width:0%"></div></div>
+    </div>
+    <div class="kpi-card green">
+      <div class="kpi-top">
+        <div class="kpi-icon-wrap">📍</div>
+        <span class="kpi-trend-badge trend-up" id="tr-visit">—</span>
+      </div>
+      <div class="kpi-value" id="kpi-visit">—</div>
+      <div class="kpi-label">Total Visit</div>
+      <div class="kpi-bar"><div class="kpi-bar-fill" id="bar-visit" style="width:0%"></div></div>
+    </div>
+    <div class="kpi-card red">
+      <div class="kpi-top">
+        <div class="kpi-icon-wrap">🔋</div>
+        <span class="kpi-trend-badge trend-up" id="tr-backup">—</span>
+      </div>
+      <div class="kpi-value" id="kpi-backup">—</div>
+      <div class="kpi-label">Total Backup</div>
+      <div class="kpi-bar"><div class="kpi-bar-fill" id="bar-backup" style="width:0%"></div></div>
+    </div>
+  </div>
+
+  <!-- TREND + SLA -->
+  <div class="chart-row">
+    <div class="chart-card">
+      <div class="card-header">
+        <div class="card-title">
+          <span class="card-dot" style="background:var(--blue)"></span>
+          Trend Ticket Bulanan
+        </div>
+        <span class="card-badge" id="trend-badge">All Period</span>
+      </div>
+      <div id="chartTrend" class="echart"></div>
+    </div>
+    <div class="chart-card">
+      <div class="card-header">
+        <div class="card-title">
+          <span class="card-dot" style="background:var(--green)"></span>
+          Status SLA
+        </div>
+        <span class="card-badge" id="sla-badge">—</span>
+      </div>
+      <div id="chartSLA" class="echart"></div>
+    </div>
+  </div>
+
+  <!-- SEVERITY + METRICS -->
+  <div class="bottom-row">
+    <div class="chart-card">
+      <div class="card-header">
+        <div class="card-title">
+          <span class="card-dot" style="background:var(--yellow)"></span>
+          Breakdown Severity
+        </div>
+        <span class="card-badge" id="sev-badge">All NOP</span>
+      </div>
+      <div id="chartSeverity" class="echart-sm"></div>
+    </div>
+    <div class="chart-card">
+      <div class="card-header">
+        <div class="card-title">
+          <span class="card-dot" style="background:var(--purple)"></span>
+          Metrics Operasional
+        </div>
+        <span class="card-badge" id="nop-metrics-badge">All NOP</span>
+      </div>
+      <div class="metric-grid">
+        <div class="metric-card">
+          <div class="m-icon">⏱️</div>
+          <div class="m-label">MTTO</div>
+          <div class="m-value" id="m-mtto">—</div>
+          <div class="m-unit">Menit</div>
+        </div>
+        <div class="metric-card">
+          <div class="m-icon">🔧</div>
+          <div class="m-label">MTTR</div>
+          <div class="m-value" id="m-mttr" style="color:var(--red)">—</div>
+          <div class="m-unit">Jam</div>
+        </div>
+        <div class="metric-card">
+          <div class="m-icon">📡</div>
+          <div class="m-label">Avg Response</div>
+          <div class="m-value" id="m-rt" style="color:var(--purple)">—</div>
+          <div class="m-unit">Menit</div>
+        </div>
+        <div class="metric-card">
+          <div class="m-icon">✅</div>
+          <div class="m-label">% IN SLA</div>
+          <div class="m-value" id="m-insla" style="color:var(--green)">—</div>
+          <div class="m-unit">Persen</div>
+        </div>
+        <div class="metric-card">
+          <div class="m-icon">❌</div>
+          <div class="m-label">% OUT SLA</div>
+          <div class="m-value" id="m-outsla" style="color:var(--red)">—</div>
+          <div class="m-unit">Persen</div>
+        </div>
+        <div class="metric-card">
+          <div class="m-icon">🕐</div>
+          <div class="m-label">Avg Durasi</div>
+          <div class="m-value" id="m-durasi" style="color:var(--yellow)">—</div>
+          <div class="m-unit">Jam</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NOP COMPARISON -->
+  <div class="chart-card">
+    <div class="card-header">
+      <div class="card-title">
+        <span class="card-dot" style="background:var(--purple)"></span>
+        Perbandingan per NOP
+      </div>
+      <span class="card-badge" id="nop-compare-badge">All Period</span>
+    </div>
+    <div id="chartNOP" style="width:100%;height:280px;"></div>
+  </div>
+
+  <!-- NOP TABLE -->
+  <div class="chart-card">
+    <div class="card-header">
+      <div class="card-title">
+        <span class="card-dot" style="background:var(--blue)"></span>
+        Detail per NOP
+      </div>
+    </div>
+    <table class="nop-table">
+      <thead>
+        <tr>
+          <th>NOP</th>
+          <th>Total Ticket</th>
+          <th>Takeover</th>
+          <th>Visit</th>
+          <th>Backup</th>
+          <th>% IN SLA</th>
+          <th>MTTO (Min)</th>
+          <th>MTTR (Jam)</th>
+          <th>Avg Response</th>
+        </tr>
+      </thead>
+      <tbody id="nop-tbody"></tbody>
+    </table>
+  </div>
+
+</div>
+
+<div class="footer">
+  SWFM Dashboard © 2026 — Data: Jan–Apr 2026 | 6 NOP Jawa Tengah & DIY
+</div>
+
+<script>
+// ── RAW DATA ──
+let rawKPI      = [];
+let rawMonthly  = [];
+let rawSeverity = [];
+let charts      = {};
+let grandTotal  = 0;
+
+// ── LOAD DATA ──
+async function loadData(){
+  try{
+    const [kpi,monthly,severity] = await Promise.all([
+      fetch('data/kpi_raw.json').then(r=>r.json()),
+      fetch('data/monthly_raw.json').then(r=>r.json()),
+      fetch('data/severity_raw.json').then(r=>r.json()),
+    ]);
+    rawKPI=kpi; rawMonthly=monthly; rawSeverity=severity;
+  } catch(e){
+    console.warn('Fetch gagal, pakai inline data');
+    loadInline();
+  }
+  grandTotal = rawKPI.reduce((s,d)=>s+d['Total Ticket'],0);
+  initSlicers();
+  initCharts();
+  applyFilter();
+  document.getElementById('mainContent').style.display='flex';
+}
+
+// ── INLINE DATA (fallback) ──
+function loadInline(){
+  rawKPI=[
+    {NOP:"NOP MAGELANG",  "Total Ticket":17505,"Total Takeover":12143,"Total Visit":4952, "Total Backup":679, "% IN SLA":93,   "% OUT SLA":7.35,  "MTTO (Min)":55.95,"MTTR (Hour)":7.79,"Avg Response Time (Min)":264.17,"Avg Durasi Ticket (Hour)":7.79},
+    {NOP:"NOP PEKALONGAN",  "Total Ticket":16535,"Total Takeover":9492, "Total Visit":3138, "Total Backup":572, "% IN SLA":87,   "% OUT SLA":13.25, "MTTO (Min)":77.64,"MTTR (Hour)":8.66,"Avg Response Time (Min)":477.78,"Avg Durasi Ticket (Hour)":8.66},
+    {NOP:"NOP PURWOKERTO", "Total Ticket":13401,"Total Takeover":8148, "Total Visit":2047, "Total Backup":782, "% IN SLA":91,   "% OUT SLA":9.21,  "MTTO (Min)":54.38,"MTTR (Hour)":5.94,"Avg Response Time (Min)":314.56,"Avg Durasi Ticket (Hour)":5.94},
+    {NOP:"NOP SEMARANG",   "Total Ticket":19367,"Total Takeover":7840, "Total Visit":5076, "Total Backup":1136,"% IN SLA":89,   "% OUT SLA":11.29, "MTTO (Min)":45.37,"MTTR (Hour)":5.18,"Avg Response Time (Min)":306.56,"Avg Durasi Ticket (Hour)":5.18},
+    {NOP:"NOP SURAKARTA",  "Total Ticket":21661,"Total Takeover":10417,"Total Visit":4484, "Total Backup":896, "% IN SLA":92,   "% OUT SLA":8.09,  "MTTO (Min)":43.55,"MTTR (Hour)":4.16,"Avg Response Time (Min)":247.63,"Avg Durasi Ticket (Hour)":4.16},
+    {NOP:"NOP YOGYAKARTA", "Total Ticket":13149,"Total Takeover":6747, "Total Visit":4097, "Total Backup":1148,"% IN SLA":95,   "% OUT SLA":5.01,  "MTTO (Min)":47.75,"MTTR (Hour)":4.45,"Avg Response Time (Min)":304.17,"Avg Durasi Ticket (Hour)":4.45},
+  ];
+  rawMonthly=[
+    // April
+    {NOP:"NOP MAGELANG",  "Month Name":"April","Month Number":4,"Year":2026,"Total Ticket":761, "Total Takeover":621, "Total Visit":454,"Total Backup":33,"MTTO (Min)":59.28,"MTTR (Hour)":7.26},
+    {NOP:"NOP PEKALONGAN",  "Month Name":"April","Month Number":4,"Year":2026,"Total Ticket":525, "Total Takeover":396, "Total Visit":136,"Total Backup":18,"MTTO (Min)":64.36,"MTTR (Hour)":7.04},
+    {NOP:"NOP PURWOKERTO", "Month Name":"April","Month Number":4,"Year":2026,"Total Ticket":687, "Total Takeover":516, "Total Visit":101,"Total Backup":32,"MTTO (Min)":55.01,"MTTR (Hour)":5.87},
+    {NOP:"NOP SEMARANG",   "Month Name":"April","Month Number":4,"Year":2026,"Total Ticket":751, "Total Takeover":258, "Total Visit":132,"Total Backup":28,"MTTO (Min)":33.85,"MTTR (Hour)":2.66},
+    {NOP:"NOP SURAKARTA",  "Month Name":"April","Month Number":4,"Year":2026,"Total Ticket":987, "Total Takeover":535, "Total Visit":180,"Total Backup":22,"MTTO (Min)":38.96,"MTTR (Hour)":3.80},
+    {NOP:"NOP YOGYAKARTA", "Month Name":"April","Month Number":4,"Year":2026,"Total Ticket":459, "Total Takeover":271, "Total Visit":89, "Total Backup":36,"MTTO (Min)":39.30,"MTTR (Hour)":3.46},
+    // Februari
+    {NOP:"NOP MAGELANG",  "Month Name":"Februari","Month Number":2,"Year":2026,"Total Ticket":4986,"Total Takeover":3824,"Total Visit":1398,"Total Backup":216,"MTTO (Min)":56.12,"MTTR (Hour)":7.25},
+    {NOP:"NOP PEKALONGAN",  "Month Name":"Februari","Month Number":2,"Year":2026,"Total Ticket":5882,"Total Takeover":3904,"Total Visit":1304,"Total Backup":162,"MTTO (Min)":69.56,"MTTR (Hour)":8.00},
+    {NOP:"NOP PURWOKERTO", "Month Name":"Februari","Month Number":2,"Year":2026,"Total Ticket":3676,"Total Takeover":2544,"Total Visit":656, "Total Backup":268,"MTTO (Min)":60.91,"MTTR (Hour)":5.07},
+    {NOP:"NOP SEMARANG",   "Month Name":"Februari","Month Number":2,"Year":2026,"Total Ticket":5140,"Total Takeover":3304,"Total Visit":2202,"Total Backup":392,"MTTO (Min)":42.61,"MTTR (Hour)":4.00},
+    {NOP:"NOP SURAKARTA",  "Month Name":"Februari","Month Number":2,"Year":2026,"Total Ticket":6056,"Total Takeover":3768,"Total Visit":1570,"Total Backup":282,"MTTO (Min)":46.55,"MTTR (Hour)":3.77},
+    {NOP:"NOP YOGYAKARTA", "Month Name":"Februari","Month Number":2,"Year":2026,"Total Ticket":4268,"Total Takeover":2336,"Total Visit":1426,"Total Backup":328,"MTTO (Min)":47.83,"MTTR (Hour)":4.62},
+    // Januari
+    {NOP:"NOP MAGELANG",  "Month Name":"Januari","Month Number":1,"Year":2026,"Total Ticket":6098,"Total Takeover":3500,"Total Visit":864, "Total Backup":270,"MTTO (Min)":54.17,"MTTR (Hour)":7.15},
+    {NOP:"NOP PEKALONGAN",  "Month Name":"Januari","Month Number":1,"Year":2026,"Total Ticket":4222,"Total Takeover":2574,"Total Visit":820, "Total Backup":190,"MTTO (Min)":78.78,"MTTR (Hour)":7.65},
+    {NOP:"NOP PURWOKERTO", "Month Name":"Januari","Month Number":1,"Year":2026,"Total Ticket":4916,"Total Takeover":2338,"Total Visit":656, "Total Backup":244,"MTTO (Min)":51.19,"MTTR (Hour)":6.12},
+    {NOP:"NOP SEMARANG",   "Month Name":"Januari","Month Number":1,"Year":2026,"Total Ticket":6088,"Total Takeover":1814,"Total Visit":1242,"Total Backup":344,"MTTO (Min)":47.07,"MTTR (Hour)":5.28},
+    {NOP:"NOP SURAKARTA",  "Month Name":"Januari","Month Number":1,"Year":2026,"Total Ticket":6568,"Total Takeover":2172,"Total Visit":1058,"Total Backup":276,"MTTO (Min)":42.12,"MTTR (Hour)":4.21},
+    {NOP:"NOP YOGYAKARTA", "Month Name":"Januari","Month Number":1,"Year":2026,"Total Ticket":5288,"Total Takeover":2366,"Total Visit":1920,"Total Backup":508,"MTTO (Min)":47.96,"MTTR (Hour)":4.06},
+    // Maret
+    {NOP:"NOP MAGELANG",  "Month Name":"Maret","Month Number":3,"Year":2026,"Total Ticket":5660,"Total Takeover":4198,"Total Visit":2236,"Total Backup":160,"MTTO (Min)":57.28,"MTTR (Hour)":9.03},
+    {NOP:"NOP PEKALONGAN",  "Month Name":"Maret","Month Number":3,"Year":2026,"Total Ticket":5906,"Total Takeover":2618,"Total Visit":878, "Total Backup":202,"MTTO (Min)":86.06,"MTTR (Hour)":10.20},
+    {NOP:"NOP PURWOKERTO", "Month Name":"Maret","Month Number":3,"Year":2026,"Total Ticket":4122,"Total Takeover":2750,"Total Visit":634, "Total Backup":238,"MTTO (Min)":52.26,"MTTR (Hour)":6.51},
+    {NOP:"NOP SEMARANG",   "Month Name":"Maret","Month Number":3,"Year":2026,"Total Ticket":7388,"Total Takeover":2464,"Total Visit":1500,"Total Backup":372,"MTTO (Min)":47.07,"MTTR (Hour)":6.13},
+    {NOP:"NOP SURAKARTA",  "Month Name":"Maret","Month Number":3,"Year":2026,"Total Ticket":8050,"Total Takeover":3942,"Total Visit":1676,"Total Backup":316,"MTTO (Min)":43.03,"MTTR (Hour)":4.47},
+    {NOP:"NOP YOGYAKARTA", "Month Name":"Maret","Month Number":3,"Year":2026,"Total Ticket":3134,"Total Takeover":1774,"Total Visit":662, "Total Backup":276,"MTTO (Min)":48.54,"MTTR (Hour)":5.04},
+  ];
+  rawSeverity=[
+    {NOP:"NOP MAGELANG",  Severity:"Critical","Total Ticket":681},
+    {NOP:"NOP PEKALONGAN",  Severity:"Critical","Total Ticket":996},
+    {NOP:"NOP PURWOKERTO", Severity:"Critical","Total Ticket":913},
+    {NOP:"NOP SEMARANG",   Severity:"Critical","Total Ticket":1174},
+    {NOP:"NOP SURAKARTA",  Severity:"Critical","Total Ticket":896},
+    {NOP:"NOP YOGYAKARTA", Severity:"Critical","Total Ticket":524},
+    {NOP:"NOP SEMARANG",   Severity:"High",    "Total Ticket":2},
+    {NOP:"NOP MAGELANG",  Severity:"Low",     "Total Ticket":7247},
+    {NOP:"NOP PEKALONGAN",  Severity:"Low",     "Total Ticket":6147},
+    {NOP:"NOP PURWOKERTO", Severity:"Low",     "Total Ticket":3956},
+    {NOP:"NOP SEMARANG",   Severity:"Low",     "Total Ticket":5540},
+    {NOP:"NOP SURAKARTA",  Severity:"Low",     "Total Ticket":6061},
+    {NOP:"NOP YOGYAKARTA", Severity:"Low",     "Total Ticket":3866},
+    {NOP:"NOP MAGELANG",  Severity:"Major",   "Total Ticket":1170},
+    {NOP:"NOP PEKALONGAN",  Severity:"Major",   "Total Ticket":1597},
+    {NOP:"NOP PURWOKERTO", Severity:"Major",   "Total Ticket":1453},
+    {NOP:"NOP SEMARANG",   Severity:"Major",   "Total Ticket":2724},
+    {NOP:"NOP SURAKARTA",  Severity:"Major",   "Total Ticket":2553},
+    {NOP:"NOP YOGYAKARTA", Severity:"Major",   "Total Ticket":1568},
+    {NOP:"NOP SEMARANG",   Severity:"Medium",  "Total Ticket":30},
+    {NOP:"NOP MAGELANG",  Severity:"Minor",   "Total Ticket":8407},
+    {NOP:"NOP PEKALONGAN",  Severity:"Minor",   "Total Ticket":7795},
+    {NOP:"NOP PURWOKERTO", Severity:"Minor",   "Total Ticket":7079},
+    {NOP:"NOP SEMARANG",   Severity:"Minor",   "Total Ticket":9897},
+    {NOP:"NOP SURAKARTA",  Severity:"Minor",   "Total Ticket":12151},
+    {NOP:"NOP YOGYAKARTA", Severity:"Minor",   "Total Ticket":7191},
+  ];
+}
+
+// ── INIT SLICERS ──
+function initSlicers(){
+  const nops    = [...new Set(rawKPI.map(d=>d.NOP))].sort();
+  const months  = [...new Map(rawMonthly.map(d=>[d['Month Number'],d])).values()]
+                    .sort((a,b)=>a['Month Number']-b['Month Number']);
+  const sevs    = [...new Set(rawSeverity.map(d=>d.Severity))].sort();
+
+  const slNOP = document.getElementById('sl-nop');
+  nops.forEach(n=>{
+    const o=document.createElement('option');
+    o.value=n; o.textContent=n; slNOP.appendChild(o);
+  });
+
+  const slMonth = document.getElementById('sl-month');
+  months.forEach(m=>{
+    const o=document.createElement('option');
+    o.value=m['Month Number'];
+    o.textContent=m['Month Name'];
+    slMonth.appendChild(o);
+  });
+
+  const slSev = document.getElementById('sl-severity');
+  sevs.forEach(s=>{
+    const o=document.createElement('option');
+    o.value=s; o.textContent=s; slSev.appendChild(o);
+  });
+}
+
+// ── INIT CHARTS ──
+function initCharts(){
+  charts.trend    = echarts.init(document.getElementById('chartTrend'));
+  charts.sla      = echarts.init(document.getElementById('chartSLA'));
+  charts.severity = echarts.init(document.getElementById('chartSeverity'));
+  charts.nop      = echarts.init(document.getElementById('chartNOP'));
+}
+
+// ── APPLY FILTER ──
+function applyFilter(){
+  const selNOP   = document.getElementById('sl-nop').value;
+  const selMonth = document.getElementById('sl-month').value;
+  const selSev   = document.getElementById('sl-severity').value;
+
+  // filter monthly
+  let filtMonthly = rawMonthly;
+  if(selNOP   !=='all') filtMonthly = filtMonthly.filter(d=>d.NOP===selNOP);
+  if(selMonth !=='all') filtMonthly = filtMonthly.filter(d=>d['Month Number']==selMonth);
+
+  // filter kpi
+  let filtKPI = rawKPI;
+  if(selNOP!=='all') filtKPI = filtKPI.filter(d=>d.NOP===selNOP);
+
+  // filter severity
+  let filtSev = rawSeverity;
+  if(selNOP!=='all') filtSev = filtSev.filter(d=>d.NOP===selNOP);
+  if(selSev!=='all') filtSev = filtSev.filter(d=>d.Severity===selSev);
+
+  // aggregate KPI
+  const agg = filtKPI.reduce((acc,d)=>{
+    acc.ticket   += d['Total Ticket'];
+    acc.takeover += d['Total Takeover'];
+    acc.visit    += d['Total Visit'];
+    acc.backup   += d['Total Backup'];
+    acc.inSLA    += Math.round(d['Total Ticket'] * d['% IN SLA']  / 100);
+    acc.outSLA   += Math.round(d['Total Ticket'] * d['% OUT SLA'] / 100);
+    acc.mtto     += d['MTTO (Min)'];
+    acc.mttr     += d['MTTR (Hour)'];
+    acc.rt       += d['Avg Response Time (Min)'];
+    acc.durasi   += d['Avg Durasi Ticket (Hour)'];
+    acc.cnt      += 1;
+    return acc;
+  },{ticket:0,takeover:0,visit:0,backup:0,
+     inSLA:0,outSLA:0,mtto:0,mttr:0,rt:0,durasi:0,cnt:0});
+
+  if(agg.cnt>0){
+    agg.mtto   /= agg.cnt;
+    agg.mttr   /= agg.cnt;
+    agg.rt     /= agg.cnt;
+    agg.durasi /= agg.cnt;
+  }
+  agg.pctIn  = agg.ticket ? (agg.inSLA /agg.ticket*100) : 0;
+  agg.pctOut = agg.ticket ? (agg.outSLA/agg.ticket*100) : 0;
+
+  updateKPI(agg);
+  renderTrend(filtMonthly, selNOP);
+  renderSLA(agg);
+  renderSeverity(filtSev);
+  renderNOP(filtMonthly, selNOP);
+  updateTable(filtKPI);
+  updateBadges(selNOP, selMonth, agg);
+}
+
+// ── FORMAT NUMBER ──
+const fmt = n => Math.round(n).toLocaleString('id-ID');
+
+// ── UPDATE KPI ──
+function updateKPI(agg){
+  document.getElementById('kpi-ticket'  ).textContent = fmt(agg.ticket);
+  document.getElementById('kpi-takeover').textContent = fmt(agg.takeover);
+  document.getElementById('kpi-visit'   ).textContent = fmt(agg.visit);
+  document.getElementById('kpi-backup'  ).textContent = fmt(agg.backup);
+
+  animateBar('bar-ticket',   agg.ticket  /grandTotal*100);
+  animateBar('bar-takeover', agg.takeover/grandTotal*100);
+  animateBar('bar-visit',    agg.visit   /grandTotal*100);
+  animateBar('bar-backup',   agg.backup  /grandTotal*100);
+
+  document.getElementById('m-mtto'  ).textContent = agg.mtto.toFixed(1);
+  document.getElementById('m-mttr'  ).textContent = agg.mttr.toFixed(2);
+  document.getElementById('m-rt'    ).textContent = Math.round(agg.rt);
+  document.getElementById('m-insla' ).textContent = agg.pctIn.toFixed(1);
+  document.getElementById('m-outsla').textContent = agg.pctOut.toFixed(1);
+  document.getElementById('m-durasi').textContent = agg.durasi.toFixed(2);
+
+  // trend badge takeover%
+  const tkoP = agg.ticket ? (agg.takeover/agg.ticket*100).toFixed(1) : 0;
+  const visP = agg.ticket ? (agg.visit   /agg.ticket*100).toFixed(1) : 0;
+  const bakP = agg.ticket ? (agg.backup  /agg.ticket*100).toFixed(1) : 0;
+  document.getElementById('tr-ticket'  ).textContent = '🎫 Grand Total';
+  document.getElementById('tr-takeover').textContent = tkoP+'% ticket';
+  document.getElementById('tr-visit'   ).textContent = visP+'% ticket';
+  document.getElementById('tr-backup'  ).textContent = bakP+'% ticket';
+}
+
+function animateBar(id,pct){
+  setTimeout(()=>{
+    document.getElementById(id).style.width=Math.min(pct,100)+'%';
+  },100);
+}
+
+// ── RENDER TREND ──
+function renderTrend(data, selNOP){
+  // group by bulan
+  const byMonth = {};
+  data.forEach(d=>{
+    const k = d['Month Number'];
+    if(!byMonth[k]) byMonth[k]={
+      name:d['Month Name'], num:k,
+      ticket:0, takeover:0, visit:0, backup:0
+    };
+    byMonth[k].ticket   += d['Total Ticket'];
+    byMonth[k].takeover += d['Total Takeover'];
+    byMonth[k].visit    += d['Total Visit'];
+    byMonth[k].backup   += d['Total Backup'];
+  });
+
+  
+
+  const months = Object.values(byMonth).sort((a,b)=>a.num-b.num);
+
+  const mkSerie=(name,key,color,area)=>({
+    name, type:'line',
+    data:months.map(m=>m[key]),
+    smooth:true, symbol:'circle', symbolSize:7,
+    lineStyle:{width:area?3:2,color},
+    itemStyle:{color},
+    ...(area?{areaStyle:{color:{
+      type:'linear',x:0,y:0,x2:0,y2:1,
+      colorStops:[{offset:0,color:color+'44'},{offset:1,color:color+'00'}]
+    }}}:{})
+  });
+
+  charts.trend.setOption({
+    backgroundColor:'transparent',
+    tooltip:{
+      trigger:'axis',backgroundColor:'#13162a',
+      borderColor:'#232640',textStyle:{color:'#e8eaf6'},
+      extraCssText:'border-radius:10px;padding:12px 16px;'
+    },
+    legend:{
+      data:['Ticket','Takeover','Visit','Backup'],
+      textStyle:{color:'#6b7280'},bottom:0,
+      icon:'circle',itemWidth:8
+    },
+    grid:{top:10,bottom:36,left:55,right:16},
+    xAxis:{
+      type:'category',data:months.map(m=>m.name),
+      axisLine:{lineStyle:{color:'#232640'}},
+      axisTick:{show:false},
+      axisLabel:{color:'#6b7280',fontSize:11}
+    },
+    yAxis:{
+      type:'value',
+      splitLine:{lineStyle:{color:'#1a1d2e',type:'dashed'}},
+      axisLabel:{color:'#6b7280',fontSize:11}
+    },
+    series:[
+      mkSerie('Ticket',  'ticket',  '#0078D4', true),
+      mkSerie('Takeover','takeover','#f7c948', false),
+      mkSerie('Visit',   'visit',   '#00c96e', false),
+      mkSerie('Backup',  'backup',  '#ff4d4d', false),
+    ]
+  });
+}
+
+// ── RENDER SLA ──
+function renderSLA(agg){
+  charts.sla.setOption({
+    backgroundColor:'transparent',
+    tooltip:{
+      trigger:'item',backgroundColor:'#13162a',
+      borderColor:'#232640',textStyle:{color:'#e8eaf6'},
+      formatter:'{b}<br/>{c} ticket ({d}%)',
+      extraCssText:'border-radius:10px;'
+    },
+    legend:{bottom:0,textStyle:{color:'#6b7280'},icon:'circle',itemWidth:8},
+    series:[{
+      type:'pie',radius:['48%','72%'],center:['50%','44%'],
+      avoidLabelOverlap:false,
+      itemStyle:{borderRadius:8,borderColor:'#0d0f1a',borderWidth:3},
+      label:{show:true,formatter:'{d}%',color:'#e8eaf6',fontSize:12,fontWeight:'bold'},
+      labelLine:{lineStyle:{color:'#444'}},
+      data:[
+        {value:agg.inSLA, name:'IN SLA',
+          itemStyle:{color:{type:'linear',x:0,y:0,x2:1,y2:1,
+            colorStops:[{offset:0,color:'#00c96e'},{offset:1,color:'#00875a'}]}}},
+        {value:agg.outSLA,name:'OUT SLA',
+          itemStyle:{color:{type:'linear',x:0,y:0,x2:1,y2:1,
+            colorStops:[{offset:0,color:'#ff4d4d'},{offset:1,color:'#cc0000'}]}}},
+      ]
+    }]
+  });
+  document.getElementById('sla-badge').textContent =
+    (agg.pctIn.toFixed(1))+'% IN SLA';
+}
+
+// ── RENDER SEVERITY ──
+function renderSeverity(data){
+  // group by severity
+  const byS={};
+  data.forEach(d=>{
+    byS[d.Severity]=(byS[d.Severity]||0)+d['Total Ticket'];
+  });
+  const order=['Critical','Major','Minor','Low','Medium','High','Warning'];
+  const sevData = order
+    .filter(s=>byS[s])
+    .map(s=>({name:s,value:byS[s]}));
+
+  const colorMap={
+    Critical:'#ff4d4d',Major:'#f7c948',
+    Minor:'#0078D4',   Low:'#00c96e',
+    Medium:'#a259ff',  High:'#ff8c00',Warning:'#00c9c9'
+  };
+
+  charts.severity.setOption({
+    backgroundColor:'transparent',
+    tooltip:{
+      trigger:'axis',backgroundColor:'#13162a',
+      borderColor:'#232640',textStyle:{color:'#e8eaf6'},
+      extraCssText:'border-radius:10px;'
+    },
+    grid:{top:8,bottom:28,left:80,right:70},
+    xAxis:{
+      type:'value',
+      splitLine:{lineStyle:{color:'#1a1d2e',type:'dashed'}},
+      axisLabel:{color:'#6b7280',fontSize:11}
+    },
+    yAxis:{
+      type:'category',
+      data:sevData.map(d=>d.name),
+      axisLabel:{color:'#ccc',fontSize:11},
+      axisLine:{lineStyle:{color:'#232640'}},
+      axisTick:{show:false}
+    },
+    series:[{
+      type:'bar',barMaxWidth:22,
+      data:sevData.map(d=>({
+        value:d.value,
+        itemStyle:{color:colorMap[d.name]||'#0078D4',borderRadius:[0,8,8,0]}
+      })),
+      label:{
+        show:true,position:'right',color:'#aaa',fontSize:11,
+        formatter:p=>p.value.toLocaleString('id-ID')
+      }
+    }]
+  });
+}
+
+// ── RENDER NOP COMPARISON ──
+function renderNOP(data, selNOP){
+  // group by NOP
+  const byNOP={};
+  data.forEach(d=>{
+    const n=d.NOP;
+    if(!byNOP[n]) byNOP[n]={ticket:0,takeover:0,visit:0,backup:0};
+    byNOP[n].ticket   += d['Total Ticket'];
+    byNOP[n].takeover += d['Total Takeover'];
+    byNOP[n].visit    += d['Total Visit'];
+    byNOP[n].backup   += d['Total Backup'];
+  });
+
+  const nops = Object.keys(byNOP).sort();
+  const shortNOP = n => n.replace('NOP ','');
+
+  charts.nop.setOption({
+    backgroundColor:'transparent',
+    tooltip:{
+      trigger:'axis',backgroundColor:'#13162a',
+      borderColor:'#232640',textStyle:{color:'#e8eaf6'},
+      extraCssText:'border-radius:10px;padding:12px 16px;'
+    },
+    legend:{
+      data:['Ticket','Takeover','Visit','Backup'],
+      textStyle:{color:'#6b7280'},bottom:0,
+      icon:'circle',itemWidth:8
+    },
+    grid:{top:10,bottom:36,left:55,right:16},
+    xAxis:{
+      type:'category',
+      data:nops.map(n=>shortNOP(n)),
+      axisLine:{lineStyle:{color:'#232640'}},
+      axisTick:{show:false},
+      axisLabel:{color:'#6b7280',fontSize:11}
+    },
+    yAxis:{
+      type:'value',
+      splitLine:{lineStyle:{color:'#1a1d2e',type:'dashed'}},
+      axisLabel:{color:'#6b7280',fontSize:11}
+    },
+    series:[
+      {name:'Ticket',  type:'bar',barMaxWidth:14,
+       data:nops.map(n=>byNOP[n].ticket),
+       itemStyle:{color:'#0078D4',borderRadius:[4,4,0,0]}},
+      {name:'Takeover',type:'bar',barMaxWidth:14,
+       data:nops.map(n=>byNOP[n].takeover),
+       itemStyle:{color:'#f7c948',borderRadius:[4,4,0,0]}},
+      {name:'Visit',   type:'bar',barMaxWidth:14,
+       data:nops.map(n=>byNOP[n].visit),
+       itemStyle:{color:'#00c96e',borderRadius:[4,4,0,0]}},
+      {name:'Backup',  type:'bar',barMaxWidth:14,
+       data:nops.map(n=>byNOP[n].backup),
+       itemStyle:{color:'#ff4d4d',borderRadius:[4,4,0,0]}},
+    ]
+  });
+}
+
+// ── UPDATE TABLE ──
+function updateTable(filtKPI){
+  const tbody = document.getElementById('nop-tbody');
+  tbody.innerHTML='';
+  filtKPI.forEach(d=>{
+    const pctIn  = d['% IN SLA'];
+    const pillClass = pctIn>=95?'pill-green':pctIn>=90?'pill-blue':pctIn>=85?'pill-yellow':'pill-red';
+    tbody.innerHTML+=`
+      <tr>
+        <td><strong>${d.NOP}</strong></td>
+        <td>${fmt(d['Total Ticket'])}</td>
+        <td>${fmt(d['Total Takeover'])}</td>
+        <td>${fmt(d['Total Visit'])}</td>
+        <td>${fmt(d['Total Backup'])}</td>
+        <td><span class="pill ${pillClass}">${pctIn.toFixed(1)}%</span></td>
+        <td>${d['MTTO (Min)'].toFixed(1)}</td>
+        <td>${d['MTTR (Hour)'].toFixed(2)}</td>
+        <td>${Math.round(d['Avg Response Time (Min)'])}</td>
+      </tr>`;
+  });
+}
+
+// ── UPDATE BADGES ──
+function updateBadges(selNOP, selMonth, agg){
+  document.getElementById('hdr-nop').textContent =
+    selNOP==='all' ? '🏢 All NOP' : '🏢 '+selNOP;
+  document.getElementById('nop-metrics-badge').textContent =
+    selNOP==='all' ? 'All NOP' : selNOP.replace('NOP ','');
+  document.getElementById('sev-badge').textContent =
+    selNOP==='all' ? 'All NOP' : selNOP.replace('NOP ','');
+  document.getElementById('nop-compare-badge').textContent =
+    selMonth==='all' ? 'All Period' : document.getElementById('sl-month').options[document.getElementById('sl-month').selectedIndex].text;
+  document.getElementById('trend-badge').textContent =
+    selNOP==='all' ? 'All NOP' : selNOP.replace('NOP ','');
+}
+
+// ── RESET ──
+function resetFilter(){
+  document.getElementById('sl-nop'     ).value='all';
+  document.getElementById('sl-month'   ).value='all';
+  document.getElementById('sl-severity').value='all';
+  applyFilter();
+}
+
+// ── RESPONSIVE ──
+window.addEventListener('resize',()=>{
+  Object.values(charts).forEach(c=>c.resize());
+});
+
+// ── START ──
+// ── START ──
+loadData();
+
+// ── FIX: Force resize setelah render ──
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    Object.values(charts).forEach(c => {
+      if(c) c.resize();
+    });
+  }, 300);
+});
+
+// ── FIX: Resize saat visibility berubah ──
+document.addEventListener('visibilitychange', () => {
+  if(document.visibilityState === 'visible'){
+    setTimeout(() => {
+      Object.values(charts).forEach(c => {
+        if(c) c.resize();
+      });
+    }, 200);
+  }
+});
+
+// ── RESPONSIVE ──
+window.addEventListener('resize', () => {
+  Object.values(charts).forEach(c => c.resize());
+});
+</script>
+</body>
+</html>

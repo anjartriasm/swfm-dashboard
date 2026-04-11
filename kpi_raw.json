@@ -1,0 +1,80 @@
+[
+  {
+    "NOP": "NOP MAGELANG",
+    "Total Ticket": 17505,
+    "Total Takeover": 12143,
+    "Total Visit": 4952,
+    "Total Backup": 679,
+    "% IN SLA": 93,
+    "% OUT SLA": 7.34647243644673,
+    "MTTO (Min)": 55.954497762543774,
+    "MTTR (Hour)": 7.789367811142439,
+    "Avg Response Time (Min)": 264.1729133010232,
+    "Avg Durasi Ticket (Hour)": 7.789367811142439
+  },
+  {
+    "NOP": "NOP PEKALONGAN",
+    "Total Ticket": 16535,
+    "Total Takeover": 9492,
+    "Total Visit": 3138,
+    "Total Backup": 572,
+    "% IN SLA": 87,
+    "% OUT SLA": 13.2506803749622,
+    "MTTO (Min)": 77.64378288479033,
+    "MTTR (Hour)": 8.664999133431198,
+    "Avg Response Time (Min)": 477.7829456129153,
+    "Avg Durasi Ticket (Hour)": 8.664999133431198
+  },
+  {
+    "NOP": "NOP PURWOKERTO",
+    "Total Ticket": 13401,
+    "Total Takeover": 8148,
+    "Total Visit": 2047,
+    "Total Backup": 782,
+    "% IN SLA": 91,
+    "% OUT SLA": 9.208268039698531,
+    "MTTO (Min)": 54.37968186453715,
+    "MTTR (Hour)": 5.94012254653563,
+    "Avg Response Time (Min)": 314.55877707213784,
+    "Avg Durasi Ticket (Hour)": 5.94012254653563
+  },
+  {
+    "NOP": "NOP SEMARANG",
+    "Total Ticket": 19367,
+    "Total Takeover": 7840,
+    "Total Visit": 5076,
+    "Total Backup": 1136,
+    "% IN SLA": 89,
+    "% OUT SLA": 11.292404605772706,
+    "MTTO (Min)": 45.37363370341644,
+    "MTTR (Hour)": 5.176644571874856,
+    "Avg Response Time (Min)": 306.55651431573443,
+    "Avg Durasi Ticket (Hour)": 5.176644571874856
+  },
+  {
+    "NOP": "NOP SURAKARTA",
+    "Total Ticket": 21661,
+    "Total Takeover": 10417,
+    "Total Visit": 4484,
+    "Total Backup": 896,
+    "% IN SLA": 92,
+    "% OUT SLA": 8.092885831679055,
+    "MTTO (Min)": 43.55421533773445,
+    "MTTR (Hour)": 4.164056150651938,
+    "Avg Response Time (Min)": 247.63446378104987,
+    "Avg Durasi Ticket (Hour)": 4.164056150651938
+  },
+  {
+    "NOP": "NOP YOGYAKARTA",
+    "Total Ticket": 13149,
+    "Total Takeover": 6747,
+    "Total Visit": 4097,
+    "Total Backup": 1148,
+    "% IN SLA": 95,
+    "% OUT SLA": 5.011787968666819,
+    "MTTO (Min)": 47.75072904780005,
+    "MTTR (Hour)": 4.448531865198521,
+    "Avg Response Time (Min)": 304.170740740741,
+    "Avg Durasi Ticket (Hour)": 4.448531865198521
+  }
+]
