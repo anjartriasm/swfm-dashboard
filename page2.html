@@ -169,6 +169,13 @@ select:hover,select:focus{border-color:var(--blue);box-shadow:0 0 0 2px rgba(0,1
   </div>
   <div class="slicer-divider"></div>
   <div class="slicer-group">
+    <label>Bulan</label>
+    <select id="sl-month" onchange="applyFilter()">
+      <option value="all">Semua Bulan</option>
+    </select>
+  </div>
+  <div class="slicer-divider"></div>
+  <div class="slicer-group">
     <label>Tampilkan</label>
     <select id="sl-top" onchange="applyFilter()">
       <option value="10">Top 10</option>
