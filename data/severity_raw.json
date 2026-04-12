@@ -1,132 +1,1640 @@
 [
   {
+    "Month Name": "April",
+    "Month Number": 4,
     "NOP": "NOP MAGELANG",
+    "Type Ticket": "Incident",
     "Severity": "Critical",
-    "Total Ticket": 681
+    "Total Ticket": 17,
+    "Durasi Ticket P90 (Hour)": 5.958444444444445
   },
   {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP MAGELANG",
+    "Type Ticket": "Incident",
+    "Severity": "Critical",
+    "Total Ticket": 342,
+    "Durasi Ticket P90 (Hour)": 3.7424999999999997
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP MAGELANG",
+    "Type Ticket": "Event",
+    "Severity": "Critical",
+    "Total Ticket": 2,
+    "Durasi Ticket P90 (Hour)": 0.553611111111111
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP MAGELANG",
+    "Type Ticket": "Incident",
+    "Severity": "Critical",
+    "Total Ticket": 194,
+    "Durasi Ticket P90 (Hour)": 6.310277777777777
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP MAGELANG",
+    "Type Ticket": "Incident",
+    "Severity": "Critical",
+    "Total Ticket": 128,
+    "Durasi Ticket P90 (Hour)": 7.284166666666667
+  },
+  {
+    "Month Name": "April",
+    "Month Number": 4,
     "NOP": "NOP PEKALONGAN",
+    "Type Ticket": "Incident",
     "Severity": "Critical",
-    "Total Ticket": 996
+    "Total Ticket": 32,
+    "Durasi Ticket P90 (Hour)": 4.164194444444446
   },
   {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP PEKALONGAN",
+    "Type Ticket": "Event",
+    "Severity": "Critical",
+    "Total Ticket": 4,
+    "Durasi Ticket P90 (Hour)": 0.06027777777777778
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP PEKALONGAN",
+    "Type Ticket": "Incident",
+    "Severity": "Critical",
+    "Total Ticket": 310,
+    "Durasi Ticket P90 (Hour)": 3.8658333333333332
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP PEKALONGAN",
+    "Type Ticket": "Incident",
+    "Severity": "Critical",
+    "Total Ticket": 300,
+    "Durasi Ticket P90 (Hour)": 7.547499999999999
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP PEKALONGAN",
+    "Type Ticket": "Event",
+    "Severity": "Critical",
+    "Total Ticket": 4,
+    "Durasi Ticket P90 (Hour)": 0.06638888888888889
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP PEKALONGAN",
+    "Type Ticket": "Incident",
+    "Severity": "Critical",
+    "Total Ticket": 354,
+    "Durasi Ticket P90 (Hour)": 11.101277777777762
+  },
+  {
+    "Month Name": "April",
+    "Month Number": 4,
     "NOP": "NOP PURWOKERTO",
+    "Type Ticket": "Incident",
     "Severity": "Critical",
-    "Total Ticket": 913
+    "Total Ticket": 33,
+    "Durasi Ticket P90 (Hour)": 5.458166666666666
   },
   {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP PURWOKERTO",
+    "Type Ticket": "Event",
+    "Severity": "Critical",
+    "Total Ticket": 4,
+    "Durasi Ticket P90 (Hour)": 0.8516666666666667
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP PURWOKERTO",
+    "Type Ticket": "Incident",
+    "Severity": "Critical",
+    "Total Ticket": 256,
+    "Durasi Ticket P90 (Hour)": 2.5241666666666664
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP PURWOKERTO",
+    "Type Ticket": "Event",
+    "Severity": "Critical",
+    "Total Ticket": 2,
+    "Durasi Ticket P90 (Hour)": 0.6683333333333333
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP PURWOKERTO",
+    "Type Ticket": "Incident",
+    "Severity": "Critical",
+    "Total Ticket": 404,
+    "Durasi Ticket P90 (Hour)": 9.499583333333334
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP PURWOKERTO",
+    "Type Ticket": "Incident",
+    "Severity": "Critical",
+    "Total Ticket": 220,
+    "Durasi Ticket P90 (Hour)": 4.366111111111111
+  },
+  {
+    "Month Name": "April",
+    "Month Number": 4,
     "NOP": "NOP SEMARANG",
+    "Type Ticket": "Incident",
     "Severity": "Critical",
-    "Total Ticket": 1174
+    "Total Ticket": 79,
+    "Durasi Ticket P90 (Hour)": 1.5489444444444462
   },
   {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP SEMARANG",
+    "Type Ticket": "Event",
+    "Severity": "Critical",
+    "Total Ticket": 6,
+    "Durasi Ticket P90 (Hour)": 0.15277777777777776
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP SEMARANG",
+    "Type Ticket": "Incident",
+    "Severity": "Critical",
+    "Total Ticket": 390,
+    "Durasi Ticket P90 (Hour)": 4.884722222222222
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP SEMARANG",
+    "Type Ticket": "Event",
+    "Severity": "Critical",
+    "Total Ticket": 10,
+    "Durasi Ticket P90 (Hour)": 2.7552777777777777
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP SEMARANG",
+    "Type Ticket": "Incident",
+    "Severity": "Critical",
+    "Total Ticket": 280,
+    "Durasi Ticket P90 (Hour)": 5.676805555555555
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP SEMARANG",
+    "Type Ticket": "Event",
+    "Severity": "Critical",
+    "Total Ticket": 30,
+    "Durasi Ticket P90 (Hour)": 0.8813888888888889
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP SEMARANG",
+    "Type Ticket": "Incident",
+    "Severity": "Critical",
+    "Total Ticket": 386,
+    "Durasi Ticket P90 (Hour)": 7.110916666666673
+  },
+  {
+    "Month Name": "April",
+    "Month Number": 4,
     "NOP": "NOP SURAKARTA",
+    "Type Ticket": "Event",
     "Severity": "Critical",
-    "Total Ticket": 896
+    "Total Ticket": 2,
+    "Durasi Ticket P90 (Hour)": 2.139472222222222
   },
   {
+    "Month Name": "April",
+    "Month Number": 4,
+    "NOP": "NOP SURAKARTA",
+    "Type Ticket": "Incident",
+    "Severity": "Critical",
+    "Total Ticket": 52,
+    "Durasi Ticket P90 (Hour)": 4.268527777777778
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP SURAKARTA",
+    "Type Ticket": "Event",
+    "Severity": "Critical",
+    "Total Ticket": 8,
+    "Durasi Ticket P90 (Hour)": 1.1130555555555555
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP SURAKARTA",
+    "Type Ticket": "Incident",
+    "Severity": "Critical",
+    "Total Ticket": 246,
+    "Durasi Ticket P90 (Hour)": 4.336361111111111
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP SURAKARTA",
+    "Type Ticket": "Event",
+    "Severity": "Critical",
+    "Total Ticket": 8,
+    "Durasi Ticket P90 (Hour)": 0.1311111111111111
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP SURAKARTA",
+    "Type Ticket": "Incident",
+    "Severity": "Critical",
+    "Total Ticket": 264,
+    "Durasi Ticket P90 (Hour)": 5.528333333333333
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP SURAKARTA",
+    "Type Ticket": "Event",
+    "Severity": "Critical",
+    "Total Ticket": 12,
+    "Durasi Ticket P90 (Hour)": 3.2636944444444445
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP SURAKARTA",
+    "Type Ticket": "Incident",
+    "Severity": "Critical",
+    "Total Ticket": 314,
+    "Durasi Ticket P90 (Hour)": 5.043194444444442
+  },
+  {
+    "Month Name": "April",
+    "Month Number": 4,
     "NOP": "NOP YOGYAKARTA",
+    "Type Ticket": "Incident",
     "Severity": "Critical",
-    "Total Ticket": 524
+    "Total Ticket": 17,
+    "Durasi Ticket P90 (Hour)": 2.204611111111111
   },
   {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP YOGYAKARTA",
+    "Type Ticket": "Incident",
+    "Severity": "Critical",
+    "Total Ticket": 236,
+    "Durasi Ticket P90 (Hour)": 3.7449999999999997
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP YOGYAKARTA",
+    "Type Ticket": "Incident",
+    "Severity": "Critical",
+    "Total Ticket": 170,
+    "Durasi Ticket P90 (Hour)": 3.1155555555555554
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP YOGYAKARTA",
+    "Type Ticket": "Incident",
+    "Severity": "Critical",
+    "Total Ticket": 104,
+    "Durasi Ticket P90 (Hour)": 3.6738888888888885
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
     "NOP": "NOP SEMARANG",
+    "Type Ticket": "Event",
     "Severity": "High",
-    "Total Ticket": 2
+    "Total Ticket": 2,
+    "Durasi Ticket P90 (Hour)": 2.0083333333333333
   },
   {
+    "Month Name": "April",
+    "Month Number": 4,
     "NOP": "NOP MAGELANG",
+    "Type Ticket": "Event",
     "Severity": "Low",
-    "Total Ticket": 7247
+    "Total Ticket": 294,
+    "Durasi Ticket P90 (Hour)": 36.33336111111111
   },
   {
-    "NOP": "NOP PEKALONGAN",
-    "Severity": "Low",
-    "Total Ticket": 6147
-  },
-  {
-    "NOP": "NOP PURWOKERTO",
-    "Severity": "Low",
-    "Total Ticket": 3956
-  },
-  {
-    "NOP": "NOP SEMARANG",
-    "Severity": "Low",
-    "Total Ticket": 5540
-  },
-  {
-    "NOP": "NOP SURAKARTA",
-    "Severity": "Low",
-    "Total Ticket": 6061
-  },
-  {
-    "NOP": "NOP YOGYAKARTA",
-    "Severity": "Low",
-    "Total Ticket": 3866
-  },
-  {
+    "Month Name": "April",
+    "Month Number": 4,
     "NOP": "NOP MAGELANG",
-    "Severity": "Major",
-    "Total Ticket": 1170
+    "Type Ticket": "Incident",
+    "Severity": "Low",
+    "Total Ticket": 135,
+    "Durasi Ticket P90 (Hour)": 5.211222222222226
   },
   {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP MAGELANG",
+    "Type Ticket": "Event",
+    "Severity": "Low",
+    "Total Ticket": 1680,
+    "Durasi Ticket P90 (Hour)": 26.107944444444442
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP MAGELANG",
+    "Type Ticket": "Incident",
+    "Severity": "Low",
+    "Total Ticket": 652,
+    "Durasi Ticket P90 (Hour)": 5.20183333333333
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP MAGELANG",
+    "Type Ticket": "Event",
+    "Severity": "Low",
+    "Total Ticket": 1268,
+    "Durasi Ticket P90 (Hour)": 34.61277777777778
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP MAGELANG",
+    "Type Ticket": "Incident",
+    "Severity": "Low",
+    "Total Ticket": 826,
+    "Durasi Ticket P90 (Hour)": 7.304166666666666
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP MAGELANG",
+    "Type Ticket": "Event",
+    "Severity": "Low",
+    "Total Ticket": 1910,
+    "Durasi Ticket P90 (Hour)": 34.28111111111111
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP MAGELANG",
+    "Type Ticket": "Incident",
+    "Severity": "Low",
+    "Total Ticket": 572,
+    "Durasi Ticket P90 (Hour)": 5.591388888888889
+  },
+  {
+    "Month Name": "April",
+    "Month Number": 4,
     "NOP": "NOP PEKALONGAN",
-    "Severity": "Major",
-    "Total Ticket": 1597
+    "Type Ticket": "Event",
+    "Severity": "Low",
+    "Total Ticket": 151,
+    "Durasi Ticket P90 (Hour)": 43.330944444444455
   },
   {
+    "Month Name": "April",
+    "Month Number": 4,
+    "NOP": "NOP PEKALONGAN",
+    "Type Ticket": "Incident",
+    "Severity": "Low",
+    "Total Ticket": 92,
+    "Durasi Ticket P90 (Hour)": 5.544722222222222
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP PEKALONGAN",
+    "Type Ticket": "Event",
+    "Severity": "Low",
+    "Total Ticket": 1470,
+    "Durasi Ticket P90 (Hour)": 46.70722222222222
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP PEKALONGAN",
+    "Type Ticket": "Incident",
+    "Severity": "Low",
+    "Total Ticket": 870,
+    "Durasi Ticket P90 (Hour)": 8.578888888888889
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP PEKALONGAN",
+    "Type Ticket": "Event",
+    "Severity": "Low",
+    "Total Ticket": 752,
+    "Durasi Ticket P90 (Hour)": 48.04044444444444
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP PEKALONGAN",
+    "Type Ticket": "Incident",
+    "Severity": "Low",
+    "Total Ticket": 612,
+    "Durasi Ticket P90 (Hour)": 9.73475
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP PEKALONGAN",
+    "Type Ticket": "Event",
+    "Severity": "Low",
+    "Total Ticket": 1340,
+    "Durasi Ticket P90 (Hour)": 50.114999999999995
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP PEKALONGAN",
+    "Type Ticket": "Incident",
+    "Severity": "Low",
+    "Total Ticket": 824,
+    "Durasi Ticket P90 (Hour)": 8.713055555555556
+  },
+  {
+    "Month Name": "April",
+    "Month Number": 4,
     "NOP": "NOP PURWOKERTO",
-    "Severity": "Major",
-    "Total Ticket": 1453
+    "Type Ticket": "Event",
+    "Severity": "Low",
+    "Total Ticket": 161,
+    "Durasi Ticket P90 (Hour)": 45.48986111111111
   },
   {
+    "Month Name": "April",
+    "Month Number": 4,
+    "NOP": "NOP PURWOKERTO",
+    "Type Ticket": "Incident",
+    "Severity": "Low",
+    "Total Ticket": 134,
+    "Durasi Ticket P90 (Hour)": 5.106944444444444
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP PURWOKERTO",
+    "Type Ticket": "Event",
+    "Severity": "Low",
+    "Total Ticket": 684,
+    "Durasi Ticket P90 (Hour)": 32.64694444444444
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP PURWOKERTO",
+    "Type Ticket": "Incident",
+    "Severity": "Low",
+    "Total Ticket": 500,
+    "Durasi Ticket P90 (Hour)": 5.550666666666666
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP PURWOKERTO",
+    "Type Ticket": "Event",
+    "Severity": "Low",
+    "Total Ticket": 528,
+    "Durasi Ticket P90 (Hour)": 41.09638888888889
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP PURWOKERTO",
+    "Type Ticket": "Incident",
+    "Severity": "Low",
+    "Total Ticket": 764,
+    "Durasi Ticket P90 (Hour)": 5.644222222222244
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP PURWOKERTO",
+    "Type Ticket": "Event",
+    "Severity": "Low",
+    "Total Ticket": 778,
+    "Durasi Ticket P90 (Hour)": 46.239444444444445
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP PURWOKERTO",
+    "Type Ticket": "Incident",
+    "Severity": "Low",
+    "Total Ticket": 470,
+    "Durasi Ticket P90 (Hour)": 6.926111111111111
+  },
+  {
+    "Month Name": "April",
+    "Month Number": 4,
     "NOP": "NOP SEMARANG",
-    "Severity": "Major",
-    "Total Ticket": 2724
+    "Type Ticket": "Event",
+    "Severity": "Low",
+    "Total Ticket": 113,
+    "Durasi Ticket P90 (Hour)": 16.090166666666676
   },
   {
+    "Month Name": "April",
+    "Month Number": 4,
+    "NOP": "NOP SEMARANG",
+    "Type Ticket": "Incident",
+    "Severity": "Low",
+    "Total Ticket": 141,
+    "Durasi Ticket P90 (Hour)": 4.541444444444444
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP SEMARANG",
+    "Type Ticket": "Event",
+    "Severity": "Low",
+    "Total Ticket": 676,
+    "Durasi Ticket P90 (Hour)": 23.365138888888904
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP SEMARANG",
+    "Type Ticket": "Incident",
+    "Severity": "Low",
+    "Total Ticket": 804,
+    "Durasi Ticket P90 (Hour)": 5.3213888888888885
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP SEMARANG",
+    "Type Ticket": "Event",
+    "Severity": "Low",
+    "Total Ticket": 962,
+    "Durasi Ticket P90 (Hour)": 30.590833333333332
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP SEMARANG",
+    "Type Ticket": "Incident",
+    "Severity": "Low",
+    "Total Ticket": 1024,
+    "Durasi Ticket P90 (Hour)": 7.7075
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP SEMARANG",
+    "Type Ticket": "Event",
+    "Severity": "Low",
+    "Total Ticket": 932,
+    "Durasi Ticket P90 (Hour)": 38.85572222222222
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP SEMARANG",
+    "Type Ticket": "Incident",
+    "Severity": "Low",
+    "Total Ticket": 1008,
+    "Durasi Ticket P90 (Hour)": 5.396805555555557
+  },
+  {
+    "Month Name": "April",
+    "Month Number": 4,
     "NOP": "NOP SURAKARTA",
-    "Severity": "Major",
-    "Total Ticket": 2553
+    "Type Ticket": "Event",
+    "Severity": "Low",
+    "Total Ticket": 185,
+    "Durasi Ticket P90 (Hour)": 24.287777777777777
   },
   {
+    "Month Name": "April",
+    "Month Number": 4,
+    "NOP": "NOP SURAKARTA",
+    "Type Ticket": "Incident",
+    "Severity": "Low",
+    "Total Ticket": 201,
+    "Durasi Ticket P90 (Hour)": 4.775555555555556
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP SURAKARTA",
+    "Type Ticket": "Event",
+    "Severity": "Low",
+    "Total Ticket": 958,
+    "Durasi Ticket P90 (Hour)": 20.77472222222222
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP SURAKARTA",
+    "Type Ticket": "Incident",
+    "Severity": "Low",
+    "Total Ticket": 862,
+    "Durasi Ticket P90 (Hour)": 5.3215
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP SURAKARTA",
+    "Type Ticket": "Event",
+    "Severity": "Low",
+    "Total Ticket": 750,
+    "Durasi Ticket P90 (Hour)": 22.270555555555553
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP SURAKARTA",
+    "Type Ticket": "Incident",
+    "Severity": "Low",
+    "Total Ticket": 992,
+    "Durasi Ticket P90 (Hour)": 5.470277777777778
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP SURAKARTA",
+    "Type Ticket": "Event",
+    "Severity": "Low",
+    "Total Ticket": 1094,
+    "Durasi Ticket P90 (Hour)": 25.054611111111114
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP SURAKARTA",
+    "Type Ticket": "Incident",
+    "Severity": "Low",
+    "Total Ticket": 1098,
+    "Durasi Ticket P90 (Hour)": 4.951111111111111
+  },
+  {
+    "Month Name": "April",
+    "Month Number": 4,
     "NOP": "NOP YOGYAKARTA",
-    "Severity": "Major",
-    "Total Ticket": 1568
+    "Type Ticket": "Event",
+    "Severity": "Low",
+    "Total Ticket": 72,
+    "Durasi Ticket P90 (Hour)": 32.386277777777785
   },
   {
+    "Month Name": "April",
+    "Month Number": 4,
+    "NOP": "NOP YOGYAKARTA",
+    "Type Ticket": "Incident",
+    "Severity": "Low",
+    "Total Ticket": 94,
+    "Durasi Ticket P90 (Hour)": 4.296166666666667
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP YOGYAKARTA",
+    "Type Ticket": "Event",
+    "Severity": "Low",
+    "Total Ticket": 716,
+    "Durasi Ticket P90 (Hour)": 36.58111111111111
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP YOGYAKARTA",
+    "Type Ticket": "Incident",
+    "Severity": "Low",
+    "Total Ticket": 448,
+    "Durasi Ticket P90 (Hour)": 7.083611111111111
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP YOGYAKARTA",
+    "Type Ticket": "Event",
+    "Severity": "Low",
+    "Total Ticket": 940,
+    "Durasi Ticket P90 (Hour)": 21.054027777777776
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP YOGYAKARTA",
+    "Type Ticket": "Incident",
+    "Severity": "Low",
+    "Total Ticket": 596,
+    "Durasi Ticket P90 (Hour)": 6.208055555555555
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP YOGYAKARTA",
+    "Type Ticket": "Event",
+    "Severity": "Low",
+    "Total Ticket": 634,
+    "Durasi Ticket P90 (Hour)": 41.39222222222222
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP YOGYAKARTA",
+    "Type Ticket": "Incident",
+    "Severity": "Low",
+    "Total Ticket": 432,
+    "Durasi Ticket P90 (Hour)": 4.3566666666666665
+  },
+  {
+    "Month Name": "April",
+    "Month Number": 4,
+    "NOP": "NOP MAGELANG",
+    "Type Ticket": "Event",
+    "Severity": "Major",
+    "Total Ticket": 64,
+    "Durasi Ticket P90 (Hour)": 3.0945
+  },
+  {
+    "Month Name": "April",
+    "Month Number": 4,
+    "NOP": "NOP MAGELANG",
+    "Type Ticket": "Incident",
+    "Severity": "Major",
+    "Total Ticket": 3,
+    "Durasi Ticket P90 (Hour)": 0.6588888888888889
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP MAGELANG",
+    "Type Ticket": "Event",
+    "Severity": "Major",
+    "Total Ticket": 316,
+    "Durasi Ticket P90 (Hour)": 3.7851388888888886
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP MAGELANG",
+    "Type Ticket": "Incident",
+    "Severity": "Major",
+    "Total Ticket": 18,
+    "Durasi Ticket P90 (Hour)": 3.742222222222222
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP MAGELANG",
+    "Type Ticket": "Event",
+    "Severity": "Major",
+    "Total Ticket": 394,
+    "Durasi Ticket P90 (Hour)": 5.578777777777777
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP MAGELANG",
+    "Type Ticket": "Event",
+    "Severity": "Major",
+    "Total Ticket": 388,
+    "Durasi Ticket P90 (Hour)": 4.589166666666666
+  },
+  {
+    "Month Name": "April",
+    "Month Number": 4,
+    "NOP": "NOP PEKALONGAN",
+    "Type Ticket": "Event",
+    "Severity": "Major",
+    "Total Ticket": 63,
+    "Durasi Ticket P90 (Hour)": 2.5072222222222234
+  },
+  {
+    "Month Name": "April",
+    "Month Number": 4,
+    "NOP": "NOP PEKALONGAN",
+    "Type Ticket": "Incident",
+    "Severity": "Major",
+    "Total Ticket": 2,
+    "Durasi Ticket P90 (Hour)": 2.9305555555555554
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP PEKALONGAN",
+    "Type Ticket": "Event",
+    "Severity": "Major",
+    "Total Ticket": 486,
+    "Durasi Ticket P90 (Hour)": 4.787222222222222
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP PEKALONGAN",
+    "Type Ticket": "Incident",
+    "Severity": "Major",
+    "Total Ticket": 10,
+    "Durasi Ticket P90 (Hour)": 6.841944444444445
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP PEKALONGAN",
+    "Type Ticket": "Event",
+    "Severity": "Major",
+    "Total Ticket": 444,
+    "Durasi Ticket P90 (Hour)": 4.993333333333333
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP PEKALONGAN",
+    "Type Ticket": "Incident",
+    "Severity": "Major",
+    "Total Ticket": 20,
+    "Durasi Ticket P90 (Hour)": 13.766944444444444
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP PEKALONGAN",
+    "Type Ticket": "Event",
+    "Severity": "Major",
+    "Total Ticket": 542,
+    "Durasi Ticket P90 (Hour)": 5.154444444444445
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP PEKALONGAN",
+    "Type Ticket": "Incident",
+    "Severity": "Major",
+    "Total Ticket": 44,
+    "Durasi Ticket P90 (Hour)": 10.060833333333333
+  },
+  {
+    "Month Name": "April",
+    "Month Number": 4,
+    "NOP": "NOP PURWOKERTO",
+    "Type Ticket": "Event",
+    "Severity": "Major",
+    "Total Ticket": 59,
+    "Durasi Ticket P90 (Hour)": 3.0879166666666666
+  },
+  {
+    "Month Name": "April",
+    "Month Number": 4,
+    "NOP": "NOP PURWOKERTO",
+    "Type Ticket": "Incident",
+    "Severity": "Major",
+    "Total Ticket": 1,
+    "Durasi Ticket P90 (Hour)": 3.461111111111111
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP PURWOKERTO",
+    "Type Ticket": "Event",
+    "Severity": "Major",
+    "Total Ticket": 316,
+    "Durasi Ticket P90 (Hour)": 3.1756944444444444
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP PURWOKERTO",
+    "Type Ticket": "Incident",
+    "Severity": "Major",
+    "Total Ticket": 52,
+    "Durasi Ticket P90 (Hour)": 2.0754444444444426
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP PURWOKERTO",
+    "Type Ticket": "Event",
+    "Severity": "Major",
+    "Total Ticket": 584,
+    "Durasi Ticket P90 (Hour)": 6.188611111111111
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP PURWOKERTO",
+    "Type Ticket": "Incident",
+    "Severity": "Major",
+    "Total Ticket": 38,
+    "Durasi Ticket P90 (Hour)": 10.089166666666666
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP PURWOKERTO",
+    "Type Ticket": "Event",
+    "Severity": "Major",
+    "Total Ticket": 410,
+    "Durasi Ticket P90 (Hour)": 3.8055555555555554
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP PURWOKERTO",
+    "Type Ticket": "Incident",
+    "Severity": "Major",
+    "Total Ticket": 4,
+    "Durasi Ticket P90 (Hour)": 7.459722222222222
+  },
+  {
+    "Month Name": "April",
+    "Month Number": 4,
     "NOP": "NOP SEMARANG",
+    "Type Ticket": "Event",
+    "Severity": "Major",
+    "Total Ticket": 182,
+    "Durasi Ticket P90 (Hour)": 3.9503055555555555
+  },
+  {
+    "Month Name": "April",
+    "Month Number": 4,
+    "NOP": "NOP SEMARANG",
+    "Type Ticket": "Incident",
+    "Severity": "Major",
+    "Total Ticket": 2,
+    "Durasi Ticket P90 (Hour)": 1.7038888888888888
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP SEMARANG",
+    "Type Ticket": "Event",
+    "Severity": "Major",
+    "Total Ticket": 700,
+    "Durasi Ticket P90 (Hour)": 4.888888888888888
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP SEMARANG",
+    "Type Ticket": "Incident",
+    "Severity": "Major",
+    "Total Ticket": 2,
+    "Durasi Ticket P90 (Hour)": 1.9902777777777776
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP SEMARANG",
+    "Type Ticket": "Event",
+    "Severity": "Major",
+    "Total Ticket": 770,
+    "Durasi Ticket P90 (Hour)": 5.479444444444444
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP SEMARANG",
+    "Type Ticket": "Incident",
+    "Severity": "Major",
+    "Total Ticket": 26,
+    "Durasi Ticket P90 (Hour)": 2.9391666666666665
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP SEMARANG",
+    "Type Ticket": "Event",
+    "Severity": "Major",
+    "Total Ticket": 1036,
+    "Durasi Ticket P90 (Hour)": 6.495500000000002
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP SEMARANG",
+    "Type Ticket": "Incident",
+    "Severity": "Major",
+    "Total Ticket": 46,
+    "Durasi Ticket P90 (Hour)": 2.5575
+  },
+  {
+    "Month Name": "April",
+    "Month Number": 4,
+    "NOP": "NOP SURAKARTA",
+    "Type Ticket": "Event",
+    "Severity": "Major",
+    "Total Ticket": 133,
+    "Durasi Ticket P90 (Hour)": 3.8092500000000005
+  },
+  {
+    "Month Name": "April",
+    "Month Number": 4,
+    "NOP": "NOP SURAKARTA",
+    "Type Ticket": "Incident",
+    "Severity": "Major",
+    "Total Ticket": 5,
+    "Durasi Ticket P90 (Hour)": 3.78972222222222
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP SURAKARTA",
+    "Type Ticket": "Event",
+    "Severity": "Major",
+    "Total Ticket": 740,
+    "Durasi Ticket P90 (Hour)": 3.9079999999999973
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP SURAKARTA",
+    "Type Ticket": "Incident",
+    "Severity": "Major",
+    "Total Ticket": 26,
+    "Durasi Ticket P90 (Hour)": 6.209722222222222
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP SURAKARTA",
+    "Type Ticket": "Event",
+    "Severity": "Major",
+    "Total Ticket": 752,
+    "Durasi Ticket P90 (Hour)": 4.668250000000002
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP SURAKARTA",
+    "Type Ticket": "Incident",
+    "Severity": "Major",
+    "Total Ticket": 14,
+    "Durasi Ticket P90 (Hour)": 9.62958333333334
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP SURAKARTA",
+    "Type Ticket": "Event",
+    "Severity": "Major",
+    "Total Ticket": 912,
+    "Durasi Ticket P90 (Hour)": 4.316666666666666
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP SURAKARTA",
+    "Type Ticket": "Incident",
+    "Severity": "Major",
+    "Total Ticket": 14,
+    "Durasi Ticket P90 (Hour)": 5.039944444444448
+  },
+  {
+    "Month Name": "April",
+    "Month Number": 4,
+    "NOP": "NOP YOGYAKARTA",
+    "Type Ticket": "Event",
+    "Severity": "Major",
+    "Total Ticket": 68,
+    "Durasi Ticket P90 (Hour)": 2.706555555555556
+  },
+  {
+    "Month Name": "April",
+    "Month Number": 4,
+    "NOP": "NOP YOGYAKARTA",
+    "Type Ticket": "Incident",
+    "Severity": "Major",
+    "Total Ticket": 4,
+    "Durasi Ticket P90 (Hour)": 0.9942222222222223
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP YOGYAKARTA",
+    "Type Ticket": "Event",
+    "Severity": "Major",
+    "Total Ticket": 474,
+    "Durasi Ticket P90 (Hour)": 5.372777777777777
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP YOGYAKARTA",
+    "Type Ticket": "Incident",
+    "Severity": "Major",
+    "Total Ticket": 16,
+    "Durasi Ticket P90 (Hour)": 8.255972222222223
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP YOGYAKARTA",
+    "Type Ticket": "Event",
+    "Severity": "Major",
+    "Total Ticket": 618,
+    "Durasi Ticket P90 (Hour)": 3.9580833333333354
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP YOGYAKARTA",
+    "Type Ticket": "Incident",
+    "Severity": "Major",
+    "Total Ticket": 8,
+    "Durasi Ticket P90 (Hour)": 2.7019444444444445
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP YOGYAKARTA",
+    "Type Ticket": "Event",
+    "Severity": "Major",
+    "Total Ticket": 384,
+    "Durasi Ticket P90 (Hour)": 3.8602777777777777
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP YOGYAKARTA",
+    "Type Ticket": "Incident",
+    "Severity": "Major",
+    "Total Ticket": 8,
+    "Durasi Ticket P90 (Hour)": 1.9480555555555554
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP SEMARANG",
+    "Type Ticket": "Event",
     "Severity": "Medium",
-    "Total Ticket": 30
+    "Total Ticket": 10,
+    "Durasi Ticket P90 (Hour)": 10.004444444444443
   },
   {
-    "NOP": "NOP MAGELANG",
-    "Severity": "Minor",
-    "Total Ticket": 8407
-  },
-  {
-    "NOP": "NOP PEKALONGAN",
-    "Severity": "Minor",
-    "Total Ticket": 7795
-  },
-  {
-    "NOP": "NOP PURWOKERTO",
-    "Severity": "Minor",
-    "Total Ticket": 7079
-  },
-  {
+    "Month Name": "Januari",
+    "Month Number": 1,
     "NOP": "NOP SEMARANG",
-    "Severity": "Minor",
-    "Total Ticket": 9897
+    "Type Ticket": "Event",
+    "Severity": "Medium",
+    "Total Ticket": 12,
+    "Durasi Ticket P90 (Hour)": 12.233333333333333
   },
   {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP SEMARANG",
+    "Type Ticket": "Event",
+    "Severity": "Medium",
+    "Total Ticket": 8,
+    "Durasi Ticket P90 (Hour)": 18.00638888888889
+  },
+  {
+    "Month Name": "April",
+    "Month Number": 4,
+    "NOP": "NOP MAGELANG",
+    "Type Ticket": "Event",
+    "Severity": "Minor",
+    "Total Ticket": 299,
+    "Durasi Ticket P90 (Hour)": 12.247388888888889
+  },
+  {
+    "Month Name": "April",
+    "Month Number": 4,
+    "NOP": "NOP MAGELANG",
+    "Type Ticket": "Incident",
+    "Severity": "Minor",
+    "Total Ticket": 142,
+    "Durasi Ticket P90 (Hour)": 5.673472222222223
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP MAGELANG",
+    "Type Ticket": "Event",
+    "Severity": "Minor",
+    "Total Ticket": 1248,
+    "Durasi Ticket P90 (Hour)": 13.161944444444444
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP MAGELANG",
+    "Type Ticket": "Incident",
+    "Severity": "Minor",
+    "Total Ticket": 730,
+    "Durasi Ticket P90 (Hour)": 6.335194444444438
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP MAGELANG",
+    "Type Ticket": "Event",
+    "Severity": "Minor",
+    "Total Ticket": 1802,
+    "Durasi Ticket P90 (Hour)": 13.970472222222222
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP MAGELANG",
+    "Type Ticket": "Incident",
+    "Severity": "Minor",
+    "Total Ticket": 1612,
+    "Durasi Ticket P90 (Hour)": 12.479999999999999
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP MAGELANG",
+    "Type Ticket": "Event",
+    "Severity": "Minor",
+    "Total Ticket": 1770,
+    "Durasi Ticket P90 (Hour)": 14.883944444444444
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP MAGELANG",
+    "Type Ticket": "Incident",
+    "Severity": "Minor",
+    "Total Ticket": 892,
+    "Durasi Ticket P90 (Hour)": 7.521944444444444
+  },
+  {
+    "Month Name": "April",
+    "Month Number": 4,
+    "NOP": "NOP PEKALONGAN",
+    "Type Ticket": "Event",
+    "Severity": "Minor",
+    "Total Ticket": 176,
+    "Durasi Ticket P90 (Hour)": 12.278611111111111
+  },
+  {
+    "Month Name": "April",
+    "Month Number": 4,
+    "NOP": "NOP PEKALONGAN",
+    "Type Ticket": "Incident",
+    "Severity": "Minor",
+    "Total Ticket": 114,
+    "Durasi Ticket P90 (Hour)": 6.428777777777784
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP PEKALONGAN",
+    "Type Ticket": "Event",
+    "Severity": "Minor",
+    "Total Ticket": 1594,
+    "Durasi Ticket P90 (Hour)": 15.186666666666667
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP PEKALONGAN",
+    "Type Ticket": "Incident",
+    "Severity": "Minor",
+    "Total Ticket": 1072,
+    "Durasi Ticket P90 (Hour)": 7.0525
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP PEKALONGAN",
+    "Type Ticket": "Event",
+    "Severity": "Minor",
+    "Total Ticket": 1210,
+    "Durasi Ticket P90 (Hour)": 16.19611111111111
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP PEKALONGAN",
+    "Type Ticket": "Incident",
+    "Severity": "Minor",
+    "Total Ticket": 878,
+    "Durasi Ticket P90 (Hour)": 11.002777777777778
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP PEKALONGAN",
+    "Type Ticket": "Event",
+    "Severity": "Minor",
+    "Total Ticket": 1374,
+    "Durasi Ticket P90 (Hour)": 16.70730555555557
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP PEKALONGAN",
+    "Type Ticket": "Incident",
+    "Severity": "Minor",
+    "Total Ticket": 1424,
+    "Durasi Ticket P90 (Hour)": 28.15261111111122
+  },
+  {
+    "Month Name": "April",
+    "Month Number": 4,
+    "NOP": "NOP PURWOKERTO",
+    "Type Ticket": "Event",
+    "Severity": "Minor",
+    "Total Ticket": 187,
+    "Durasi Ticket P90 (Hour)": 11.961694444444445
+  },
+  {
+    "Month Name": "April",
+    "Month Number": 4,
+    "NOP": "NOP PURWOKERTO",
+    "Type Ticket": "Incident",
+    "Severity": "Minor",
+    "Total Ticket": 265,
+    "Durasi Ticket P90 (Hour)": 5.078055555555555
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP PURWOKERTO",
+    "Type Ticket": "Event",
+    "Severity": "Minor",
+    "Total Ticket": 806,
+    "Durasi Ticket P90 (Hour)": 12.922222222222222
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP PURWOKERTO",
+    "Type Ticket": "Incident",
+    "Severity": "Minor",
+    "Total Ticket": 1058,
+    "Durasi Ticket P90 (Hour)": 4.724444444444444
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP PURWOKERTO",
+    "Type Ticket": "Event",
+    "Severity": "Minor",
+    "Total Ticket": 1068,
+    "Durasi Ticket P90 (Hour)": 14.150833333333333
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP PURWOKERTO",
+    "Type Ticket": "Incident",
+    "Severity": "Minor",
+    "Total Ticket": 1528,
+    "Durasi Ticket P90 (Hour)": 15.625555555555556
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP PURWOKERTO",
+    "Type Ticket": "Event",
+    "Severity": "Minor",
+    "Total Ticket": 980,
+    "Durasi Ticket P90 (Hour)": 13.219972222222221
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP PURWOKERTO",
+    "Type Ticket": "Incident",
+    "Severity": "Minor",
+    "Total Ticket": 1260,
+    "Durasi Ticket P90 (Hour)": 11.018027777777837
+  },
+  {
+    "Month Name": "April",
+    "Month Number": 4,
+    "NOP": "NOP SEMARANG",
+    "Type Ticket": "Event",
+    "Severity": "Minor",
+    "Total Ticket": 197,
+    "Durasi Ticket P90 (Hour)": 9.15602777777778
+  },
+  {
+    "Month Name": "April",
+    "Month Number": 4,
+    "NOP": "NOP SEMARANG",
+    "Type Ticket": "Incident",
+    "Severity": "Minor",
+    "Total Ticket": 272,
+    "Durasi Ticket P90 (Hour)": 4.693944444444444
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP SEMARANG",
+    "Type Ticket": "Event",
+    "Severity": "Minor",
+    "Total Ticket": 1058,
+    "Durasi Ticket P90 (Hour)": 8.709999999999999
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP SEMARANG",
+    "Type Ticket": "Incident",
+    "Severity": "Minor",
+    "Total Ticket": 1526,
+    "Durasi Ticket P90 (Hour)": 9.122222222222222
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP SEMARANG",
+    "Type Ticket": "Event",
+    "Severity": "Minor",
+    "Total Ticket": 1298,
+    "Durasi Ticket P90 (Hour)": 10.795277777777777
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP SEMARANG",
+    "Type Ticket": "Incident",
+    "Severity": "Minor",
+    "Total Ticket": 1710,
+    "Durasi Ticket P90 (Hour)": 7.963611111111111
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP SEMARANG",
+    "Type Ticket": "Event",
+    "Severity": "Minor",
+    "Total Ticket": 1672,
+    "Durasi Ticket P90 (Hour)": 11.64391666666666
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP SEMARANG",
+    "Type Ticket": "Incident",
+    "Severity": "Minor",
+    "Total Ticket": 2270,
+    "Durasi Ticket P90 (Hour)": 18.182777777777776
+  },
+  {
+    "Month Name": "April",
+    "Month Number": 4,
     "NOP": "NOP SURAKARTA",
+    "Type Ticket": "Event",
     "Severity": "Minor",
-    "Total Ticket": 12151
+    "Total Ticket": 283,
+    "Durasi Ticket P90 (Hour)": 7.816194444444443
   },
   {
-    "NOP": "NOP YOGYAKARTA",
+    "Month Name": "April",
+    "Month Number": 4,
+    "NOP": "NOP SURAKARTA",
+    "Type Ticket": "Incident",
     "Severity": "Minor",
-    "Total Ticket": 7191
+    "Total Ticket": 456,
+    "Durasi Ticket P90 (Hour)": 6.411111111111111
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP SURAKARTA",
+    "Type Ticket": "Event",
+    "Severity": "Minor",
+    "Total Ticket": 1396,
+    "Durasi Ticket P90 (Hour)": 8.280583333333343
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP SURAKARTA",
+    "Type Ticket": "Incident",
+    "Severity": "Minor",
+    "Total Ticket": 1820,
+    "Durasi Ticket P90 (Hour)": 5.789916666666646
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP SURAKARTA",
+    "Type Ticket": "Event",
+    "Severity": "Minor",
+    "Total Ticket": 1542,
+    "Durasi Ticket P90 (Hour)": 8.855555555555556
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP SURAKARTA",
+    "Type Ticket": "Incident",
+    "Severity": "Minor",
+    "Total Ticket": 2246,
+    "Durasi Ticket P90 (Hour)": 9.519166666666667
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP SURAKARTA",
+    "Type Ticket": "Event",
+    "Severity": "Minor",
+    "Total Ticket": 1986,
+    "Durasi Ticket P90 (Hour)": 8.85661111111113
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP SURAKARTA",
+    "Type Ticket": "Incident",
+    "Severity": "Minor",
+    "Total Ticket": 2620,
+    "Durasi Ticket P90 (Hour)": 6.711944444444444
+  },
+  {
+    "Month Name": "April",
+    "Month Number": 4,
+    "NOP": "NOP YOGYAKARTA",
+    "Type Ticket": "Event",
+    "Severity": "Minor",
+    "Total Ticket": 156,
+    "Durasi Ticket P90 (Hour)": 7.413750000000001
+  },
+  {
+    "Month Name": "April",
+    "Month Number": 4,
+    "NOP": "NOP YOGYAKARTA",
+    "Type Ticket": "Incident",
+    "Severity": "Minor",
+    "Total Ticket": 137,
+    "Durasi Ticket P90 (Hour)": 5.755722222222223
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP YOGYAKARTA",
+    "Type Ticket": "Event",
+    "Severity": "Minor",
+    "Total Ticket": 1456,
+    "Durasi Ticket P90 (Hour)": 7.8005555555555555
+  },
+  {
+    "Month Name": "Februari",
+    "Month Number": 2,
+    "NOP": "NOP YOGYAKARTA",
+    "Type Ticket": "Incident",
+    "Severity": "Minor",
+    "Total Ticket": 956,
+    "Durasi Ticket P90 (Hour)": 9.332222222222223
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP YOGYAKARTA",
+    "Type Ticket": "Event",
+    "Severity": "Minor",
+    "Total Ticket": 1374,
+    "Durasi Ticket P90 (Hour)": 8.490833333333333
+  },
+  {
+    "Month Name": "Januari",
+    "Month Number": 1,
+    "NOP": "NOP YOGYAKARTA",
+    "Type Ticket": "Incident",
+    "Severity": "Minor",
+    "Total Ticket": 1582,
+    "Durasi Ticket P90 (Hour)": 6.6125
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP YOGYAKARTA",
+    "Type Ticket": "Event",
+    "Severity": "Minor",
+    "Total Ticket": 978,
+    "Durasi Ticket P90 (Hour)": 11.376000000000007
+  },
+  {
+    "Month Name": "Maret",
+    "Month Number": 3,
+    "NOP": "NOP YOGYAKARTA",
+    "Type Ticket": "Incident",
+    "Severity": "Minor",
+    "Total Ticket": 594,
+    "Durasi Ticket P90 (Hour)": 3.7123611111111097
   }
 ]
