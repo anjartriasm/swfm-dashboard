@@ -307,20 +307,98 @@ select:hover,select:focus{border-color:var(--blue);box-shadow:0 0 0 2px rgba(0,1
 let rawPIC=[], charts={}, sortKey='takeover', sortDir=-1;
 
 // ── CLEAN & NORMALIZE DATA ──
+// ── CLEAN DATA (support bulan) ──
 function cleanPIC(raw){
   return raw
-    .filter(d => d['PIC Take Over Ticket'] && d['PIC Take Over Ticket'].trim() !== '')
+    .filter(d => d['PIC Take Over Ticket'] && 
+                 d['PIC Take Over Ticket'].trim() !== '')
     .map(d => ({
       name     : d['PIC Take Over Ticket'].trim(),
       nop      : d['NOP'] || '',
-      takeover : parseInt(d['Total Takeover']) || 0,
-      visit    : parseInt(d['Total Visit'])    || 0,
-      backup   : parseInt(d['Total Backup'])   || 0,
+      month    : parseInt(d['Month Number']) || 0,   // ← TAMBAH
+      monthName: d['Month Name'] || '',              // ← TAMBAH
+      takeover : parseInt(d['Total Takeover'])  || 0,
+      visit    : parseInt(d['Total Visit'])     || 0,
+      backup   : parseInt(d['Total Backup'])    || 0,
       score    : parseFloat(d['Sum of Score Ticket']) || 0,
-      mtto     : parseFloat(d['MTTO (Min)'])   || 0,
-      mttr     : parseFloat(d['MTTR (Hour)'])  || 0,
+      mtto     : parseFloat(d['MTTO (Min)'])    || 0,
+      mttr     : parseFloat(d['MTTR (Hour)'])   || 0,
     }))
-    .filter(d => d.takeover > 0); // filter yg takeover = 0
+    .filter(d => d.takeover > 0);
+}
+
+// ── INIT SLICERS (tambah bulan) ──
+function initSlicers(){
+  // NOP
+  const nops=[...new Set(rawPIC.map(d=>d.nop))].sort();
+  const slNOP=document.getElementById('sl-nop');
+  nops.forEach(n=>{
+    const o=document.createElement('option');
+    o.value=n; o.textContent=n; slNOP.appendChild(o);
+  });
+
+  // Bulan ← TAMBAH
+  const months=[...new Map(
+    rawPIC.filter(d=>d.month>0)
+          .map(d=>[d.month, {num:d.month, name:d.monthName}])
+  ).values()].sort((a,b)=>a.num-b.num);
+
+  const slMonth=document.getElementById('sl-month');
+  months.forEach(m=>{
+    const o=document.createElement('option');
+    o.value=m.num; o.textContent=m.name;
+    slMonth.appendChild(o);
+  });
+}
+
+// ── APPLY FILTER (tambah bulan) ──
+function applyFilter(){
+  const selNOP  = document.getElementById('sl-nop').value;
+  const selMonth= document.getElementById('sl-month').value; // ← TAMBAH
+  const selTop  = parseInt(document.getElementById('sl-top').value);
+  const selMin  = parseInt(document.getElementById('sl-min').value)||0;
+
+  let data=[...rawPIC];
+  if(selNOP   !=='all') data=data.filter(d=>d.nop===selNOP);
+  if(selMonth !=='all') data=data.filter(d=>d.month==selMonth); // ← TAMBAH
+
+  // Kalau filter bulan → data sudah per bulan per PIC
+  // Kalau all bulan   → aggregate per PIC dulu
+  if(selMonth==='all'){
+    data = aggregateByPIC(data); // ← TAMBAH
+  }
+
+  data=data.filter(d=>d.takeover>=selMin);
+  // ... sort & render sama seperti sebelumnya
+}
+
+// ── AGGREGATE per PIC (untuk all bulan) ── TAMBAH FUNGSI INI
+function aggregateByPIC(data){
+  const map={};
+  data.forEach(d=>{
+    const key=`${d.name}||${d.nop}`;
+    if(!map[key]){
+      map[key]={
+        name:d.name, nop:d.nop,
+        month:0, monthName:'All',
+        takeover:0, visit:0, backup:0,
+        score:0, mttoSum:0, mttrSum:0, cnt:0
+      };
+    }
+    map[key].takeover += d.takeover;
+    map[key].visit    += d.visit;
+    map[key].backup   += d.backup;
+    map[key].score    += d.score;
+    map[key].mttoSum  += d.mtto;
+    map[key].mttrSum  += d.mttr;
+    map[key].cnt      += 1;
+  });
+
+  return Object.values(map).map(d=>({
+    ...d,
+    mtto: d.cnt ? d.mttoSum/d.cnt : 0,
+    mttr: d.cnt ? d.mttrSum/d.cnt : 0,
+  }));
 }
 
 // ── LOAD DATA ──
