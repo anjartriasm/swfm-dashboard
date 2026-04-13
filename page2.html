@@ -343,8 +343,8 @@ function cleanPIC(raw){
       takeover : +d['Total Takeover']  || 0,
       visit    : +d['Total Visit']     || 0,
       backup   : +d['Total Backup']    || 0,
-      manRes   : (d['% Manual Resolved'] !== '' && d['% Manual Resolved'] !== null) ? +d['% Manual Resolved'] : null,
-      backVis  : (d['% Backup vs Visit'] !== '' && d['% Backup vs Visit'] !== null) ? +d['% Backup vs Visit'] : null,
+      manRes   : (d['% Manual Resolved'] !== '' && d['% Manual Resolved'] !== null && d['% Manual Resolved'] !== undefined) ? (+d['% Manual Resolved'] || 0) : null,
+      backVis  : (d['% Backup vs Visit'] !== '' && d['% Backup vs Visit'] !== null && d['% Backup vs Visit'] !== undefined) ? (+d['% Backup vs Visit'] || 0) : null,
       score    : +d['Sum of Score Ticket'] || 0,
     }))
     .filter(d => d.takeover > 0);
@@ -604,7 +604,7 @@ function renderTable(data){
   document.getElementById('pic-tbody').innerHTML = data.map((d,i) => {
     const [g,gc] = grade(d);
     const scPct = (d.score/maxSco*100).toFixed(0);
-    const visStr  = d.visitation.toFixed(1)+'%';
+    const visStr  = ((d.visitation ?? 0).toFixed(1))+'%';
     const bvStr   = d.backVis  !== null ? d.backVis.toFixed(1)+'%'  : '—';
     const manStr  = d.manRes   !== null ? d.manRes.toFixed(1)+'%'   : '—';
     const visCls  = visColor(d.visitation);
