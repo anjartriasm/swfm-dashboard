@@ -12,6 +12,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 2,
     "% Manual Resolved": 100,
+    "% Visitation": 100,
     "% IN SLA": 100,
     "% OUT SLA": ""
   },
@@ -28,6 +29,7 @@
     "Total Backup": 20,
     "Total Manual Resolved": 116,
     "% Manual Resolved": 59.79381443298969,
+    "% Visitation": 72.88135593220339,
     "% IN SLA": 78,
     "% OUT SLA": 21.649484536082475
   },
@@ -44,6 +46,7 @@
     "Total Backup": 36,
     "Total Manual Resolved": 268,
     "% Manual Resolved": 68.02030456852792,
+    "% Visitation": 48.507462686567166,
     "% IN SLA": 82,
     "% OUT SLA": 17.766497461928935
   },
@@ -60,6 +63,7 @@
     "Total Backup": 86,
     "Total Manual Resolved": 1140,
     "% Manual Resolved": 63.263041065482795,
+    "% Visitation": 24.561403508771928,
     "% IN SLA": 90,
     "% OUT SLA": 9.544950055493896
   },
@@ -76,6 +80,7 @@
     "Total Backup": 78,
     "Total Manual Resolved": 608,
     "% Manual Resolved": 37.71712158808933,
+    "% Visitation": 24.671052631578945,
     "% IN SLA": 83,
     "% OUT SLA": 16.62531017369727
   },
@@ -92,6 +97,7 @@
     "Total Backup": 2,
     "Total Manual Resolved": 990,
     "% Manual Resolved": 78.07570977917982,
+    "% Visitation": 10.707070707070706,
     "% IN SLA": 96,
     "% OUT SLA": 3.627760252365931
   },
@@ -108,6 +114,7 @@
     "Total Backup": 48,
     "Total Manual Resolved": 374,
     "% Manual Resolved": 45.27845036319613,
+    "% Visitation": 29.411764705882355,
     "% IN SLA": 96,
     "% OUT SLA": 4.358353510895883
   },
@@ -124,6 +131,7 @@
     "Total Backup": 32,
     "Total Manual Resolved": 202,
     "% Manual Resolved": 67.33333333333333,
+    "% Visitation": 66.99029126213593,
     "% IN SLA": 74,
     "% OUT SLA": 26
   },
@@ -140,6 +148,7 @@
     "Total Backup": 22,
     "Total Manual Resolved": 264,
     "% Manual Resolved": 59.45945945945946,
+    "% Visitation": 25.757575757575758,
     "% IN SLA": 86,
     "% OUT SLA": 13.963963963963963
   },
@@ -156,6 +165,7 @@
     "Total Backup": 2,
     "Total Manual Resolved": 4,
     "% Manual Resolved": 20,
+    "% Visitation": 50,
     "% IN SLA": 80,
     "% OUT SLA": 20
   },
@@ -172,6 +182,7 @@
     "Total Backup": 80,
     "Total Manual Resolved": 878,
     "% Manual Resolved": 72.56198347107437,
+    "% Visitation": 35.147392290249435,
     "% IN SLA": 87,
     "% OUT SLA": 13.223140495867769
   },
@@ -188,6 +199,7 @@
     "Total Backup": 34,
     "Total Manual Resolved": 330,
     "% Manual Resolved": 37.58542141230068,
+    "% Visitation": 22.485207100591715,
     "% IN SLA": 82,
     "% OUT SLA": 17.539863325740317
   },
@@ -204,6 +216,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 608,
     "% Manual Resolved": 80.85106382978722,
+    "% Visitation": 28.947368421052634,
     "% IN SLA": 90,
     "% OUT SLA": 10.106382978723403
   },
@@ -220,6 +233,7 @@
     "Total Backup": 20,
     "Total Manual Resolved": 266,
     "% Manual Resolved": 43.4640522875817,
+    "% Visitation": 17.77777777777778,
     "% IN SLA": 92,
     "% OUT SLA": 8.169934640522875
   },
@@ -236,6 +250,7 @@
     "Total Backup": "",
     "Total Manual Resolved": "",
     "% Manual Resolved": "",
+    "% Visitation": "",
     "% IN SLA": 100,
     "% OUT SLA": ""
   },
@@ -252,6 +267,7 @@
     "Total Backup": 30,
     "Total Manual Resolved": 178,
     "% Manual Resolved": 44.05940594059406,
+    "% Visitation": 56.52173913043478,
     "% IN SLA": 66,
     "% OUT SLA": 33.663366336633665
   },
@@ -268,6 +284,7 @@
     "Total Backup": 26,
     "Total Manual Resolved": 330,
     "% Manual Resolved": 56.5068493150685,
+    "% Visitation": 36.144578313253014,
     "% IN SLA": 83,
     "% OUT SLA": 17.123287671232877
   },
@@ -284,6 +301,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 2,
     "% Manual Resolved": 5.263157894736842,
+    "% Visitation": "",
     "% IN SLA": 74,
     "% OUT SLA": 26.31578947368421
   },
@@ -300,6 +318,7 @@
     "Total Backup": 84,
     "Total Manual Resolved": 734,
     "% Manual Resolved": 68.72659176029963,
+    "% Visitation": 26.358695652173914,
     "% IN SLA": 92,
     "% OUT SLA": 7.677902621722846
   },
@@ -316,6 +335,7 @@
     "Total Backup": 72,
     "Total Manual Resolved": 470,
     "% Manual Resolved": 30.759162303664922,
+    "% Visitation": 26.80851063829787,
     "% IN SLA": 79,
     "% OUT SLA": 20.81151832460733
   },
@@ -332,6 +352,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 358,
     "% Manual Resolved": 67.8030303030303,
+    "% Visitation": 15.64245810055866,
     "% IN SLA": 95,
     "% OUT SLA": 4.924242424242424
   },
@@ -348,6 +369,7 @@
     "Total Backup": 32,
     "Total Manual Resolved": 250,
     "% Manual Resolved": 32.72251308900523,
+    "% Visitation": 21.875,
     "% IN SLA": 94,
     "% OUT SLA": 6.282722513089005
   },
@@ -364,6 +386,7 @@
     "Total Backup": 4,
     "Total Manual Resolved": 8,
     "% Manual Resolved": 80,
+    "% Visitation": 100,
     "% IN SLA": 60,
     "% OUT SLA": 40
   },
@@ -380,6 +403,7 @@
     "Total Backup": 32,
     "Total Manual Resolved": 128,
     "% Manual Resolved": 45.714285714285715,
+    "% Visitation": 84.93150684931507,
     "% IN SLA": 82,
     "% OUT SLA": 17.857142857142858
   },
@@ -396,6 +420,7 @@
     "Total Backup": 26,
     "Total Manual Resolved": 274,
     "% Manual Resolved": 35.58441558441559,
+    "% Visitation": 68.57142857142857,
     "% IN SLA": 82,
     "% OUT SLA": 17.92207792207792
   },
@@ -412,6 +437,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 4,
     "% Manual Resolved": 15.384615384615385,
+    "% Visitation": 50,
     "% IN SLA": 92,
     "% OUT SLA": 7.6923076923076925
   },
@@ -428,6 +454,7 @@
     "Total Backup": 94,
     "Total Manual Resolved": 458,
     "% Manual Resolved": 35.28505392912172,
+    "% Visitation": 72.84482758620689,
     "% IN SLA": 93,
     "% OUT SLA": 7.395993836671804
   },
@@ -444,6 +471,7 @@
     "Total Backup": 116,
     "Total Manual Resolved": 300,
     "% Manual Resolved": 17.543859649122805,
+    "% Visitation": 71.33333333333334,
     "% IN SLA": 93,
     "% OUT SLA": 7.368421052631578
   },
@@ -460,6 +488,7 @@
     "Total Backup": 2,
     "Total Manual Resolved": 410,
     "% Manual Resolved": 42.61954261954262,
+    "% Visitation": 59.42028985507246,
     "% IN SLA": 95,
     "% OUT SLA": 5.405405405405405
   },
@@ -476,6 +505,7 @@
     "Total Backup": 70,
     "Total Manual Resolved": 192,
     "% Manual Resolved": 18.75,
+    "% Visitation": 61.458333333333336,
     "% IN SLA": 98,
     "% OUT SLA": 2.1484375
   },
@@ -492,6 +522,7 @@
     "Total Backup": "",
     "Total Manual Resolved": "",
     "% Manual Resolved": "",
+    "% Visitation": "",
     "% IN SLA": 100,
     "% OUT SLA": ""
   },
@@ -508,6 +539,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 6,
     "% Manual Resolved": 50,
+    "% Visitation": 25,
     "% IN SLA": 67,
     "% OUT SLA": 33.33333333333333
   },
@@ -524,6 +556,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 2,
     "% Manual Resolved": 25,
+    "% Visitation": 50,
     "% IN SLA": 75,
     "% OUT SLA": 25
   },
@@ -540,6 +573,7 @@
     "Total Backup": 28,
     "Total Manual Resolved": 104,
     "% Manual Resolved": 39.39393939393939,
+    "% Visitation": 70.96774193548387,
     "% IN SLA": 82,
     "% OUT SLA": 18.181818181818183
   },
@@ -556,6 +590,7 @@
     "Total Backup": 40,
     "Total Manual Resolved": 272,
     "% Manual Resolved": 36.17021276595745,
+    "% Visitation": 51.07913669064749,
     "% IN SLA": 86,
     "% OUT SLA": 14.095744680851062
   },
@@ -572,6 +607,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 4,
     "% Manual Resolved": 28.57142857142857,
+    "% Visitation": 66.66666666666666,
     "% IN SLA": 86,
     "% OUT SLA": 14.285714285714285
   },
@@ -588,6 +624,7 @@
     "Total Backup": 88,
     "Total Manual Resolved": 614,
     "% Manual Resolved": 39.81841763942931,
+    "% Visitation": 52.243589743589745,
     "% IN SLA": 94,
     "% OUT SLA": 5.577172503242543
   },
@@ -604,6 +641,7 @@
     "Total Backup": 76,
     "Total Manual Resolved": 516,
     "% Manual Resolved": 22.974176313446126,
+    "% Visitation": 47.49034749034749,
     "% IN SLA": 92,
     "% OUT SLA": 7.5690115761353525
   },
@@ -620,6 +658,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 322,
     "% Manual Resolved": 42.93333333333334,
+    "% Visitation": 34.25414364640884,
     "% IN SLA": 92,
     "% OUT SLA": 8
   },
@@ -636,6 +675,7 @@
     "Total Backup": 44,
     "Total Manual Resolved": 250,
     "% Manual Resolved": 25.201612903225808,
+    "% Visitation": 49.21875,
     "% IN SLA": 98,
     "% OUT SLA": 2.217741935483871
   },
@@ -652,6 +692,7 @@
     "Total Backup": 16,
     "Total Manual Resolved": 104,
     "% Manual Resolved": 61.1764705882353,
+    "% Visitation": 73.58490566037736,
     "% IN SLA": 98,
     "% OUT SLA": 2.3529411764705883
   },
@@ -668,6 +709,7 @@
     "Total Backup": 74,
     "Total Manual Resolved": 338,
     "% Manual Resolved": 54.69255663430421,
+    "% Visitation": 85.20710059171599,
     "% IN SLA": 90,
     "% OUT SLA": 9.70873786407767
   },
@@ -684,6 +726,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 4,
     "% Manual Resolved": 50,
+    "% Visitation": 50,
     "% IN SLA": 100,
     "% OUT SLA": ""
   },
@@ -700,6 +743,7 @@
     "Total Backup": 184,
     "Total Manual Resolved": 832,
     "% Manual Resolved": 60.55312954876274,
+    "% Visitation": 81.62291169451073,
     "% IN SLA": 97,
     "% OUT SLA": 2.911208151382824
   },
@@ -716,6 +760,7 @@
     "Total Backup": 170,
     "Total Manual Resolved": 436,
     "% Manual Resolved": 27.560050568900124,
+    "% Visitation": 84.86238532110092,
     "% IN SLA": 97,
     "% OUT SLA": 2.9077117572692797
   },
@@ -732,6 +777,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 486,
     "% Manual Resolved": 51.70212765957447,
+    "% Visitation": 74.6938775510204,
     "% IN SLA": 97,
     "% OUT SLA": 2.9787234042553195
   },
@@ -748,6 +794,7 @@
     "Total Backup": 64,
     "Total Manual Resolved": 154,
     "% Manual Resolved": 25.838926174496645,
+    "% Visitation": 85.71428571428571,
     "% IN SLA": 98,
     "% OUT SLA": 2.348993288590604
   },
@@ -764,6 +811,7 @@
     "Total Backup": 20,
     "Total Manual Resolved": 142,
     "% Manual Resolved": 41.52046783625731,
+    "% Visitation": 60.810810810810814,
     "% IN SLA": 90,
     "% OUT SLA": 9.941520467836257
   },
@@ -780,6 +828,7 @@
     "Total Backup": 26,
     "Total Manual Resolved": 254,
     "% Manual Resolved": 80.37974683544303,
+    "% Visitation": 37.00787401574803,
     "% IN SLA": 94,
     "% OUT SLA": 5.69620253164557
   },
@@ -796,6 +845,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 14,
     "% Manual Resolved": 77.77777777777779,
+    "% Visitation": 28.57142857142857,
     "% IN SLA": 100,
     "% OUT SLA": ""
   },
@@ -812,6 +862,7 @@
     "Total Backup": 62,
     "Total Manual Resolved": 1010,
     "% Manual Resolved": 80.92948717948718,
+    "% Visitation": 38.06706114398422,
     "% IN SLA": 93,
     "% OUT SLA": 6.570512820512821
   },
@@ -828,6 +879,7 @@
     "Total Backup": 64,
     "Total Manual Resolved": 462,
     "% Manual Resolved": 63.287671232876704,
+    "% Visitation": 37.66233766233766,
     "% IN SLA": 92,
     "% OUT SLA": 8.21917808219178
   },
@@ -844,6 +896,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 1562,
     "% Manual Resolved": 92.97619047619048,
+    "% Visitation": 34.82714468629962,
     "% IN SLA": 100,
     "% OUT SLA": 0.2380952380952381
   },
@@ -860,6 +913,7 @@
     "Total Backup": 44,
     "Total Manual Resolved": 370,
     "% Manual Resolved": 56.74846625766872,
+    "% Visitation": 28.64864864864865,
     "% IN SLA": 100,
     "% OUT SLA": ""
   },
@@ -876,6 +930,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 4,
     "% Manual Resolved": 100,
+    "% Visitation": 50,
     "% IN SLA": 100,
     "% OUT SLA": ""
   },
@@ -892,6 +947,7 @@
     "Total Backup": 20,
     "Total Manual Resolved": 188,
     "% Manual Resolved": 60.64516129032258,
+    "% Visitation": 79.7872340425532,
     "% IN SLA": 86,
     "% OUT SLA": 13.548387096774196
   },
@@ -908,6 +964,7 @@
     "Total Backup": 18,
     "Total Manual Resolved": 344,
     "% Manual Resolved": 70.78189300411523,
+    "% Visitation": 26.744186046511626,
     "% IN SLA": 86,
     "% OUT SLA": 14.40329218106996
   },
@@ -924,6 +981,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 4,
     "% Manual Resolved": 40,
+    "% Visitation": 50,
     "% IN SLA": 100,
     "% OUT SLA": ""
   },
@@ -940,6 +998,7 @@
     "Total Backup": 46,
     "Total Manual Resolved": 1176,
     "% Manual Resolved": 73.77666248431619,
+    "% Visitation": 37.07482993197279,
     "% IN SLA": 90,
     "% OUT SLA": 10.28858218318695
   },
@@ -956,6 +1015,7 @@
     "Total Backup": 50,
     "Total Manual Resolved": 518,
     "% Manual Resolved": 48.32089552238806,
+    "% Visitation": 23.93822393822394,
     "% IN SLA": 95,
     "% OUT SLA": 4.664179104477612
   },
@@ -972,6 +1032,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 1212,
     "% Manual Resolved": 82.44897959183673,
+    "% Visitation": 31.18811881188119,
     "% IN SLA": 93,
     "% OUT SLA": 6.802721088435375
   },
@@ -988,6 +1049,7 @@
     "Total Backup": 28,
     "Total Manual Resolved": 400,
     "% Manual Resolved": 45.97701149425287,
+    "% Visitation": 21.5,
     "% IN SLA": 95,
     "% OUT SLA": 5.057471264367816
   },
@@ -1004,6 +1066,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 2,
     "% Manual Resolved": 50,
+    "% Visitation": 100,
     "% IN SLA": 100,
     "% OUT SLA": ""
   },
@@ -1020,6 +1083,7 @@
     "Total Backup": 36,
     "Total Manual Resolved": 128,
     "% Manual Resolved": 50,
+    "% Visitation": 78.46153846153847,
     "% IN SLA": 93,
     "% OUT SLA": 7.03125
   },
@@ -1036,6 +1100,7 @@
     "Total Backup": 18,
     "Total Manual Resolved": 274,
     "% Manual Resolved": 86.70886075949366,
+    "% Visitation": 30.656934306569344,
     "% IN SLA": 96,
     "% OUT SLA": 3.79746835443038
   },
@@ -1052,6 +1117,7 @@
     "Total Backup": "",
     "Total Manual Resolved": "",
     "% Manual Resolved": "",
+    "% Visitation": "",
     "% IN SLA": 100,
     "% OUT SLA": ""
   },
@@ -1068,6 +1134,7 @@
     "Total Backup": 112,
     "Total Manual Resolved": 696,
     "% Manual Resolved": 86.35235732009926,
+    "% Visitation": 31.988472622478387,
     "% IN SLA": 99,
     "% OUT SLA": 1.488833746898263
   },
@@ -1084,6 +1151,7 @@
     "Total Backup": 58,
     "Total Manual Resolved": 556,
     "% Manual Resolved": 52.55198487712666,
+    "% Visitation": 20.357142857142858,
     "% IN SLA": 91,
     "% OUT SLA": 8.695652173913043
   },
@@ -1100,6 +1168,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 590,
     "% Manual Resolved": 86.25730994152046,
+    "% Visitation": 10.472972972972974,
     "% IN SLA": 99,
     "% OUT SLA": 1.1695906432748537
   },
@@ -1116,6 +1185,7 @@
     "Total Backup": 44,
     "Total Manual Resolved": 292,
     "% Manual Resolved": 58.4,
+    "% Visitation": 23.972602739726025,
     "% IN SLA": 98,
     "% OUT SLA": 1.6
   },
@@ -1132,6 +1202,7 @@
     "Total Backup": "",
     "Total Manual Resolved": "",
     "% Manual Resolved": "",
+    "% Visitation": "",
     "% IN SLA": 100,
     "% OUT SLA": ""
   },
@@ -1148,6 +1219,7 @@
     "Total Backup": 32,
     "Total Manual Resolved": 186,
     "% Manual Resolved": 47.69230769230769,
+    "% Visitation": 87.2340425531915,
     "% IN SLA": 79,
     "% OUT SLA": 20.51282051282051
   },
@@ -1164,6 +1236,7 @@
     "Total Backup": 56,
     "Total Manual Resolved": 548,
     "% Manual Resolved": 78.28571428571428,
+    "% Visitation": 69.50354609929079,
     "% IN SLA": 83,
     "% OUT SLA": 16.857142857142858
   },
@@ -1180,6 +1253,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 2,
     "% Manual Resolved": 100,
+    "% Visitation": 100,
     "% IN SLA": 100,
     "% OUT SLA": ""
   },
@@ -1196,6 +1270,7 @@
     "Total Backup": 118,
     "Total Manual Resolved": 834,
     "% Manual Resolved": 78.82797731568998,
+    "% Visitation": 73.79310344827587,
     "% IN SLA": 93,
     "% OUT SLA": 6.994328922495274
   },
@@ -1212,6 +1287,7 @@
     "Total Backup": 110,
     "Total Manual Resolved": 724,
     "% Manual Resolved": 47.44429882044561,
+    "% Visitation": 55.342465753424655,
     "% IN SLA": 91,
     "% OUT SLA": 8.781127129750983
   },
@@ -1228,6 +1304,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 564,
     "% Manual Resolved": 83.4319526627219,
+    "% Visitation": 64.78405315614619,
     "% IN SLA": 92,
     "% OUT SLA": 7.988165680473373
   },
@@ -1244,6 +1321,7 @@
     "Total Backup": 76,
     "Total Manual Resolved": 360,
     "% Manual Resolved": 44.776119402985074,
+    "% Visitation": 60,
     "% IN SLA": 99,
     "% OUT SLA": 0.9950248756218906
   },
@@ -1260,6 +1338,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 10,
     "% Manual Resolved": 100,
+    "% Visitation": 100,
     "% IN SLA": 100,
     "% OUT SLA": ""
   },
@@ -1276,6 +1355,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 2,
     "% Manual Resolved": 25,
+    "% Visitation": "",
     "% IN SLA": 100,
     "% OUT SLA": ""
   },
@@ -1292,6 +1372,7 @@
     "Total Backup": 8,
     "Total Manual Resolved": 64,
     "% Manual Resolved": 26.01626016260163,
+    "% Visitation": 64.86486486486487,
     "% IN SLA": 82,
     "% OUT SLA": 17.88617886178862
   },
@@ -1308,6 +1389,7 @@
     "Total Backup": 48,
     "Total Manual Resolved": 504,
     "% Manual Resolved": 68.10810810810811,
+    "% Visitation": 44.15094339622642,
     "% IN SLA": 88,
     "% OUT SLA": 11.621621621621623
   },
@@ -1324,6 +1406,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 18,
     "% Manual Resolved": 69.23076923076923,
+    "% Visitation": 22.22222222222222,
     "% IN SLA": 100,
     "% OUT SLA": ""
   },
@@ -1340,6 +1423,7 @@
     "Total Backup": 96,
     "Total Manual Resolved": 1026,
     "% Manual Resolved": 73.49570200573066,
+    "% Visitation": 44.761904761904766,
     "% IN SLA": 95,
     "% OUT SLA": 5.157593123209169
   },
@@ -1356,6 +1440,7 @@
     "Total Backup": 84,
     "Total Manual Resolved": 908,
     "% Manual Resolved": 49.89010989010989,
+    "% Visitation": 37.204301075268816,
     "% IN SLA": 93,
     "% OUT SLA": 7.362637362637363
   },
@@ -1372,6 +1457,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 652,
     "% Manual Resolved": 68.05845511482255,
+    "% Visitation": 35.16483516483517,
     "% IN SLA": 91,
     "% OUT SLA": 8.977035490605429
   },
@@ -1388,6 +1474,7 @@
     "Total Backup": 46,
     "Total Manual Resolved": 420,
     "% Manual Resolved": 48.72389791183295,
+    "% Visitation": 48.62385321100918,
     "% IN SLA": 94,
     "% OUT SLA": 5.800464037122969
   },
@@ -1404,6 +1491,7 @@
     "Total Backup": 20,
     "Total Manual Resolved": 92,
     "% Manual Resolved": 38.983050847457626,
+    "% Visitation": 75,
     "% IN SLA": 93,
     "% OUT SLA": 6.779661016949152
   },
@@ -1420,6 +1508,7 @@
     "Total Backup": 24,
     "Total Manual Resolved": 260,
     "% Manual Resolved": 54.85232067510548,
+    "% Visitation": 49.629629629629626,
     "% IN SLA": 86,
     "% OUT SLA": 13.924050632911392
   },
@@ -1436,6 +1525,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 8,
     "% Manual Resolved": 50,
+    "% Visitation": 50,
     "% IN SLA": 88,
     "% OUT SLA": 12.5
   },
@@ -1452,6 +1542,7 @@
     "Total Backup": 136,
     "Total Manual Resolved": 838,
     "% Manual Resolved": 57.55494505494505,
+    "% Visitation": 67.9245283018868,
     "% IN SLA": 97,
     "% OUT SLA": 3.021978021978022
   },
@@ -1468,6 +1559,7 @@
     "Total Backup": 98,
     "Total Manual Resolved": 414,
     "% Manual Resolved": 43.30543933054393,
+    "% Visitation": 57.74647887323944,
     "% IN SLA": 92,
     "% OUT SLA": 8.368200836820083
   },
@@ -1484,6 +1576,7 @@
     "Total Backup": 2,
     "Total Manual Resolved": 516,
     "% Manual Resolved": 72.06703910614524,
+    "% Visitation": 55.893536121673,
     "% IN SLA": 95,
     "% OUT SLA": 5.307262569832402
   },
@@ -1500,6 +1593,7 @@
     "Total Backup": 48,
     "Total Manual Resolved": 186,
     "% Manual Resolved": 41.517857142857146,
+    "% Visitation": 58.51063829787234,
     "% IN SLA": 98,
     "% OUT SLA": 1.7857142857142856
   },
@@ -1516,6 +1610,7 @@
     "Total Backup": 10,
     "Total Manual Resolved": 106,
     "% Manual Resolved": 82.8125,
+    "% Visitation": 74.07407407407408,
     "% IN SLA": 81,
     "% OUT SLA": 18.75
   },
@@ -1532,6 +1627,7 @@
     "Total Backup": 18,
     "Total Manual Resolved": 294,
     "% Manual Resolved": 75.77319587628865,
+    "% Visitation": 52.702702702702695,
     "% IN SLA": 85,
     "% OUT SLA": 14.948453608247423
   },
@@ -1548,6 +1644,7 @@
     "Total Backup": 58,
     "Total Manual Resolved": 1404,
     "% Manual Resolved": 79.3220338983051,
+    "% Visitation": 55.50847457627118,
     "% IN SLA": 90,
     "% OUT SLA": 10.282485875706215
   },
@@ -1564,6 +1661,7 @@
     "Total Backup": 30,
     "Total Manual Resolved": 480,
     "% Manual Resolved": 53.81165919282511,
+    "% Visitation": 50,
     "% IN SLA": 92,
     "% OUT SLA": 7.623318385650224
   },
@@ -1580,6 +1678,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 1592,
     "% Manual Resolved": 83.35078534031413,
+    "% Visitation": 51.819322459222086,
     "% IN SLA": 95,
     "% OUT SLA": 4.502617801047121
   },
@@ -1596,6 +1695,7 @@
     "Total Backup": 44,
     "Total Manual Resolved": 300,
     "% Manual Resolved": 52.44755244755245,
+    "% Visitation": 48.68421052631579,
     "% IN SLA": 97,
     "% OUT SLA": 3.146853146853147
   },
@@ -1612,6 +1712,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 4,
     "% Manual Resolved": 100,
+    "% Visitation": "",
     "% IN SLA": 100,
     "% OUT SLA": ""
   },
@@ -1628,6 +1729,7 @@
     "Total Backup": 26,
     "Total Manual Resolved": 204,
     "% Manual Resolved": 57.6271186440678,
+    "% Visitation": 69.81132075471697,
     "% IN SLA": 73,
     "% OUT SLA": 26.55367231638418
   },
@@ -1644,6 +1746,7 @@
     "Total Backup": 18,
     "Total Manual Resolved": 314,
     "% Manual Resolved": 57.93357933579336,
+    "% Visitation": 34.394904458598724,
     "% IN SLA": 83,
     "% OUT SLA": 16.974169741697416
   },
@@ -1660,6 +1763,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 10,
     "% Manual Resolved": 22.727272727272727,
+    "% Visitation": 80,
     "% IN SLA": 73,
     "% OUT SLA": 27.27272727272727
   },
@@ -1676,6 +1780,7 @@
     "Total Backup": 64,
     "Total Manual Resolved": 692,
     "% Manual Resolved": 50.36390101892285,
+    "% Visitation": 35.83815028901734,
     "% IN SLA": 87,
     "% OUT SLA": 12.663755458515283
   },
@@ -1692,6 +1797,7 @@
     "Total Backup": 50,
     "Total Manual Resolved": 348,
     "% Manual Resolved": 24.43820224719101,
+    "% Visitation": 31.03448275862069,
     "% IN SLA": 66,
     "% OUT SLA": 33.70786516853933
   },
@@ -1708,6 +1814,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 756,
     "% Manual Resolved": 56.4179104477612,
+    "% Visitation": 20.052770448548813,
     "% IN SLA": 86,
     "% OUT SLA": 13.73134328358209
   },
@@ -1724,6 +1831,7 @@
     "Total Backup": 44,
     "Total Manual Resolved": 280,
     "% Manual Resolved": 33.980582524271846,
+    "% Visitation": 37.857142857142854,
     "% IN SLA": 92,
     "% OUT SLA": 7.766990291262135
   },
@@ -1740,6 +1848,7 @@
     "Total Backup": 10,
     "Total Manual Resolved": 134,
     "% Manual Resolved": 60.909090909090914,
+    "% Visitation": 69.11764705882352,
     "% IN SLA": 81,
     "% OUT SLA": 19.090909090909093
   },
@@ -1756,6 +1865,7 @@
     "Total Backup": 38,
     "Total Manual Resolved": 346,
     "% Manual Resolved": 84.39024390243902,
+    "% Visitation": 30.45977011494253,
     "% IN SLA": 92,
     "% OUT SLA": 8.292682926829269
   },
@@ -1772,6 +1882,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 4,
     "% Manual Resolved": 100,
+    "% Visitation": 50,
     "% IN SLA": 100,
     "% OUT SLA": ""
   },
@@ -1788,6 +1899,7 @@
     "Total Backup": 76,
     "Total Manual Resolved": 788,
     "% Manual Resolved": 80.40816326530611,
+    "% Visitation": 25.063291139240505,
     "% IN SLA": 96,
     "% OUT SLA": 3.6734693877551026
   },
@@ -1804,6 +1916,7 @@
     "Total Backup": 78,
     "Total Manual Resolved": 614,
     "% Manual Resolved": 48.73015873015873,
+    "% Visitation": 18.83116883116883,
     "% IN SLA": 86,
     "% OUT SLA": 13.65079365079365
   },
@@ -1820,6 +1933,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 626,
     "% Manual Resolved": 80.46272493573264,
+    "% Visitation": 10.725552050473187,
     "% IN SLA": 95,
     "% OUT SLA": 4.627249357326478
   },
@@ -1836,6 +1950,7 @@
     "Total Backup": 36,
     "Total Manual Resolved": 222,
     "% Manual Resolved": 47.23404255319149,
+    "% Visitation": 22.52252252252252,
     "% IN SLA": 97,
     "% OUT SLA": 2.9787234042553195
   },
@@ -1852,6 +1967,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 6,
     "% Manual Resolved": 20,
+    "% Visitation": 75,
     "% IN SLA": 80,
     "% OUT SLA": 20
   },
@@ -1868,6 +1984,7 @@
     "Total Backup": 36,
     "Total Manual Resolved": 150,
     "% Manual Resolved": 38.860103626943,
+    "% Visitation": 81.48148148148148,
     "% IN SLA": 74,
     "% OUT SLA": 25.906735751295333
   },
@@ -1884,6 +2001,7 @@
     "Total Backup": 36,
     "Total Manual Resolved": 372,
     "% Manual Resolved": 35.907335907335906,
+    "% Visitation": 59,
     "% IN SLA": 75,
     "% OUT SLA": 25.28957528957529
   },
@@ -1900,6 +2018,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 8,
     "% Manual Resolved": 17.391304347826086,
+    "% Visitation": 100,
     "% IN SLA": 100,
     "% OUT SLA": ""
   },
@@ -1916,6 +2035,7 @@
     "Total Backup": 122,
     "Total Manual Resolved": 656,
     "% Manual Resolved": 39.23444976076555,
+    "% Visitation": 60.534124629080125,
     "% IN SLA": 90,
     "% OUT SLA": 9.569377990430622
   },
@@ -1932,6 +2052,7 @@
     "Total Backup": 112,
     "Total Manual Resolved": 452,
     "% Manual Resolved": 19.911894273127754,
+    "% Visitation": 63.59649122807017,
     "% IN SLA": 79,
     "% OUT SLA": 21.057268722466958
   },
@@ -1948,6 +2069,7 @@
     "Total Backup": 2,
     "Total Manual Resolved": 502,
     "% Manual Resolved": 53.862660944206006,
+    "% Visitation": 52.61194029850746,
     "% IN SLA": 89,
     "% OUT SLA": 11.158798283261802
   },
@@ -1964,6 +2086,7 @@
     "Total Backup": 64,
     "Total Manual Resolved": 216,
     "% Manual Resolved": 21.428571428571427,
+    "% Visitation": 63.888888888888886,
     "% IN SLA": 99,
     "% OUT SLA": 1.3888888888888888
   },
@@ -1980,6 +2103,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 4,
     "% Manual Resolved": 50,
+    "% Visitation": "",
     "% IN SLA": 50,
     "% OUT SLA": ""
   },
@@ -1996,6 +2120,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 4,
     "% Manual Resolved": 33.33333333333333,
+    "% Visitation": 100,
     "% IN SLA": 67,
     "% OUT SLA": 33.33333333333333
   },
@@ -2012,6 +2137,7 @@
     "Total Backup": 14,
     "Total Manual Resolved": 148,
     "% Manual Resolved": 47.13375796178344,
+    "% Visitation": 67.0103092783505,
     "% IN SLA": 79,
     "% OUT SLA": 21.019108280254777
   },
@@ -2028,6 +2154,7 @@
     "Total Backup": 52,
     "Total Manual Resolved": 582,
     "% Manual Resolved": 63.81578947368421,
+    "% Visitation": 48.986486486486484,
     "% IN SLA": 88,
     "% OUT SLA": 12.06140350877193
   },
@@ -2044,6 +2171,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 4,
     "% Manual Resolved": 28.57142857142857,
+    "% Visitation": "",
     "% IN SLA": 100,
     "% OUT SLA": ""
   },
@@ -2060,6 +2188,7 @@
     "Total Backup": 98,
     "Total Manual Resolved": 1010,
     "% Manual Resolved": 50.85599194360524,
+    "% Visitation": 44.128787878787875,
     "% IN SLA": 92,
     "% OUT SLA": 8.25780463242699
   },
@@ -2076,6 +2205,7 @@
     "Total Backup": 98,
     "Total Manual Resolved": 968,
     "% Manual Resolved": 36.94656488549619,
+    "% Visitation": 35.984095427435385,
     "% IN SLA": 93,
     "% OUT SLA": 6.793893129770992
   },
@@ -2092,6 +2222,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 610,
     "% Manual Resolved": 55.758683729433265,
+    "% Visitation": 37.005649717514125,
     "% IN SLA": 86,
     "% OUT SLA": 13.893967093235831
   },
@@ -2108,6 +2239,7 @@
     "Total Backup": 54,
     "Total Manual Resolved": 370,
     "% Manual Resolved": 33.697632058287795,
+    "% Visitation": 42.857142857142854,
     "% IN SLA": 97,
     "% OUT SLA": 2.5500910746812386
   },
@@ -2124,6 +2256,7 @@
     "Total Backup": 34,
     "Total Manual Resolved": 70,
     "% Manual Resolved": 67.3076923076923,
+    "% Visitation": 61.111111111111114,
     "% IN SLA": 92,
     "% OUT SLA": 7.6923076923076925
   },
@@ -2140,6 +2273,7 @@
     "Total Backup": 16,
     "Total Manual Resolved": 198,
     "% Manual Resolved": 51.5625,
+    "% Visitation": 23.684210526315788,
     "% IN SLA": 82,
     "% OUT SLA": 17.708333333333336
   },
@@ -2156,6 +2290,7 @@
     "Total Backup": 2,
     "Total Manual Resolved": 2,
     "% Manual Resolved": 25,
+    "% Visitation": 100,
     "% IN SLA": 100,
     "% OUT SLA": ""
   },
@@ -2172,6 +2307,7 @@
     "Total Backup": 108,
     "Total Manual Resolved": 676,
     "% Manual Resolved": 69.12065439672801,
+    "% Visitation": 38.4393063583815,
     "% IN SLA": 93,
     "% OUT SLA": 6.5439672801636
   },
@@ -2188,6 +2324,7 @@
     "Total Backup": 74,
     "Total Manual Resolved": 236,
     "% Manual Resolved": 39.73063973063973,
+    "% Visitation": 31.932773109243694,
     "% IN SLA": 99,
     "% OUT SLA": 1.0101010101010102
   },
@@ -2204,6 +2341,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 354,
     "% Manual Resolved": 55.83596214511041,
+    "% Visitation": 42.93193717277487,
     "% IN SLA": 91,
     "% OUT SLA": 8.517350157728707
   },
@@ -2220,6 +2358,7 @@
     "Total Backup": 42,
     "Total Manual Resolved": 156,
     "% Manual Resolved": 36.11111111111111,
+    "% Visitation": 34.177215189873415,
     "% IN SLA": 98,
     "% OUT SLA": 1.8518518518518516
   },
@@ -2236,6 +2375,7 @@
     "Total Backup": 5,
     "Total Manual Resolved": 16,
     "% Manual Resolved": 94.11764705882352,
+    "% Visitation": 100,
     "% IN SLA": 82,
     "% OUT SLA": 17.647058823529413
   },
@@ -2252,6 +2392,7 @@
     "Total Backup": 1,
     "Total Manual Resolved": 49,
     "% Manual Resolved": 76.5625,
+    "% Visitation": 69.38775510204081,
     "% IN SLA": 95,
     "% OUT SLA": 4.6875
   },
@@ -2268,6 +2409,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 1,
     "% Manual Resolved": 33.33333333333333,
+    "% Visitation": 100,
     "% IN SLA": 100,
     "% OUT SLA": ""
   },
@@ -2284,6 +2426,7 @@
     "Total Backup": 8,
     "Total Manual Resolved": 247,
     "% Manual Resolved": 82.6086956521739,
+    "% Visitation": 83.53413654618474,
     "% IN SLA": 98,
     "% OUT SLA": 2.341137123745819
   },
@@ -2300,6 +2443,7 @@
     "Total Backup": 9,
     "Total Manual Resolved": 102,
     "% Manual Resolved": 71.83098591549296,
+    "% Visitation": 57.84313725490197,
     "% IN SLA": 99,
     "% OUT SLA": 1.4084507042253522
   },
@@ -2316,6 +2460,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 275,
     "% Manual Resolved": 93.5374149659864,
+    "% Visitation": 83.27272727272728,
     "% IN SLA": 99,
     "% OUT SLA": 0.6802721088435374
   },
@@ -2332,6 +2477,7 @@
     "Total Backup": 13,
     "Total Manual Resolved": 84,
     "% Manual Resolved": 62.22222222222222,
+    "% Visitation": 53.57142857142857,
     "% IN SLA": 98,
     "% OUT SLA": 2.2222222222222223
   },
@@ -2348,6 +2494,7 @@
     "Total Backup": 4,
     "Total Manual Resolved": 25,
     "% Manual Resolved": 78.125,
+    "% Visitation": 56.00000000000001,
     "% IN SLA": 88,
     "% OUT SLA": 12.5
   },
@@ -2364,6 +2511,7 @@
     "Total Backup": 2,
     "Total Manual Resolved": 50,
     "% Manual Resolved": 79.36507936507937,
+    "% Visitation": 36,
     "% IN SLA": 95,
     "% OUT SLA": 4.761904761904762
   },
@@ -2380,6 +2528,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 1,
     "% Manual Resolved": 50,
+    "% Visitation": "",
     "% IN SLA": 100,
     "% OUT SLA": ""
   },
@@ -2396,6 +2545,7 @@
     "Total Backup": 11,
     "Total Manual Resolved": 146,
     "% Manual Resolved": 82.95454545454545,
+    "% Visitation": 44.21768707482993,
     "% IN SLA": 97,
     "% OUT SLA": 2.840909090909091
   },
@@ -2412,6 +2562,7 @@
     "Total Backup": 5,
     "Total Manual Resolved": 52,
     "% Manual Resolved": 45.614035087719294,
+    "% Visitation": 25,
     "% IN SLA": 88,
     "% OUT SLA": 12.280701754385964
   },
@@ -2428,6 +2579,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 136,
     "% Manual Resolved": 90.06622516556291,
+    "% Visitation": 35.25179856115108,
     "% IN SLA": 96,
     "% OUT SLA": 3.9735099337748347
   },
@@ -2444,6 +2596,7 @@
     "Total Backup": 2,
     "Total Manual Resolved": 45,
     "% Manual Resolved": 48.91304347826087,
+    "% Visitation": 20,
     "% IN SLA": 98,
     "% OUT SLA": 2.1739130434782608
   },
@@ -2460,6 +2613,7 @@
     "Total Backup": 7,
     "Total Manual Resolved": 25,
     "% Manual Resolved": 75.75757575757575,
+    "% Visitation": 68,
     "% IN SLA": 76,
     "% OUT SLA": 24.242424242424242
   },
@@ -2476,6 +2630,7 @@
     "Total Backup": 4,
     "Total Manual Resolved": 49,
     "% Manual Resolved": 83.05084745762711,
+    "% Visitation": 19.230769230769234,
     "% IN SLA": 93,
     "% OUT SLA": 6.779661016949152
   },
@@ -2492,6 +2647,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 1,
     "% Manual Resolved": 100,
+    "% Visitation": "",
     "% IN SLA": 100,
     "% OUT SLA": ""
   },
@@ -2508,6 +2664,7 @@
     "Total Backup": 12,
     "Total Manual Resolved": 158,
     "% Manual Resolved": 84.49197860962568,
+    "% Visitation": 30.67484662576687,
     "% IN SLA": 97,
     "% OUT SLA": 2.6737967914438503
   },
@@ -2524,6 +2681,7 @@
     "Total Backup": 9,
     "Total Manual Resolved": 166,
     "% Manual Resolved": 62.64150943396226,
+    "% Visitation": 13.953488372093023,
     "% IN SLA": 95,
     "% OUT SLA": 4.905660377358491
   },
@@ -2540,6 +2698,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 142,
     "% Manual Resolved": 88.19875776397515,
+    "% Visitation": 9.45945945945946,
     "% IN SLA": 99,
     "% OUT SLA": 0.6211180124223602
   },
@@ -2556,6 +2715,7 @@
     "Total Backup": 6,
     "Total Manual Resolved": 80,
     "% Manual Resolved": 59.70149253731343,
+    "% Visitation": 15.66265060240964,
     "% IN SLA": 96,
     "% OUT SLA": 3.731343283582089
   },
@@ -2572,6 +2732,7 @@
     "Total Backup": 3,
     "Total Manual Resolved": 23,
     "% Manual Resolved": 29.11392405063291,
+    "% Visitation": 34.78260869565217,
     "% IN SLA": 92,
     "% OUT SLA": 7.59493670886076
   },
@@ -2588,6 +2749,7 @@
     "Total Backup": 5,
     "Total Manual Resolved": 68,
     "% Manual Resolved": 37.362637362637365,
+    "% Visitation": 45.33333333333333,
     "% IN SLA": 84,
     "% OUT SLA": 16.483516483516482
   },
@@ -2604,6 +2766,7 @@
     "Total Backup": "",
     "Total Manual Resolved": "",
     "% Manual Resolved": "",
+    "% Visitation": "",
     "% IN SLA": 100,
     "% OUT SLA": ""
   },
@@ -2620,6 +2783,7 @@
     "Total Backup": 9,
     "Total Manual Resolved": 86,
     "% Manual Resolved": 43.65482233502538,
+    "% Visitation": 58.87850467289719,
     "% IN SLA": 84,
     "% OUT SLA": 15.736040609137056
   },
@@ -2636,6 +2800,7 @@
     "Total Backup": 17,
     "Total Manual Resolved": 60,
     "% Manual Resolved": 22.058823529411764,
+    "% Visitation": 54.09836065573771,
     "% IN SLA": 88,
     "% OUT SLA": 12.132352941176471
   },
@@ -2652,6 +2817,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 51,
     "% Manual Resolved": 45.13274336283185,
+    "% Visitation": 46.666666666666664,
     "% IN SLA": 74,
     "% OUT SLA": 25.663716814159294
   },
@@ -2668,6 +2834,7 @@
     "Total Backup": 9,
     "Total Manual Resolved": 28,
     "% Manual Resolved": 19.858156028368796,
+    "% Visitation": 50,
     "% IN SLA": 98,
     "% OUT SLA": 2.127659574468085
   },
@@ -2684,6 +2851,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 1,
     "% Manual Resolved": 50,
+    "% Visitation": 100,
     "% IN SLA": 50,
     "% OUT SLA": 50
   },
@@ -2700,6 +2868,7 @@
     "Total Backup": 2,
     "Total Manual Resolved": 30,
     "% Manual Resolved": 57.692307692307686,
+    "% Visitation": 47.05882352941176,
     "% IN SLA": 85,
     "% OUT SLA": 15.384615384615385
   },
@@ -2716,6 +2885,7 @@
     "Total Backup": 4,
     "Total Manual Resolved": 100,
     "% Manual Resolved": 75.18796992481202,
+    "% Visitation": 46,
     "% IN SLA": 90,
     "% OUT SLA": 9.774436090225564
   },
@@ -2732,6 +2902,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 1,
     "% Manual Resolved": 20,
+    "% Visitation": 100,
     "% IN SLA": 100,
     "% OUT SLA": ""
   },
@@ -2748,6 +2919,7 @@
     "Total Backup": 17,
     "Total Manual Resolved": 184,
     "% Manual Resolved": 65.01766784452296,
+    "% Visitation": 43.36734693877551,
     "% IN SLA": 93,
     "% OUT SLA": 7.06713780918728
   },
@@ -2764,6 +2936,7 @@
     "Total Backup": 11,
     "Total Manual Resolved": 202,
     "% Manual Resolved": 44.29824561403509,
+    "% Visitation": 37.980769230769226,
     "% IN SLA": 94,
     "% OUT SLA": 6.359649122807018
   },
@@ -2780,6 +2953,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 113,
     "% Manual Resolved": 61.08108108108108,
+    "% Visitation": 33.82352941176471,
     "% IN SLA": 86,
     "% OUT SLA": 14.054054054054054
   },
@@ -2796,6 +2970,7 @@
     "Total Backup": 1,
     "Total Manual Resolved": 80,
     "% Manual Resolved": 39.800995024875625,
+    "% Visitation": 35.714285714285715,
     "% IN SLA": 97,
     "% OUT SLA": 3.482587064676617
   },
@@ -2812,6 +2987,7 @@
     "Total Backup": 4,
     "Total Manual Resolved": 11,
     "% Manual Resolved": 64.70588235294117,
+    "% Visitation": 54.54545454545454,
     "% IN SLA": 100,
     "% OUT SLA": ""
   },
@@ -2828,6 +3004,7 @@
     "Total Backup": 3,
     "Total Manual Resolved": 33,
     "% Manual Resolved": 48.529411764705884,
+    "% Visitation": 20,
     "% IN SLA": 94,
     "% OUT SLA": 5.88235294117647
   },
@@ -2844,6 +3021,7 @@
     "Total Backup": "",
     "Total Manual Resolved": "",
     "% Manual Resolved": "",
+    "% Visitation": "",
     "% IN SLA": 100,
     "% OUT SLA": ""
   },
@@ -2860,6 +3038,7 @@
     "Total Backup": 24,
     "Total Manual Resolved": 127,
     "% Manual Resolved": 81.41025641025641,
+    "% Visitation": 35.65891472868217,
     "% IN SLA": 98,
     "% OUT SLA": 1.9230769230769231
   },
@@ -2876,6 +3055,7 @@
     "Total Backup": 10,
     "Total Manual Resolved": 54,
     "% Manual Resolved": 39.416058394160586,
+    "% Visitation": 27.77777777777778,
     "% IN SLA": 100,
     "% OUT SLA": ""
   },
@@ -2892,6 +3072,7 @@
     "Total Backup": "",
     "Total Manual Resolved": 58,
     "% Manual Resolved": 80.55555555555556,
+    "% Visitation": 50,
     "% IN SLA": 99,
     "% OUT SLA": 1.3888888888888888
   },
@@ -2908,6 +3089,7 @@
     "Total Backup": 7,
     "Total Manual Resolved": 40,
     "% Manual Resolved": 42.5531914893617,
+    "% Visitation": 25,
     "% IN SLA": 99,
     "% OUT SLA": 1.0638297872340425
   }
