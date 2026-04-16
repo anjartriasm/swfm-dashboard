@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SWFM Dashboard — Score Team</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg-main:#0d0f1a;--bg-card:#13162a;--bg-card2:#1a1d2e;
+  --border:#232640;--blue:#0078D4;--green:#00c96e;
+  --yellow:#f7c948;--red:#ff4d4d;--purple:#a259ff;
+  --orange:#ff8c00;--text-main:#e8eaf6;--text-muted:#6b7280;
+  --sb-w:220px;--sb-cw:60px;
+}
+body.light{
+  --bg-main:#f0f2f8;--bg-card:#ffffff;--bg-card2:#f5f7ff;
+  --border:#dde1f0;--text-main:#111827;--text-muted:#6b7280;
+}
+body{font-family:'Segoe UI',sans-serif;background:var(--bg-main);color:var(--text-main);min-height:100vh;display:flex;}
+
+/* ── SIDEBAR ── */
+.sidebar{width:var(--sb-w);min-height:100vh;background:var(--bg-card);border-right:1px solid var(--border);position:fixed;left:0;top:0;z-index:200;transition:width .2s ease;display:flex;flex-direction:column;overflow:hidden;flex-shrink:0;}
+.sidebar.collapsed{width:var(--sb-cw);}
+.sb-header{display:flex;align-items:center;padding:15px 13px;border-bottom:1px solid var(--border);gap:11px;min-height:64px;}
+.sb-toggle{background:none;border:none;color:var(--text-main);cursor:pointer;font-size:18px;padding:4px;flex-shrink:0;line-height:1;transition:color .2s;}
+.sb-toggle:hover{color:var(--yellow);}
+.sb-logo{width:32px;height:32px;flex-shrink:0;background:linear-gradient(135deg,#f7c948,#ff8c00);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;color:#000;}
+.sb-title{font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;transition:opacity .15s;opacity:1;}
+.sidebar.collapsed .sb-title{opacity:0;width:0;pointer-events:none;}
+.sb-nav{padding:10px 8px;flex:1;display:flex;flex-direction:column;gap:2px;}
+.nav-link{display:flex;align-items:center;gap:11px;padding:9px 10px;border-radius:10px;color:var(--text-muted);text-decoration:none;font-size:12px;transition:all .2s;white-space:nowrap;overflow:hidden;}
+.nav-link:hover{background:rgba(0,120,212,.1);color:var(--text-main);}
+.nav-link.active{background:rgba(247,201,72,.12);color:var(--yellow);}
+.nav-icon{font-size:16px;flex-shrink:0;width:20px;text-align:center;}
+.nav-text{opacity:1;transition:opacity .15s;white-space:nowrap;}
+.sidebar.collapsed .nav-text{opacity:0;width:0;pointer-events:none;}
+.sb-footer{padding:11px 12px;border-top:1px solid var(--border);}
+.theme-btn{display:flex;align-items:center;gap:7px;width:100%;background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--text-main);padding:7px 10px;border-radius:8px;font-size:12px;cursor:pointer;transition:all .2s;white-space:nowrap;overflow:hidden;}
+.theme-btn:hover{background:rgba(255,255,255,.1);}
+.sidebar.collapsed .theme-btn .btn-label{display:none;}
+
+/* ── PAGE WRAPPER ── */
+.page-wrapper{margin-left:var(--sb-w);transition:margin-left .2s ease;min-height:100vh;flex:1;display:flex;flex-direction:column;}
+body.sb-col .page-wrapper{margin-left:var(--sb-cw);}
+
+/* ── HEADER ── */
+.header{background:linear-gradient(135deg,#1a1204 0%,#2a1f05 50%,#1a1204 100%);padding:13px 22px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(247,201,72,.3);position:sticky;top:0;z-index:100;}
+body.light .header{background:linear-gradient(135deg,#fffbea 0%,#fef3c7 50%,#fffbea 100%);border-bottom:1px solid rgba(247,201,72,.4);}
+.hdr-title h1{font-size:17px;font-weight:700;background:linear-gradient(90deg,#fff,#f7c948);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+body.light .hdr-title h1{background:linear-gradient(90deg,#111,#b45309);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hdr-title p{font-size:11px;color:var(--text-muted);margin-top:2px;}
+.hdr-right{display:flex;gap:7px;align-items:center;}
+.badge{background:rgba(255,255,255,.05);border:1px solid var(--border);padding:4px 10px;border-radius:20px;font-size:11px;color:#aaa;}
+.live-badge{background:rgba(0,201,110,.1);border:1px solid rgba(0,201,110,.3);padding:4px 10px;border-radius:20px;font-size:11px;color:var(--green);display:flex;align-items:center;gap:5px;}
+.live-dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 1.5s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(1.5);}}
+.print-btn{background:rgba(247,201,72,.12);border:1px solid rgba(247,201,72,.3);color:var(--yellow);padding:5px 11px;border-radius:8px;font-size:11px;cursor:pointer;transition:all .2s;}
+.print-btn:hover{background:rgba(247,201,72,.25);}
+.export-btn{background:rgba(0,201,110,.12);border:1px solid rgba(0,201,110,.3);color:var(--green);padding:5px 11px;border-radius:8px;font-size:11px;cursor:pointer;transition:all .2s;}
+.export-btn:hover{background:rgba(0,201,110,.25);}
+
+/* ── FILTER BAR ── */
+.filter-bar{background:rgba(19,22,42,.98);padding:8px 22px;display:flex;gap:8px;align-items:center;border-bottom:1px solid var(--border);flex-wrap:wrap;position:sticky;top:51px;z-index:99;}
+body.light .filter-bar{background:rgba(240,242,248,.98);}
+.fl-group{display:flex;align-items:center;gap:5px;}
+.fl-group label{font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.7px;white-space:nowrap;}
+select{background:var(--bg-card2);color:var(--text-main);border:1px solid var(--border);border-radius:7px;padding:4px 22px 4px 9px;font-size:12px;cursor:pointer;outline:none;transition:border-color .2s;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 5px center;}
+select:hover,select:focus{border-color:var(--yellow);}
+.fl-div{width:1px;height:20px;background:var(--border);margin:0 2px;}
+.search-input{background:var(--bg-card2);color:var(--text-main);border:1px solid var(--border);border-radius:7px;padding:4px 10px;font-size:12px;outline:none;transition:border-color .2s;width:160px;}
+.search-input:focus{border-color:var(--yellow);}
+.btn-reset{background:rgba(255,77,77,.1);border:1px solid rgba(255,77,77,.3);color:var(--red);padding:4px 10px;border-radius:7px;font-size:11px;cursor:pointer;transition:all .2s;}
+.btn-reset:hover{background:rgba(255,77,77,.2);}
+
+/* ── MAIN ── */
+.main{padding:16px 22px;display:flex;flex-direction:column;gap:13px;}
+
+/* ── SCORE CARD ── */
+.score-meta{display:flex;align-items:center;gap:12px;font-size:12px;color:var(--text-muted);}
+.score-meta strong{color:var(--text-main);font-weight:700;}
+
+/* ── TABLE ── */
+.tbl-wrap{overflow-x:auto;}
+.score-table{width:100%;border-collapse:collapse;font-size:11px;}
+.score-table th{padding:8px 11px;text-align:left;font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.7px;border-bottom:1px solid var(--border);white-space:nowrap;cursor:pointer;user-select:none;transition:color .15s;}
+.score-table th:hover{color:var(--yellow);}
+.score-table th.sorted{color:var(--yellow);}
+.score-table td{padding:7px 11px;border-bottom:1px solid rgba(35,38,64,.4);transition:background .15s;white-space:nowrap;}
+.score-table tr:hover td{background:rgba(247,201,72,.05);}
+.score-table tr:last-child td{border-bottom:none;}
+.chart-card{background:var(--bg-card);border-radius:12px;padding:17px 19px;border:1px solid var(--border);}
+
+/* ── SCORE BAR ── */
+.sc-bar-wrap{display:flex;align-items:center;gap:6px;}
+.sc-bar-bg{flex:1;height:4px;background:var(--border);border-radius:2px;min-width:50px;}
+.sc-bar-fill{height:100%;border-radius:2px;background:var(--purple);transition:width .8s;}
+
+/* ── PILLS ── */
+.pill{padding:2px 7px;border-radius:10px;font-size:10px;font-weight:600;}
+.pill-gold  {background:rgba(247,201,72,.2);color:var(--yellow);}
+.pill-blue  {background:rgba(0,120,212,.15);color:#4da6ff;}
+.pill-green {background:rgba(0,201,110,.15);color:var(--green);}
+.pill-yellow{background:rgba(247,201,72,.15);color:var(--yellow);}
+.pill-red   {background:rgba(255,77,77,.15); color:var(--red);}
+.pill-gray  {background:rgba(107,114,128,.15);color:var(--text-muted);}
+
+/* ── PAGINATION ── */
+.pagination{display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 0 4px;flex-wrap:wrap;}
+.pg-btn{background:var(--bg-card2);border:1px solid var(--border);color:var(--text-muted);padding:5px 11px;border-radius:7px;font-size:11px;cursor:pointer;transition:all .2s;min-width:32px;text-align:center;}
+.pg-btn:hover{border-color:var(--yellow);color:var(--yellow);}
+.pg-btn.active{background:rgba(247,201,72,.15);border-color:var(--yellow);color:var(--yellow);font-weight:700;}
+.pg-btn:disabled{opacity:.4;cursor:default;}
+.pg-info{font-size:11px;color:var(--text-muted);}
+
+/* ── EMPTY STATE ── */
+.empty-state{text-align:center;padding:40px 20px;color:var(--text-muted);font-size:13px;}
+
+/* ── FOOTER ── */
+.footer{text-align:center;padding:12px;color:var(--text-muted);font-size:11px;border-top:1px solid var(--border);margin-top:4px;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:700px){.main{padding:10px;}}
+
+/* ── PRINT A4 (current page only) ── */
+@media print{
+  @page{size:A4 portrait;margin:12mm 15mm;}
+  .sidebar,.filter-bar,.print-btn,.export-btn,.btn-reset,.sb-footer,.live-badge,.pagination{display:none!important;}
+  .page-wrapper{margin-left:0!important;}
+  .header{position:static!important;background:#fff!important;border-bottom:1px solid #ccc!important;padding:10px 15px!important;}
+  .hdr-title h1{background:none!important;-webkit-text-fill-color:#000!important;}
+  body{background:#fff!important;color:#000!important;}
+  .main{padding:10px 0!important;}
+  .chart-card{break-inside:avoid;background:#f8f9fa!important;border:1px solid #ddd!important;}
+  .score-table td,.score-table th{color:#000!important;border-color:#ddd!important;}
+  /* Show only visible rows (current page) */
+  .score-table tr[data-hidden="true"]{display:none!important;}
+}
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+  <div class="sb-header">
+    <button class="sb-toggle" onclick="toggleSidebar()" title="Toggle Sidebar">☰</button>
+    <div class="sb-logo">🏆</div>
+    <div class="sb-title">SWFM</div>
+  </div>
+  <nav class="sb-nav">
+    <a href="index.html" class="nav-link">
+      <span class="nav-icon">📊</span>
+      <span class="nav-text">Overview &amp; KPI</span>
+    </a>
+    <a href="page2.html" class="nav-link">
+      <span class="nav-icon">👤</span>
+      <span class="nav-text">PIC Performance</span>
+    </a>
+    <a href="page3.html" class="nav-link active">
+      <span class="nav-icon">🏆</span>
+      <span class="nav-text">Score Team</span>
+    </a>
+  </nav>
+  <div class="sb-footer">
+    <button class="theme-btn" id="themeToggle" onclick="toggleTheme()">
+      🌙 <span class="btn-label">Dark Mode</span>
+    </button>
+  </div>
+</div>
+
+<!-- PAGE WRAPPER -->
+<div class="page-wrapper" id="pageWrapper">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="hdr-title">
+      <h1>🏆 Score Team</h1>
+      <p>Smart Workforce Management — Officer Ranking &amp; Scoring</p>
+    </div>
+    <div class="hdr-right">
+      <span class="live-badge"><span class="live-dot"></span>Live Data</span>
+      <span class="badge" id="hdr-nop">🏢 All NOP</span>
+      <button class="export-btn" onclick="exportCSV()">📥 Export CSV</button>
+      <button class="print-btn" onclick="window.print()">🖨️ Print A4</button>
+    </div>
+  </div>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar">
+    <div class="fl-group">
+      <label>NOP</label>
+      <select id="fl-nop" onchange="applyFilter()">
+        <option value="all">All NOP</option>
+      </select>
+    </div>
+    <div class="fl-div"></div>
+    <div class="fl-group">
+      <label>Month</label>
+      <select id="fl-month" onchange="applyFilter()">
+        <option value="all">All Months</option>
+      </select>
+    </div>
+    <div class="fl-div"></div>
+    <div class="fl-group">
+      <label>Search PIC</label>
+      <input type="text" class="search-input" id="fl-search" placeholder="Name..." oninput="applyFilter()"/>
+    </div>
+    <div class="fl-div"></div>
+    <div class="fl-group">
+      <label>Rows/page</label>
+      <select id="fl-pagesize" onchange="applyFilter()">
+        <option value="25" selected>25</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+        <option value="9999">All</option>
+      </select>
+    </div>
+    <div class="fl-div"></div>
+    <button class="btn-reset" onclick="resetFilter()">↺ Reset</button>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="main" id="mainContent" style="display:none;">
+
+    <div class="chart-card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:13px;flex-wrap:wrap;gap:8px;">
+        <div style="display:flex;align-items:center;gap:7px;font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.7px;font-weight:600;">
+          <span style="width:8px;height:8px;border-radius:50%;background:var(--yellow);flex-shrink:0;display:inline-block;"></span>
+          Score Team Ranking
+        </div>
+        <div class="score-meta" id="score-meta">—</div>
+      </div>
+
+      <div class="tbl-wrap">
+        <table class="score-table" id="score-table">
+          <thead>
+            <tr>
+              <th onclick="setSort('rank')"       id="th-rank">    Rank ↕</th>
+              <th onclick="setSort('name')"       id="th-name">    PIC Name ↕</th>
+              <th onclick="setSort('nop')"        id="th-nop">     NOP ↕</th>
+              <th onclick="setSort('takeover')"   id="th-takeover">Takeover ↕</th>
+              <th onclick="setSort('visit')"      id="th-visit">   Visit ↕</th>
+              <th onclick="setSort('backup')"     id="th-backup">  Backup ↕</th>
+              <th onclick="setSort('score')"      id="th-score">   Score Total ↕</th>
+              <th onclick="setSort('visitation')" id="th-visitation">Visitation % ↕</th>
+              <th onclick="setSort('backVis')"    id="th-backVis"> Backup vs Visit % ↕</th>
+            </tr>
+          </thead>
+          <tbody id="score-tbody"></tbody>
+        </table>
+      </div>
+
+      <!-- PAGINATION -->
+      <div class="pagination" id="pagination"></div>
+    </div>
+
+  </div>
+
+  <div class="footer">SWFM Dashboard &copy; 2026 &mdash; Score Team | Data: Jan–Apr 2026</div>
+</div>
+
+<script>
+let rawPIC = [], filteredData = [], currentPage = 1;
+let sortKey = 'score', sortDir = -1;
+const n0 = v => (v === '' || v === null || v === undefined) ? 0 : (+v || 0);
+const fmt = n => Math.round(n).toLocaleString('en-US');
+
+// ── SIDEBAR ──
+function toggleSidebar(){
+  const col = document.getElementById('sidebar').classList.toggle('collapsed');
+  document.body.classList.toggle('sb-col', col);
+  localStorage.setItem('sidebarCollapsed', col);
+}
+(function(){
+  if(localStorage.getItem('sidebarCollapsed') === 'true'){
+    document.getElementById('sidebar').classList.add('collapsed');
+    document.body.classList.add('sb-col');
+  }
+})();
+
+// ── THEME ──
+function toggleTheme(){
+  const isLight = document.body.classList.toggle('light');
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  const btn = document.getElementById('themeToggle');
+  btn.innerHTML = isLight ? '☀️ <span class="btn-label">Light Mode</span>' : '🌙 <span class="btn-label">Dark Mode</span>';
+}
+(function(){
+  const s = localStorage.getItem('theme');
+  if(s === 'light'){
+    document.body.classList.add('light');
+    document.getElementById('themeToggle').innerHTML = '☀️ <span class="btn-label">Light Mode</span>';
+  }
+})();
+
+// ── PARSE DATA ──
+function cleanPIC(raw){
+  return raw
+    .filter(d => d['PIC Name'] && String(d['PIC Name']).trim() !== '')
+    .map(d => ({
+      name     : String(d['PIC Name']).trim(),
+      nop      : d['NOP'] || '',
+      month    : n0(d['Month Number']),
+      monthName: d['Month Name'] || '',
+      takeover : n0(d['Takeover Count']),
+      visit    : n0(d['Visit Count']),
+      backup   : n0(d['Backup Count']),
+      score    : n0(d['Score Total']),
+      visRaw   : d['Visitation %']     !== '' && d['Visitation %']     != null ? n0(d['Visitation %'])     : null,
+      backVisRaw:d['Backup vs Visit %']!== '' && d['Backup vs Visit %']!= null ? n0(d['Backup vs Visit %']): null,
+    }));
+}
+
+function aggregateByPIC(data){
+  const map = {};
+  data.forEach(d => {
+    const key = d.name + '||' + d.nop;
+    if(!map[key]) map[key] = {name:d.name,nop:d.nop,takeover:0,visit:0,backup:0,score:0,bvSum:0,bvCnt:0};
+    map[key].takeover += d.takeover;
+    map[key].visit    += d.visit;
+    map[key].backup   += d.backup;
+    map[key].score    += d.score;
+    if(d.backVisRaw !== null){ map[key].bvSum += d.backVisRaw; map[key].bvCnt++; }
+  });
+  return Object.values(map).map(d => ({
+    name    : d.name,
+    nop     : d.nop,
+    takeover: d.takeover,
+    visit   : d.visit,
+    backup  : d.backup,
+    score   : d.score,
+    visitation: d.takeover > 0 ? d.visit / d.takeover * 100 : 0,
+    backVis : d.bvCnt > 0 ? d.bvSum / d.bvCnt : null,
+  }));
+}
+
+// ── LOAD DATA ──
+async function loadData(){
+  try{
+    const raw = await fetch('data/pic_raw.json').then(r => r.json());
+    rawPIC = cleanPIC(raw);
+  } catch(e){
+    console.warn('Fetch pic_raw.json failed:', e);
+    rawPIC = [];
+  }
+  initFilters();
+  applyFilter();
+  document.getElementById('mainContent').style.display = 'flex';
+}
+
+// ── INIT FILTERS ──
+function initFilters(){
+  const nops = [...new Set(rawPIC.map(d => d.nop))].filter(Boolean).sort();
+  const flNOP = document.getElementById('fl-nop');
+  nops.forEach(n => { const o = document.createElement('option'); o.value=n; o.textContent=n; flNOP.appendChild(o); });
+
+  const monthMap = new Map();
+  rawPIC.filter(d => d.month > 0).forEach(d => { if(!monthMap.has(d.month)) monthMap.set(d.month, d.monthName); });
+  const months = [...monthMap.entries()].sort((a,b) => a[0]-b[0]);
+  const flMonth = document.getElementById('fl-month');
+  months.forEach(([num,name]) => { const o = document.createElement('option'); o.value=num; o.textContent=name; flMonth.appendChild(o); });
+}
+
+// ── SET SORT ──
+function setSort(key){
+  if(sortKey === key) sortDir *= -1;
+  else { sortKey = key; sortDir = (key==='name'||key==='nop') ? 1 : -1; }
+  document.querySelectorAll('.score-table th').forEach(th => th.classList.remove('sorted'));
+  const th = document.getElementById('th-'+key);
+  if(th) th.classList.add('sorted');
+  currentPage = 1;
+  renderTable();
+}
+
+// ── APPLY FILTER ──
+function applyFilter(){
+  const selNOP    = document.getElementById('fl-nop').value;
+  const selMonth  = document.getElementById('fl-month').value;
+  const selSearch = document.getElementById('fl-search').value.trim().toLowerCase();
+
+  let data = [...rawPIC];
+  if(selNOP   !== 'all') data = data.filter(d => d.nop === selNOP);
+  if(selMonth !== 'all') data = data.filter(d => d.month == selMonth);
+
+  // aggregate if all months
+  if(selMonth === 'all'){
+    data = aggregateByPIC(data);
+  } else {
+    data = data.map(d => ({
+      name:d.name, nop:d.nop, takeover:d.takeover, visit:d.visit, backup:d.backup, score:d.score,
+      visitation: d.takeover > 0 ? d.visit/d.takeover*100 : 0,
+      backVis: d.backVisRaw,
+    }));
+  }
+
+  if(selSearch) data = data.filter(d => d.name.toLowerCase().includes(selSearch));
+
+  // sort
+  data.sort((a,b) => {
+    const vA = sortKey==='rank' ? b.score : a[sortKey];
+    const vB = sortKey==='rank' ? a.score : b[sortKey];
+    if(vA===null&&vB===null) return 0;
+    if(vA===null) return 1; if(vB===null) return -1;
+    if(typeof vA==='string') return vA.localeCompare(vB)*sortDir;
+    return (vA-vB)*sortDir;
+  });
+
+  filteredData = data;
+  currentPage = 1;
+
+  // header badge
+  document.getElementById('hdr-nop').textContent = selNOP==='all' ? '🏢 All NOP' : '🏢 '+selNOP.replace('NOP ','');
+
+  renderTable();
+}
+
+// ── RENDER TABLE ──
+function renderTable(){
+  const pageSize = parseInt(document.getElementById('fl-pagesize').value) || 25;
+  const total    = filteredData.length;
+  const maxSco   = Math.max(...filteredData.map(d=>d.score), 1);
+  const totalPages = Math.ceil(total / pageSize);
+  if(currentPage > totalPages && totalPages > 0) currentPage = totalPages;
+
+  const startIdx = (currentPage - 1) * pageSize;
+  const endIdx   = startIdx + pageSize;
+  const pageData = filteredData.slice(startIdx, endIdx);
+
+  // meta info
+  document.getElementById('score-meta').innerHTML =
+    `<strong>${total}</strong> officers &bull; Page <strong>${currentPage}</strong>/${Math.max(totalPages,1)} &bull; Sorted by <strong>${sortKey}</strong>`;
+
+  if(!total){
+    document.getElementById('score-tbody').innerHTML = '<tr><td colspan="9" class="empty-state">No data found for selected filters.</td></tr>';
+    document.getElementById('pagination').innerHTML = '';
+    return;
+  }
+
+  // Render rows
+  const visColor = v => v>=80?'pill-green':v>=50?'pill-yellow':'pill-red';
+  const bvColor  = v => v>=60?'pill-green':v>=30?'pill-yellow':'pill-red';
+
+  document.getElementById('score-tbody').innerHTML = pageData.map((d, idx) => {
+    const globalRank = startIdx + idx + 1;
+    const medal = globalRank===1?'🥇 ':globalRank===2?'🥈 ':globalRank===3?'🥉 ':'';
+    const scPct  = (d.score / maxSco * 100).toFixed(0);
+    const visStr = d.visitation.toFixed(1) + '%';
+    const bvStr  = d.backVis !== null ? d.backVis.toFixed(1)+'%' : '—';
+    const visCls = visColor(d.visitation);
+    const bvCls  = d.backVis !== null ? bvColor(d.backVis) : 'pill-gray';
+    const rankCls= globalRank<=3 ? 'pill-gold' : globalRank<=10 ? 'pill-yellow' : 'pill-gray';
+    return `<tr>
+      <td><span class="pill ${rankCls}">${medal}${globalRank}</span></td>
+      <td><strong style="font-size:11px;">${d.name}</strong></td>
+      <td><span class="pill pill-blue" style="font-size:9px;">${d.nop.replace('NOP ','')}</span></td>
+      <td style="color:var(--yellow);font-weight:700;">${fmt(d.takeover)}</td>
+      <td style="color:var(--green);">${fmt(d.visit)}</td>
+      <td style="color:var(--red);">${fmt(d.backup)}</td>
+      <td>
+        <div class="sc-bar-wrap">
+          <div class="sc-bar-bg"><div class="sc-bar-fill" style="width:${scPct}%"></div></div>
+          <span style="color:var(--purple);font-size:11px;min-width:40px;">${d.score.toFixed(1)}</span>
+        </div>
+      </td>
+      <td><span class="pill ${visCls}">${visStr}</span></td>
+      <td><span class="pill ${bvCls}">${bvStr}</span></td>
+    </tr>`;
+  }).join('');
+
+  renderPagination(total, pageSize, totalPages);
+}
+
+// ── RENDER PAGINATION ──
+function renderPagination(total, pageSize, totalPages){
+  if(totalPages <= 1 || pageSize >= 9999){ document.getElementById('pagination').innerHTML = ''; return; }
+  const maxBtns = 7;
+  let html = `<button class="pg-btn" onclick="goPage(${currentPage-1})" ${currentPage<=1?'disabled':''}>&#8592;</button>`;
+
+  let start = Math.max(1, currentPage - Math.floor(maxBtns/2));
+  let end   = Math.min(totalPages, start + maxBtns - 1);
+  if(end - start < maxBtns - 1) start = Math.max(1, end - maxBtns + 1);
+
+  if(start > 1) html += `<button class="pg-btn" onclick="goPage(1)">1</button>${start>2?'<span class="pg-info">…</span>':''}`;
+  for(let i = start; i <= end; i++) html += `<button class="pg-btn ${i===currentPage?'active':''}" onclick="goPage(${i})">${i}</button>`;
+  if(end < totalPages) html += `${end<totalPages-1?'<span class="pg-info">…</span>':''}<button class="pg-btn" onclick="goPage(${totalPages})">${totalPages}</button>`;
+
+  html += `<button class="pg-btn" onclick="goPage(${currentPage+1})" ${currentPage>=totalPages?'disabled':''}>&#8594;</button>`;
+  html += `<span class="pg-info">${(currentPage-1)*pageSize+1}–${Math.min(currentPage*pageSize,total)} of ${total}</span>`;
+  document.getElementById('pagination').innerHTML = html;
+}
+
+function goPage(n){
+  const pageSize = parseInt(document.getElementById('fl-pagesize').value) || 25;
+  const totalPages = Math.ceil(filteredData.length / pageSize);
+  if(n < 1 || n > totalPages) return;
+  currentPage = n;
+  renderTable();
+  document.getElementById('mainContent').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+// ── EXPORT CSV ──
+function exportCSV(){
+  if(!filteredData.length){ alert('No data to export.'); return; }
+  const headers = ['Rank','PIC Name','NOP','Takeover Count','Visit Count','Backup Count','Score Total','Visitation %','Backup vs Visit %'];
+  const rows = filteredData.map((d,i) => [
+    i+1, d.name, d.nop, d.takeover, d.visit, d.backup, d.score.toFixed(1),
+    d.visitation.toFixed(1)+'%',
+    d.backVis !== null ? d.backVis.toFixed(1)+'%' : ''
+  ]);
+  const csv = [headers, ...rows].map(r => r.map(v => `"${String(v).replace(/"/g,'""')}"`).join(',')).join('\n');
+  const blob = new Blob([csv], {type:'text/csv;charset=utf-8;'});
+  const url  = URL.createObjectURL(blob);
+  const a = document.createElement('a'); a.href=url; a.download='score_team_export.csv'; a.click();
+  URL.revokeObjectURL(url);
+}
+
+// ── RESET ──
+function resetFilter(){
+  document.getElementById('fl-nop').value   = 'all';
+  document.getElementById('fl-month').value = 'all';
+  document.getElementById('fl-search').value = '';
+  document.getElementById('fl-pagesize').value = '25';
+  sortKey = 'score'; sortDir = -1;
+  document.querySelectorAll('.score-table th').forEach(th => th.classList.remove('sorted'));
+  document.getElementById('th-score').classList.add('sorted');
+  currentPage = 1;
+  applyFilter();
+}
+
+loadData();
+</script>
+</body>
+</html>
