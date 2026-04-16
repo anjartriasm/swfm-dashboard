@@ -429,10 +429,10 @@ async function loadData(){
     rawPIC = [];
   }
   initSlicers();
-  initCharts();
+  try{ initCharts(); } catch(e){ console.warn('Charts init skipped (ECharts not available):', e); }
   applyFilter();
   document.getElementById('mainContent').style.display = 'flex';
-  applyChartTheme(document.body.classList.contains('light'));
+  try{ applyChartTheme(document.body.classList.contains('light')); } catch(e){}
 }
 
 // ── INIT SLICERS ──
@@ -513,10 +513,10 @@ function applyFilter(){
   document.getElementById('lb-badge').textContent       = `Top 10 ${sortKey.charAt(0).toUpperCase()+sortKey.slice(1)}`;
 
   renderLeaderboard(data.slice(0,10));
-  renderNOP(data);
-  renderNOPBar(data);
-  renderScatter(data.filter(d=>d.visit>0||d.backup>0));
-  renderWorkload(data);
+  if(charts.nop)      renderNOP(data);
+  if(charts.nopBar)   renderNOPBar(data);
+  if(charts.scatter)  renderScatter(data.filter(d=>d.visit>0||d.backup>0));
+  if(charts.workload) renderWorkload(data);
 }
 
 // ── LEADERBOARD ──

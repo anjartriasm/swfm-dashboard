@@ -449,10 +449,10 @@ async function loadData(){
     rawKPI = [];
   }
   initSlicers();
-  initCharts();
+  try{ initCharts(); } catch(e){ console.warn('Charts init skipped (ECharts not available):', e); }
   applyFilter();
   document.getElementById('mainContent').style.display = 'flex';
-  applyChartTheme(document.body.classList.contains('light'));
+  try{ applyChartTheme(document.body.classList.contains('light')); } catch(e){}
 }
 
 // ── INIT SLICERS ──
@@ -539,10 +539,10 @@ function applyFilter(){
   document.getElementById('hdr-nop').textContent = selNOP === 'all' ? '🏢 All NOP' : '🏢 '+selNOP.replace('NOP ','');
   document.getElementById('hdr-period').textContent = selMonth === 'all' ? '📅 2026' : '📅 '+(document.getElementById('sl-month').selectedOptions[0]?.text||'2026');
 
-  renderTrend(filt);
-  renderSLA(totInSLA, totOutSLA, pctInSLA);
-  renderMTTR(filt);
-  renderVisitation(filt);
+  if(charts.trend)      renderTrend(filt);
+  if(charts.sla)        renderSLA(totInSLA, totOutSLA, pctInSLA);
+  if(charts.mttr)       renderMTTR(filt);
+  if(charts.visitation) renderVisitation(filt);
   renderScopeTable(filt);
 }
 
