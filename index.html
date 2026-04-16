@@ -1,307 +1,406 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>R5 Ticket Dashboard — Overview</title>
+<title>SWFM Dashboard — Overview &amp; KPI</title>
 <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{
-  --bg-main:#0d0f1a; --bg-card:#13162a; --bg-card2:#1a1d2e;
-  --border:#232640; --blue:#0078D4; --green:#00c96e;
-  --yellow:#f7c948; --red:#ff4d4d; --purple:#a259ff;
-  --text-main:#e8eaf6; --text-muted:#6b7280;
+  --bg-main:#0d0f1a;--bg-card:#13162a;--bg-card2:#1a1d2e;
+  --border:#232640;--blue:#0078D4;--green:#00c96e;
+  --yellow:#f7c948;--red:#ff4d4d;--purple:#a259ff;
+  --orange:#ff8c00;--teal:#00c9b1;--text-main:#e8eaf6;--text-muted:#6b7280;
+  --sb-w:220px;--sb-cw:60px;
 }
 body.light{
-  --bg-main:#f0f2f8; --bg-card:#ffffff; --bg-card2:#f5f7ff;
-  --border:#dde1f0; --text-main:#111827; --text-muted:#6b7280;
+  --bg-main:#f0f2f8;--bg-card:#ffffff;--bg-card2:#f5f7ff;
+  --border:#dde1f0;--text-main:#111827;--text-muted:#6b7280;
 }
-body{font-family:'Segoe UI',sans-serif;background:var(--bg-main);color:var(--text-main);min-height:100vh;}
-.nav-pages{background:var(--bg-main);padding:0 28px;display:flex;gap:4px;border-bottom:1px solid var(--border);}
-.nav-btn{padding:12px 20px;font-size:12px;color:var(--text-muted);cursor:pointer;border:none;background:none;border-bottom:2px solid transparent;transition:all .2s;text-decoration:none;display:flex;align-items:center;gap:6px;}
-.nav-btn:hover{color:var(--text-main);}
-.nav-btn.active{color:var(--blue);border-bottom-color:var(--blue);}
-.header{background:linear-gradient(135deg,#0a1628 0%,#0d1f3c 50%,#0a1628 100%);padding:16px 28px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(0,120,212,0.3);position:sticky;top:0;z-index:100;}
-.header-left{display:flex;align-items:center;gap:14px;}
-.logo{width:42px;height:42px;background:linear-gradient(135deg,#0078D4,#00c96e);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#fff;box-shadow:0 4px 15px rgba(0,120,212,0.4);}
-.header-title h1{font-size:18px;font-weight:700;background:linear-gradient(90deg,#fff,#4da6ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.header-title p{font-size:11px;color:var(--text-muted);margin-top:2px;}
-.header-right{display:flex;gap:8px;align-items:center;}
-.badge{background:rgba(255,255,255,0.05);border:1px solid var(--border);padding:5px 12px;border-radius:20px;font-size:11px;color:#aaa;}
-.live-badge{background:rgba(0,201,110,0.1);border:1px solid rgba(0,201,110,0.3);padding:5px 12px;border-radius:20px;font-size:11px;color:var(--green);display:flex;align-items:center;gap:6px;}
-.live-dot{width:7px;height:7px;background:var(--green);border-radius:50%;animation:pulse 1.5s infinite;}
+body{font-family:'Segoe UI',sans-serif;background:var(--bg-main);color:var(--text-main);min-height:100vh;display:flex;}
+
+/* ── SIDEBAR ── */
+.sidebar{width:var(--sb-w);min-height:100vh;background:var(--bg-card);border-right:1px solid var(--border);position:fixed;left:0;top:0;z-index:200;transition:width .2s ease;display:flex;flex-direction:column;overflow:hidden;flex-shrink:0;}
+.sidebar.collapsed{width:var(--sb-cw);}
+.sb-header{display:flex;align-items:center;padding:15px 13px;border-bottom:1px solid var(--border);gap:11px;min-height:64px;}
+.sb-toggle{background:none;border:none;color:var(--text-main);cursor:pointer;font-size:18px;padding:4px;flex-shrink:0;line-height:1;transition:color .2s;}
+.sb-toggle:hover{color:var(--blue);}
+.sb-logo{width:32px;height:32px;flex-shrink:0;background:linear-gradient(135deg,#0078D4,#00c96e);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;color:#fff;}
+.sb-title{font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;transition:opacity .15s;opacity:1;}
+.sidebar.collapsed .sb-title{opacity:0;width:0;pointer-events:none;}
+.sb-nav{padding:10px 8px;flex:1;display:flex;flex-direction:column;gap:2px;}
+.nav-link{display:flex;align-items:center;gap:11px;padding:9px 10px;border-radius:10px;color:var(--text-muted);text-decoration:none;font-size:12px;transition:all .2s;white-space:nowrap;overflow:hidden;}
+.nav-link:hover{background:rgba(0,120,212,.1);color:var(--text-main);}
+.nav-link.active{background:rgba(0,120,212,.15);color:var(--blue);}
+.nav-icon{font-size:16px;flex-shrink:0;width:20px;text-align:center;}
+.nav-text{opacity:1;transition:opacity .15s;white-space:nowrap;}
+.sidebar.collapsed .nav-text{opacity:0;width:0;pointer-events:none;}
+.sb-footer{padding:11px 12px;border-top:1px solid var(--border);}
+.theme-btn{display:flex;align-items:center;gap:7px;width:100%;background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--text-main);padding:7px 10px;border-radius:8px;font-size:12px;cursor:pointer;transition:all .2s;white-space:nowrap;overflow:hidden;}
+.theme-btn:hover{background:rgba(255,255,255,.1);}
+.sidebar.collapsed .theme-btn .btn-label{display:none;}
+
+/* ── PAGE WRAPPER ── */
+.page-wrapper{margin-left:var(--sb-w);transition:margin-left .2s ease;min-height:100vh;flex:1;display:flex;flex-direction:column;}
+body.sb-col .page-wrapper{margin-left:var(--sb-cw);}
+
+/* ── HEADER ── */
+.header{background:linear-gradient(135deg,#0a1628 0%,#0d1f3c 50%,#0a1628 100%);padding:13px 22px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(0,120,212,.3);position:sticky;top:0;z-index:100;}
+body.light .header{background:linear-gradient(135deg,#e8edf8 0%,#dce6f5 50%,#e8edf8 100%);border-bottom:1px solid rgba(0,120,212,.2);}
+.hdr-title h1{font-size:17px;font-weight:700;background:linear-gradient(90deg,#fff,#4da6ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+body.light .hdr-title h1{background:linear-gradient(90deg,#111,#0078D4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hdr-title p{font-size:11px;color:var(--text-muted);margin-top:2px;}
+.hdr-right{display:flex;gap:7px;align-items:center;}
+.badge{background:rgba(255,255,255,.05);border:1px solid var(--border);padding:4px 10px;border-radius:20px;font-size:11px;color:#aaa;}
+.live-badge{background:rgba(0,201,110,.1);border:1px solid rgba(0,201,110,.3);padding:4px 10px;border-radius:20px;font-size:11px;color:var(--green);display:flex;align-items:center;gap:5px;}
+.live-dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 1.5s infinite;}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(1.5);}}
-.theme-toggle{background:rgba(255,255,255,0.06);border:1px solid var(--border);color:var(--text-main);padding:5px 10px;border-radius:20px;font-size:14px;cursor:pointer;transition:all .2s;}
-.theme-toggle:hover{background:rgba(255,255,255,0.12);}
-.slicer-bar{background:rgba(19,22,42,0.98);padding:10px 28px;display:flex;gap:10px;align-items:center;border-bottom:1px solid var(--border);flex-wrap:wrap;position:sticky;top:57px;z-index:99;}
-body.light .slicer-bar{background:rgba(240,242,248,0.98);}
-.slicer-group{display:flex;align-items:center;gap:6px;}
-.slicer-group label{font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.8px;}
-select{background:var(--bg-card2);color:var(--text-main);border:1px solid var(--border);border-radius:8px;padding:5px 24px 5px 10px;font-size:12px;cursor:pointer;outline:none;transition:all .2s;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 6px center;}
-select:hover,select:focus{border-color:var(--blue);box-shadow:0 0 0 2px rgba(0,120,212,.2);}
-.slicer-divider{width:1px;height:24px;background:var(--border);margin:0 4px;}
-.btn-reset{background:rgba(255,77,77,0.1);border:1px solid rgba(255,77,77,0.3);color:var(--red);padding:5px 12px;border-radius:8px;font-size:11px;cursor:pointer;transition:all .2s;}
-.btn-reset:hover{background:rgba(255,77,77,0.2);}
-.main{padding:20px 28px;display:flex;flex-direction:column;gap:16px;}
-.kpi-row{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;}
-.kpi-card{background:var(--bg-card);border-radius:14px;padding:18px 20px;border:1px solid var(--border);position:relative;overflow:hidden;cursor:pointer;transition:transform .2s,box-shadow .2s,border-color .2s;}
-.kpi-card:hover{transform:translateY(-4px);}
-.kpi-card.blue:hover  {border-color:var(--blue);  box-shadow:0 12px 40px rgba(0,120,212,.25);}
-.kpi-card.yellow:hover{border-color:var(--yellow); box-shadow:0 12px 40px rgba(247,201,72,.25);}
-.kpi-card.green:hover {border-color:var(--green);  box-shadow:0 12px 40px rgba(0,201,110,.25);}
-.kpi-card.purple:hover{border-color:var(--purple); box-shadow:0 12px 40px rgba(162,89,255,.25);}
-.kpi-card.red:hover   {border-color:var(--red);    box-shadow:0 12px 40px rgba(255,77,77,.25);}
-.kpi-card::after{content:'';position:absolute;top:-40px;right:-40px;width:100px;height:100px;border-radius:50%;opacity:.06;}
-.kpi-card.blue::after  {background:var(--blue);}
-.kpi-card.yellow::after{background:var(--yellow);}
-.kpi-card.green::after {background:var(--green);}
-.kpi-card.purple::after{background:var(--purple);}
-.kpi-card.red::after   {background:var(--red);}
-.kpi-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;}
-.kpi-icon-wrap{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;}
-.blue   .kpi-icon-wrap{background:rgba(0,120,212,.15);}
-.yellow .kpi-icon-wrap{background:rgba(247,201,72,.15);}
-.green  .kpi-icon-wrap{background:rgba(0,201,110,.15);}
-.purple .kpi-icon-wrap{background:rgba(162,89,255,.15);}
-.red    .kpi-icon-wrap{background:rgba(255,77,77,.15);}
-.kpi-trend-badge{font-size:10px;padding:3px 8px;border-radius:10px;font-weight:600;}
-.trend-up  {background:rgba(0,201,110,.15);color:var(--green);}
-.trend-down{background:rgba(255,77,77,.15); color:var(--red);}
-.kpi-value{font-size:28px;font-weight:800;letter-spacing:-1px;line-height:1;margin-bottom:4px;}
+.print-btn{background:rgba(0,120,212,.12);border:1px solid rgba(0,120,212,.3);color:var(--blue);padding:5px 11px;border-radius:8px;font-size:11px;cursor:pointer;transition:all .2s;}
+.print-btn:hover{background:rgba(0,120,212,.25);}
+
+/* ── SLICER BAR ── */
+.slicer-bar{background:rgba(19,22,42,.98);padding:8px 22px;display:flex;gap:8px;align-items:center;border-bottom:1px solid var(--border);flex-wrap:wrap;position:sticky;top:51px;z-index:99;}
+body.light .slicer-bar{background:rgba(240,242,248,.98);}
+.sl-group{display:flex;align-items:center;gap:5px;}
+.sl-group label{font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.7px;white-space:nowrap;}
+select{background:var(--bg-card2);color:var(--text-main);border:1px solid var(--border);border-radius:7px;padding:4px 22px 4px 9px;font-size:12px;cursor:pointer;outline:none;transition:border-color .2s;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 5px center;}
+select:hover,select:focus{border-color:var(--blue);}
+.sl-div{width:1px;height:20px;background:var(--border);margin:0 2px;}
+.btn-reset{background:rgba(255,77,77,.1);border:1px solid rgba(255,77,77,.3);color:var(--red);padding:4px 10px;border-radius:7px;font-size:11px;cursor:pointer;transition:all .2s;}
+.btn-reset:hover{background:rgba(255,77,77,.2);}
+
+/* ── MAIN ── */
+.main{padding:16px 22px;display:flex;flex-direction:column;gap:13px;}
+
+/* ── KPI CARDS ── */
+.kpi-row{display:grid;grid-template-columns:repeat(5,1fr);gap:11px;}
+.kpi-row-b{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;}
+.kpi-card{background:var(--bg-card);border-radius:12px;padding:15px 17px;border:1px solid var(--border);position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s,border-color .2s;}
+.kpi-card:hover{transform:translateY(-3px);}
+.kpi-card.blue:hover  {border-color:var(--blue);  box-shadow:0 8px 28px rgba(0,120,212,.2);}
+.kpi-card.yellow:hover{border-color:var(--yellow); box-shadow:0 8px 28px rgba(247,201,72,.2);}
+.kpi-card.green:hover {border-color:var(--green);  box-shadow:0 8px 28px rgba(0,201,110,.2);}
+.kpi-card.purple:hover{border-color:var(--purple); box-shadow:0 8px 28px rgba(162,89,255,.2);}
+.kpi-card.red:hover   {border-color:var(--red);    box-shadow:0 8px 28px rgba(255,77,77,.2);}
+.kpi-card.orange:hover{border-color:var(--orange); box-shadow:0 8px 28px rgba(255,140,0,.2);}
+.kpi-card.teal:hover  {border-color:var(--teal);   box-shadow:0 8px 28px rgba(0,201,177,.2);}
+.kpi-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;border-radius:12px 12px 0 0;}
+.kpi-card.blue::before  {background:var(--blue);}
+.kpi-card.yellow::before{background:var(--yellow);}
+.kpi-card.green::before {background:var(--green);}
+.kpi-card.purple::before{background:var(--purple);}
+.kpi-card.red::before   {background:var(--red);}
+.kpi-card.orange::before{background:var(--orange);}
+.kpi-card.teal::before  {background:var(--teal);}
+.kpi-icon{font-size:22px;margin-bottom:8px;}
+.kpi-value{font-size:26px;font-weight:800;line-height:1;margin-bottom:4px;}
 .blue   .kpi-value{color:#4da6ff;}
 .yellow .kpi-value{color:var(--yellow);}
 .green  .kpi-value{color:var(--green);}
 .purple .kpi-value{color:var(--purple);}
 .red    .kpi-value{color:var(--red);}
-.kpi-label{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.8px;}
-.kpi-bar{margin-top:12px;height:3px;background:var(--border);border-radius:2px;overflow:hidden;}
-.kpi-bar-fill{height:100%;border-radius:2px;transition:width 1s ease;}
-.blue   .kpi-bar-fill{background:var(--blue);}
-.yellow .kpi-bar-fill{background:var(--yellow);}
-.green  .kpi-bar-fill{background:var(--green);}
-.purple .kpi-bar-fill{background:var(--purple);}
-.red    .kpi-bar-fill{background:var(--red);}
-.chart-row{display:grid;grid-template-columns:2fr 1fr;gap:14px;}
-.chart-row-half{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-.chart-card{background:var(--bg-card);border-radius:14px;padding:20px 22px;border:1px solid var(--border);}
-.card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;}
-.card-title{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.8px;font-weight:600;}
-.card-dot{width:8px;height:8px;border-radius:50%;}
-.card-badge{font-size:10px;padding:3px 8px;border-radius:6px;background:rgba(255,255,255,.05);color:var(--text-muted);border:1px solid var(--border);}
-.nop-table{width:100%;border-collapse:collapse;font-size:12px;}
-.nop-table th{padding:8px 12px;text-align:left;font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.8px;border-bottom:1px solid var(--border);}
-.nop-table td{padding:8px 12px;border-bottom:1px solid rgba(35,38,64,.5);transition:background .15s;}
-.nop-table tr:hover td{background:rgba(0,120,212,.06);}
-.nop-table tr:last-child td{border-bottom:none;}
-.pill{padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;}
+.orange .kpi-value{color:var(--orange);}
+.teal   .kpi-value{color:var(--teal);}
+.kpi-label{font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.7px;}
+.kpi-sub{font-size:10px;color:var(--text-muted);margin-top:3px;}
+
+/* ── CHARTS ── */
+.chart-row{display:grid;grid-template-columns:2fr 1fr;gap:13px;}
+.chart-row-half{display:grid;grid-template-columns:1fr 1fr;gap:13px;}
+.chart-card{background:var(--bg-card);border-radius:12px;padding:17px 19px;border:1px solid var(--border);}
+.card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:13px;}
+.card-title{display:flex;align-items:center;gap:7px;font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.7px;font-weight:600;}
+.card-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.card-badge{font-size:10px;padding:2px 8px;border-radius:6px;background:rgba(255,255,255,.04);color:var(--text-muted);border:1px solid var(--border);}
+.echart   {width:100%;height:240px;}
+.echart-sm{width:100%;height:200px;}
+
+/* ── SCOPE TABLE ── */
+.tbl-wrap{overflow-x:auto;}
+.scope-table{width:100%;border-collapse:collapse;font-size:11px;}
+.scope-table th{padding:8px 12px;text-align:left;font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.7px;border-bottom:1px solid var(--border);white-space:nowrap;}
+.scope-table td{padding:7px 12px;border-bottom:1px solid rgba(35,38,64,.5);transition:background .15s;}
+.scope-table tr:hover td{background:rgba(0,120,212,.05);}
+.scope-table tr:last-child td{border-bottom:none;}
+.pill{padding:2px 7px;border-radius:10px;font-size:10px;font-weight:600;}
 .pill-blue  {background:rgba(0,120,212,.15);color:#4da6ff;}
 .pill-green {background:rgba(0,201,110,.15);color:var(--green);}
 .pill-yellow{background:rgba(247,201,72,.15);color:var(--yellow);}
 .pill-red   {background:rgba(255,77,77,.15); color:var(--red);}
-.echart    {width:100%;height:260px;}
-.echart-sm {width:100%;height:220px;}
-.echart-md {width:100%;height:300px;}
-.echart-hm {width:100%;height:240px;}
-@media(max-width:1200px){.kpi-row{grid-template-columns:repeat(3,1fr);}.chart-row,.chart-row-half{grid-template-columns:1fr;}}
-@media(max-width:700px){.kpi-row{grid-template-columns:repeat(2,1fr);}.main{padding:14px;}}
-.footer{text-align:center;padding:14px;color:var(--text-muted);font-size:11px;border-top:1px solid var(--border);margin-top:4px;}
+
+/* ── EMPTY STATE ── */
+.empty-state{text-align:center;padding:40px 20px;color:var(--text-muted);font-size:13px;}
+
+/* ── FOOTER ── */
+.footer{text-align:center;padding:12px;color:var(--text-muted);font-size:11px;border-top:1px solid var(--border);margin-top:4px;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1400px){.kpi-row{grid-template-columns:repeat(3,1fr);}.kpi-row-b{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:1000px){.kpi-row,.kpi-row-b{grid-template-columns:repeat(2,1fr);}.chart-row,.chart-row-half{grid-template-columns:1fr;}}
+@media(max-width:700px){.main{padding:10px;}.kpi-row,.kpi-row-b{grid-template-columns:repeat(2,1fr);}}
+
+/* ── PRINT A4 ── */
+@media print{
+  @page{size:A4 portrait;margin:12mm 15mm;}
+  .sidebar,.slicer-bar,.print-btn,.btn-reset,.sb-footer,.live-badge{display:none!important;}
+  .page-wrapper{margin-left:0!important;}
+  .header{position:static!important;background:#fff!important;border-bottom:1px solid #ccc!important;padding:10px 15px!important;}
+  .hdr-title h1{background:none!important;-webkit-text-fill-color:#000!important;font-size:16px!important;}
+  .hdr-title p,.badge{color:#555!important;}
+  body{background:#fff!important;color:#000!important;}
+  .main{padding:10px 0!important;gap:10px!important;}
+  .kpi-card{break-inside:avoid;background:#f8f9fa!important;border:1px solid #ddd!important;padding:10px 12px!important;}
+  .kpi-value{color:#000!important;font-size:20px!important;}
+  .kpi-label,.kpi-sub{color:#555!important;}
+  .chart-card{break-inside:avoid;background:#f8f9fa!important;border:1px solid #ddd!important;}
+  .echart,.echart-sm{height:160px!important;}
+  .scope-table td,.scope-table th{color:#000!important;border-color:#ddd!important;}
+  .kpi-row{grid-template-columns:repeat(3,1fr)!important;}
+  .kpi-row-b{grid-template-columns:repeat(4,1fr)!important;}
+  .chart-row{grid-template-columns:1fr 1fr!important;}
+  .chart-row-half{grid-template-columns:1fr 1fr!important;}
+}
 </style>
 </head>
 <body>
-<div class="nav-pages">
-  <a href="index.html" class="nav-btn active">📊 Overview &amp; KPI</a>
-  <a href="page2.html" class="nav-btn">👤 Performance PIC</a>
-  <a href="page3.html" class="nav-btn">🗺️ Peta Sebaran</a>
-</div>
-<div class="header">
-  <div class="header-left">
-    <div class="logo">SW</div>
-    <div class="header-title">
-      <h1>R5 Ticket Dashboard</h1>
-      <p>Smart Workforce Management — Overview &amp; KPI</p>
-    </div>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+  <div class="sb-header">
+    <button class="sb-toggle" onclick="toggleSidebar()" title="Toggle Sidebar">☰</button>
+    <div class="sb-logo">SW</div>
+    <div class="sb-title">SWFM</div>
   </div>
-  <div class="header-right">
-    <span class="live-badge"><span class="live-dot"></span>Live Data</span>
-    <span class="badge" id="hdr-period">📅 2026</span>
-    <span class="badge" id="hdr-nop">🏢 All NOP</span>
-    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">🌙</button>
+  <nav class="sb-nav">
+    <a href="index.html" class="nav-link active">
+      <span class="nav-icon">📊</span>
+      <span class="nav-text">Overview &amp; KPI</span>
+    </a>
+    <a href="page2.html" class="nav-link">
+      <span class="nav-icon">👤</span>
+      <span class="nav-text">PIC Performance</span>
+    </a>
+    <a href="page3.html" class="nav-link">
+      <span class="nav-icon">🏆</span>
+      <span class="nav-text">Score Team</span>
+    </a>
+  </nav>
+  <div class="sb-footer">
+    <button class="theme-btn" id="themeToggle" onclick="toggleTheme()">
+      🌙 <span class="btn-label">Dark Mode</span>
+    </button>
   </div>
-</div>
-<div class="slicer-bar">
-  <div class="slicer-group">
-    <label>NOP</label>
-    <select id="sl-nop" onchange="applyFilter()">
-      <option value="all">Semua NOP</option>
-    </select>
-  </div>
-  <div class="slicer-divider"></div>
-  <div class="slicer-group">
-    <label>Bulan</label>
-    <select id="sl-month" onchange="applyFilter()">
-      <option value="all">Semua Bulan</option>
-    </select>
-  </div>
-  <div class="slicer-divider"></div>
-  <div class="slicer-group">
-    <label>Type Ticket</label>
-    <select id="sl-type" onchange="applyFilter()">
-      <option value="all">All</option>
-      <option value="Event">Event</option>
-      <option value="Incident">Incident</option>
-    </select>
-  </div>
-  <div class="slicer-divider"></div>
-  <button class="btn-reset" onclick="resetFilter()">&#8634; Reset</button>
 </div>
 
-<div class="main" id="mainContent" style="display:none;">
+<!-- PAGE WRAPPER -->
+<div class="page-wrapper" id="pageWrapper">
 
-  <!-- KPI CARDS -->
-  <div class="kpi-row">
-    <div class="kpi-card blue">
-      <div class="kpi-top">
-        <div class="kpi-icon-wrap">🎫</div>
-        <span class="kpi-trend-badge trend-up" id="tr-ticket">Grand Total</span>
-      </div>
-      <div class="kpi-value" id="kpi-ticket">—</div>
-      <div class="kpi-label">Total Ticket</div>
-      <div class="kpi-bar"><div class="kpi-bar-fill" id="bar-ticket" style="width:0%"></div></div>
+  <!-- HEADER -->
+  <div class="header">
+    <div class="hdr-title">
+      <h1>Overview &amp; KPI</h1>
+      <p>Smart Workforce Management — Ticket Performance Dashboard</p>
     </div>
-    <div class="kpi-card yellow">
-      <div class="kpi-top">
-        <div class="kpi-icon-wrap">🔧</div>
-        <span class="kpi-trend-badge trend-up" id="tr-manres">—</span>
-      </div>
-      <div class="kpi-value" id="kpi-manres">—</div>
-      <div class="kpi-label">% Manual Resolved</div>
-      <div class="kpi-bar"><div class="kpi-bar-fill" id="bar-manres" style="width:0%"></div></div>
-    </div>
-    <div class="kpi-card green">
-      <div class="kpi-top">
-        <div class="kpi-icon-wrap">📍</div>
-        <span class="kpi-trend-badge trend-up" id="tr-visit">—</span>
-      </div>
-      <div class="kpi-value" id="kpi-visit">—</div>
-      <div class="kpi-label">% Visitation</div>
-      <div class="kpi-bar"><div class="kpi-bar-fill" id="bar-visit" style="width:0%"></div></div>
-    </div>
-    <div class="kpi-card purple">
-      <div class="kpi-top">
-        <div class="kpi-icon-wrap">✅</div>
-        <span class="kpi-trend-badge trend-up" id="tr-insla">—</span>
-      </div>
-      <div class="kpi-value" id="kpi-insla">—</div>
-      <div class="kpi-label">% IN SLA</div>
-      <div class="kpi-bar"><div class="kpi-bar-fill" id="bar-insla" style="width:0%"></div></div>
-    </div>
-    <div class="kpi-card red">
-      <div class="kpi-top">
-        <div class="kpi-icon-wrap">❌</div>
-        <span class="kpi-trend-badge trend-down" id="tr-outsla">—</span>
-      </div>
-      <div class="kpi-value" id="kpi-outsla">—</div>
-      <div class="kpi-label">% OUT SLA</div>
-      <div class="kpi-bar"><div class="kpi-bar-fill" id="bar-outsla" style="width:0%"></div></div>
+    <div class="hdr-right">
+      <span class="live-badge"><span class="live-dot"></span>Live Data</span>
+      <span class="badge" id="hdr-period">📅 2026</span>
+      <span class="badge" id="hdr-nop">🏢 All NOP</span>
+      <button class="print-btn" onclick="window.print()">🖨️ Print A4</button>
     </div>
   </div>
 
-  <!-- TREND + SLA -->
-  <div class="chart-row">
+  <!-- SLICER BAR -->
+  <div class="slicer-bar">
+    <div class="sl-group">
+      <label>Scope</label>
+      <select id="sl-scope" onchange="applyFilter()">
+        <option value="all">All Scopes</option>
+      </select>
+    </div>
+    <div class="sl-div"></div>
+    <div class="sl-group">
+      <label>NOP</label>
+      <select id="sl-nop" onchange="applyFilter()">
+        <option value="all">All NOP</option>
+      </select>
+    </div>
+    <div class="sl-div"></div>
+    <div class="sl-group">
+      <label>Month</label>
+      <select id="sl-month" onchange="applyFilter()">
+        <option value="all">All Months</option>
+      </select>
+    </div>
+    <div class="sl-div"></div>
+    <div class="sl-group">
+      <label>Ticket Type</label>
+      <select id="sl-type" onchange="applyFilter()">
+        <option value="all">All Types</option>
+        <option value="Event">Event</option>
+        <option value="Incident">Incident</option>
+      </select>
+    </div>
+    <div class="sl-div"></div>
+    <button class="btn-reset" onclick="resetFilter()">↺ Reset</button>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="main" id="mainContent" style="display:none;">
+
+    <!-- KPI ROW 1 (5 cards) -->
+    <div class="kpi-row">
+      <div class="kpi-card blue">
+        <div class="kpi-icon">🎫</div>
+        <div class="kpi-value" id="kpi-total">—</div>
+        <div class="kpi-label">Total Tickets</div>
+      </div>
+      <div class="kpi-card green">
+        <div class="kpi-icon">✅</div>
+        <div class="kpi-value" id="kpi-closed">—</div>
+        <div class="kpi-label">Closed Tickets</div>
+        <div class="kpi-sub">Close Rate: <strong id="kpi-close-rate">—</strong></div>
+      </div>
+      <div class="kpi-card yellow">
+        <div class="kpi-icon">🔓</div>
+        <div class="kpi-value" id="kpi-open">—</div>
+        <div class="kpi-label">Open Tickets</div>
+      </div>
+      <div class="kpi-card purple">
+        <div class="kpi-icon">��️</div>
+        <div class="kpi-value" id="kpi-insla">—</div>
+        <div class="kpi-label">% In SLA</div>
+        <div class="kpi-sub">In: <span id="kpi-insla-cnt">—</span> / Out: <span id="kpi-outsla-cnt">—</span></div>
+      </div>
+      <div class="kpi-card orange">
+        <div class="kpi-icon">🔄</div>
+        <div class="kpi-value" id="kpi-tko-rate">—</div>
+        <div class="kpi-label">Takeover Rate %</div>
+        <div class="kpi-sub">Count: <span id="kpi-tko-cnt">—</span></div>
+      </div>
+    </div>
+
+    <!-- KPI ROW 2 (4 cards) -->
+    <div class="kpi-row-b">
+      <div class="kpi-card green">
+        <div class="kpi-icon">📍</div>
+        <div class="kpi-value" id="kpi-visitation">—</div>
+        <div class="kpi-label">Visitation %</div>
+        <div class="kpi-sub">Visit / Takeover</div>
+      </div>
+      <div class="kpi-card yellow">
+        <div class="kpi-icon">🔧</div>
+        <div class="kpi-value" id="kpi-manres">—</div>
+        <div class="kpi-label">% Manual Resolved</div>
+        <div class="kpi-sub">Count: <span id="kpi-manres-cnt">—</span></div>
+      </div>
+      <div class="kpi-card red">
+        <div class="kpi-icon">⏱️</div>
+        <div class="kpi-value" id="kpi-mttr-inc">—</div>
+        <div class="kpi-label">MTTR P90 Incident</div>
+        <div class="kpi-sub">Hours (weighted avg)</div>
+      </div>
+      <div class="kpi-card teal">
+        <div class="kpi-icon">⚡</div>
+        <div class="kpi-value" id="kpi-mttr-evt">—</div>
+        <div class="kpi-label">MTTR P90 Event</div>
+        <div class="kpi-sub">Hours (weighted avg)</div>
+      </div>
+    </div>
+
+    <!-- CHART ROW 1: Trend + SLA -->
+    <div class="chart-row">
+      <div class="chart-card">
+        <div class="card-header">
+          <div class="card-title"><span class="card-dot" style="background:var(--blue)"></span>Tickets &amp; Closure Trend</div>
+          <span class="card-badge" id="trend-badge">Monthly</span>
+        </div>
+        <div id="chartTrend" class="echart"></div>
+      </div>
+      <div class="chart-card">
+        <div class="card-header">
+          <div class="card-title"><span class="card-dot" style="background:var(--green)"></span>SLA Status</div>
+          <span class="card-badge" id="sla-badge">—</span>
+        </div>
+        <div id="chartSLA" class="echart"></div>
+      </div>
+    </div>
+
+    <!-- CHART ROW 2: MTTR P90 + % Visitation by Severity -->
+    <div class="chart-row-half">
+      <div class="chart-card">
+        <div class="card-header">
+          <div class="card-title"><span class="card-dot" style="background:var(--red)"></span>MTTR P90 by Severity</div>
+          <span class="card-badge">Incident vs Event (hrs)</span>
+        </div>
+        <div id="chartMTTR" class="echart-sm"></div>
+      </div>
+      <div class="chart-card">
+        <div class="card-header">
+          <div class="card-title"><span class="card-dot" style="background:var(--green)"></span>% Visitation by Severity</div>
+          <span class="card-badge">Incident vs Event</span>
+        </div>
+        <div id="chartVisitation" class="echart-sm"></div>
+      </div>
+    </div>
+
+    <!-- SCOPE KPI SUMMARY TABLE -->
     <div class="chart-card">
       <div class="card-header">
-        <div class="card-title"><span class="card-dot" style="background:var(--blue)"></span>Trend Ticket Bulanan</div>
-        <span class="card-badge" id="trend-badge">All Period</span>
+        <div class="card-title"><span class="card-dot" style="background:var(--purple)"></span>Scope KPI Summary</div>
+        <span class="card-badge" id="scope-count">— Scopes</span>
       </div>
-      <div id="chartTrend" class="echart"></div>
-    </div>
-    <div class="chart-card">
-      <div class="card-header">
-        <div class="card-title"><span class="card-dot" style="background:var(--green)"></span>Status SLA</div>
-        <span class="card-badge" id="sla-badge">—</span>
+      <div class="tbl-wrap">
+        <table class="scope-table">
+          <thead>
+            <tr>
+              <th>Scope</th>
+              <th>Tickets</th>
+              <th>Close Rate</th>
+              <th>% In SLA</th>
+              <th>Takeover Rate</th>
+              <th>Visitation %</th>
+              <th>MTTR P90 Incident</th>
+              <th>MTTR P90 Event</th>
+            </tr>
+          </thead>
+          <tbody id="scope-tbody"></tbody>
+        </table>
       </div>
-      <div id="chartSLA" class="echart"></div>
     </div>
+
   </div>
 
-  <!-- SEVERITY + HEATMAP -->
-  <div class="chart-row-half">
-    <div class="chart-card">
-      <div class="card-header">
-        <div class="card-title"><span class="card-dot" style="background:var(--yellow)"></span>Breakdown Severity</div>
-        <span class="card-badge" id="sev-badge">Event vs Incident</span>
-      </div>
-      <div id="chartSeverity" class="echart-sm"></div>
-    </div>
-    <div class="chart-card">
-      <div class="card-header">
-        <div class="card-title"><span class="card-dot" style="background:var(--purple)"></span>Heatmap SLA per NOP × Bulan</div>
-        <span class="card-badge">% IN SLA</span>
-      </div>
-      <div id="chartHeatmap" class="echart-hm"></div>
-    </div>
-  </div>
-
-  <!-- NOP COMPARISON -->
-  <div class="chart-card">
-    <div class="card-header">
-      <div class="card-title"><span class="card-dot" style="background:var(--purple)"></span>Perbandingan per NOP</div>
-      <span class="card-badge" id="nop-compare-badge">All Period</span>
-    </div>
-    <div id="chartNOP" style="width:100%;height:280px;"></div>
-  </div>
-
-  <!-- % IN SLA per Severity -->
-  <div class="chart-card">
-    <div class="card-header">
-      <div class="card-title"><span class="card-dot" style="background:var(--green)"></span>% IN SLA per Severity</div>
-      <span class="card-badge" id="sevsla-badge">Weighted Avg</span>
-    </div>
-    <div id="chartSevSLA" style="width:100%;height:240px;"></div>
-  </div>
-
-  <!-- NOP TABLE -->
-  <div class="chart-card">
-    <div class="card-header">
-      <div class="card-title"><span class="card-dot" style="background:var(--blue)"></span>Detail per NOP</div>
-    </div>
-    <table class="nop-table">
-      <thead>
-        <tr>
-          <th>NOP</th>
-          <th>Total Ticket</th>
-          <th>Takeover</th>
-          <th>Visit</th>
-          <th>Backup</th>
-          <th>% Manual Resolved</th>
-          <th>% Visitation</th>
-          <th>% IN SLA</th>
-          <th>% OUT SLA</th>
-        </tr>
-      </thead>
-      <tbody id="nop-tbody"></tbody>
-    </table>
-  </div>
-
-</div>
-
-<div class="footer">
-  ENOM R5 Ticket Dashboard &copy; 2026 &mdash; Data: Jan&ndash;Apr 2026 | 6 NOP Jawa Tengah &amp; DIY
+  <div class="footer">SWFM Dashboard &copy; 2026 &mdash; Overview &amp; KPI | Data: Jan–Apr 2026 | 6 NOP Jawa Tengah &amp; DIY</div>
 </div>
 
 <script>
-let rawKPI = [], charts = {}, grandTotal = 0;
-
-// ── NUM COERCE ──
+let rawKPI = [], charts = {};
 const n0 = v => (v === '' || v === null || v === undefined) ? 0 : (+v || 0);
-const fmt = n => Math.round(n).toLocaleString('id-ID');
+const fmt = n => Math.round(n).toLocaleString('en-US');
+const fmtPct = v => v.toFixed(1) + '%';
+const SEV_ORDER = ['Critical','Major','Minor','Low'];
+const SEV_COLOR = {Critical:'#ff4d4d', Major:'#f7c948', Minor:'#0078D4', Low:'#00c96e'};
+
+// ── SIDEBAR ──
+function toggleSidebar(){
+  const col = document.getElementById('sidebar').classList.toggle('collapsed');
+  document.body.classList.toggle('sb-col', col);
+  localStorage.setItem('sidebarCollapsed', col);
+}
+(function(){
+  if(localStorage.getItem('sidebarCollapsed') === 'true'){
+    document.getElementById('sidebar').classList.add('collapsed');
+    document.body.classList.add('sb-col');
+  }
+})();
 
 // ── THEME ──
 function toggleTheme(){
   const isLight = document.body.classList.toggle('light');
   localStorage.setItem('theme', isLight ? 'light' : 'dark');
-  document.getElementById('themeToggle').textContent = isLight ? '☀️' : '🌙';
+  const btn = document.getElementById('themeToggle');
+  btn.innerHTML = isLight ? '☀️ <span class="btn-label">Light Mode</span>' : '🌙 <span class="btn-label">Dark Mode</span>';
   applyChartTheme(isLight);
 }
 function applyChartTheme(isLight){
@@ -310,20 +409,15 @@ function applyChartTheme(isLight){
   const ac = isLight ? '#9ca3af' : '#232640';
   Object.values(charts).forEach(c => {
     if(!c) return;
-    c.setOption({
-      legend:  { textStyle:{ color:tc } },
-      xAxis:   [{ axisLabel:{color:tc}, axisLine:{lineStyle:{color:ac}}, splitLine:{lineStyle:{color:sc}} }],
-      yAxis:   [{ axisLabel:{color:tc}, axisLine:{lineStyle:{color:ac}}, splitLine:{lineStyle:{color:sc}} }],
-      tooltip: { backgroundColor:isLight?'#ffffff':'#13162a', borderColor:isLight?'#dde1f0':'#232640', textStyle:{color:tc} }
-    }, false);
+    c.setOption({legend:{textStyle:{color:tc}},tooltip:{backgroundColor:isLight?'#fff':'#13162a',borderColor:isLight?'#dde1f0':'#232640',textStyle:{color:tc}}},false);
     c.resize();
   });
 }
 (function(){
-  const saved = localStorage.getItem('theme');
-  if(saved === 'light'){
+  const s = localStorage.getItem('theme');
+  if(s === 'light'){
     document.body.classList.add('light');
-    document.getElementById('themeToggle').textContent = '☀️';
+    document.getElementById('themeToggle').innerHTML = '☀️ <span class="btn-label">Light Mode</span>';
   }
 })();
 
@@ -332,35 +426,41 @@ async function loadData(){
   try{
     const raw = await fetch('data/kpi_raw.json').then(r => r.json());
     rawKPI = raw.map(d => ({
-      NOP:                d['NOP'] || '',
-      monthNum:           +d['Month Number'] || 0,
-      monthName:          d['Month Name'] || '',
-      year:               +d['Year'] || 0,
-      typeTicket:         d['Type Ticket'] || '',
-      severity:           d['Severity'] || '',
-      totalTicket:        n0(d['Total Ticket']),
-      totalTakeover:      n0(d['Total Takeover']),
-      totalVisit:         n0(d['Total Visit']),
-      totalBackup:        n0(d['Total Backup']),
-      totalManRes:        n0(d['Total Manual Resolved']),
-      pctInSLA:           n0(d['% IN SLA']),
-      pctOutSLA:          n0(d['% OUT SLA']),
+      NOP:           d['NOP'] || '',
+      monthNum:      +d['Month Number'] || 0,
+      monthName:     d['Month Name'] || '',
+      year:          +d['Year'] || 0,
+      scope:         d['Scope'] || '',
+      typeTicket:    d['Type Ticket'] || '',
+      severity:      d['Severity'] || '',
+      ticketsTotal:  n0(d['Tickets Total']),
+      ticketsClosed: n0(d['Tickets Closed']),
+      ticketsOpen:   n0(d['Tickets Open']),
+      takeoverCount: n0(d['Takeover Count']),
+      visitCount:    n0(d['Visit Count']),
+      backupCount:   n0(d['Backup Count']),
+      manualResolved:n0(d['Manual Resolved Count']),
+      ticketsInSLA:  n0(d['Tickets In SLA']),
+      ticketsOutSLA: n0(d['Tickets Out SLA']),
+      mttrP90:       n0(d['MTTR P90 (Hours)']),
     }));
   } catch(e){
-    console.warn('Fetch kpi_raw.json gagal:', e);
+    console.warn('Fetch kpi_raw.json failed:', e);
     rawKPI = [];
   }
-  grandTotal = rawKPI.reduce((s,d) => s + d.totalTicket, 0);
   initSlicers();
   initCharts();
   applyFilter();
   document.getElementById('mainContent').style.display = 'flex';
-  const isLight = document.body.classList.contains('light');
-  applyChartTheme(isLight);
+  applyChartTheme(document.body.classList.contains('light'));
 }
 
 // ── INIT SLICERS ──
 function initSlicers(){
+  const scopes = [...new Set(rawKPI.map(d => d.scope))].filter(Boolean).sort();
+  const slScope = document.getElementById('sl-scope');
+  scopes.forEach(s => { const o = document.createElement('option'); o.value=s; o.textContent=s; slScope.appendChild(o); });
+
   const nops = [...new Set(rawKPI.map(d => d.NOP))].sort();
   const slNOP = document.getElementById('sl-nop');
   nops.forEach(n => { const o = document.createElement('option'); o.value=n; o.textContent=n; slNOP.appendChild(o); });
@@ -374,110 +474,104 @@ function initSlicers(){
 
 // ── INIT CHARTS ──
 function initCharts(){
-  charts.trend    = echarts.init(document.getElementById('chartTrend'));
-  charts.sla      = echarts.init(document.getElementById('chartSLA'));
-  charts.severity = echarts.init(document.getElementById('chartSeverity'));
-  charts.heatmap  = echarts.init(document.getElementById('chartHeatmap'));
-  charts.nop      = echarts.init(document.getElementById('chartNOP'));
-  charts.sevSLA   = echarts.init(document.getElementById('chartSevSLA'));
+  charts.trend      = echarts.init(document.getElementById('chartTrend'));
+  charts.sla        = echarts.init(document.getElementById('chartSLA'));
+  charts.mttr       = echarts.init(document.getElementById('chartMTTR'));
+  charts.visitation = echarts.init(document.getElementById('chartVisitation'));
 }
 
 // ── APPLY FILTER ──
 function applyFilter(){
+  const selScope = document.getElementById('sl-scope').value;
   const selNOP   = document.getElementById('sl-nop').value;
   const selMonth = document.getElementById('sl-month').value;
   const selType  = document.getElementById('sl-type').value;
 
-  let filt = rawKPI;
+  // Base filter: constrain severity to Critical, Major, Minor, Low
+  const SEV_SET = new Set(SEV_ORDER);
+  let filt = rawKPI.filter(d => SEV_SET.has(d.severity));
+  if(selScope !== 'all') filt = filt.filter(d => d.scope === selScope);
   if(selNOP   !== 'all') filt = filt.filter(d => d.NOP === selNOP);
   if(selMonth !== 'all') filt = filt.filter(d => d.monthNum == selMonth);
   if(selType  !== 'all') filt = filt.filter(d => d.typeTicket === selType);
 
-  // Aggregate KPI
-  let totTicket=0, totManRes=0, totTakeover=0, totVisit=0, inSLASum=0;
+  // Aggregate KPIs
+  let totTickets=0,totClosed=0,totOpen=0,totTakeover=0,totVisit=0,totManRes=0,totInSLA=0,totOutSLA=0;
+  let mttrIncSum=0,mttrIncW=0,mttrEvtSum=0,mttrEvtW=0;
   filt.forEach(d => {
-    totTicket   += d.totalTicket;
-    totManRes   += d.totalManRes;
-    totTakeover += d.totalTakeover;
-    totVisit    += d.totalVisit;
-    inSLASum    += d.totalTicket * d.pctInSLA / 100;
+    totTickets   += d.ticketsTotal;
+    totClosed    += d.ticketsClosed;
+    totOpen      += d.ticketsOpen;
+    totTakeover  += d.takeoverCount;
+    totVisit     += d.visitCount;
+    totManRes    += d.manualResolved;
+    totInSLA     += d.ticketsInSLA;
+    totOutSLA    += d.ticketsOutSLA;
+    if(d.typeTicket === 'Incident' && d.ticketsTotal > 0){ mttrIncSum += d.mttrP90 * d.ticketsTotal; mttrIncW += d.ticketsTotal; }
+    if(d.typeTicket === 'Event'    && d.ticketsTotal > 0){ mttrEvtSum += d.mttrP90 * d.ticketsTotal; mttrEvtW += d.ticketsTotal; }
   });
-  const pctManRes = totTicket   ? (totManRes  / totTicket   * 100) : 0;
-  const pctVisit  = totTakeover ? (totVisit   / totTakeover * 100) : 0;
-  const pctInSLA  = totTicket   ? (inSLASum   / totTicket   * 100) : 0;
-  const pctOutSLA = 100 - pctInSLA;
-  const inSLACount  = inSLASum;
-  const outSLACount = totTicket - inSLASum;
 
-  updateKPI({ totTicket, pctManRes, pctVisit, pctInSLA, pctOutSLA });
+  const closeRate   = totTickets   ? totClosed   / totTickets   * 100 : 0;
+  const pctInSLA    = totTickets   ? totInSLA    / totTickets   * 100 : 0;
+  const tkoRate     = totTickets   ? totTakeover / totTickets   * 100 : 0;
+  const visitPct    = totTakeover  ? totVisit    / totTakeover  * 100 : 0;
+  const pctManRes   = totTickets   ? totManRes   / totTickets   * 100 : 0;
+  const mttrInc     = mttrIncW     ? mttrIncSum  / mttrIncW          : 0;
+  const mttrEvt     = mttrEvtW     ? mttrEvtSum  / mttrEvtW          : 0;
+
+  // Update KPI cards
+  document.getElementById('kpi-total').textContent      = fmt(totTickets);
+  document.getElementById('kpi-closed').textContent     = fmt(totClosed);
+  document.getElementById('kpi-close-rate').textContent = fmtPct(closeRate);
+  document.getElementById('kpi-open').textContent       = fmt(totOpen);
+  document.getElementById('kpi-insla').textContent      = fmtPct(pctInSLA);
+  document.getElementById('kpi-insla-cnt').textContent  = fmt(totInSLA);
+  document.getElementById('kpi-outsla-cnt').textContent = fmt(totOutSLA);
+  document.getElementById('kpi-tko-rate').textContent   = fmtPct(tkoRate);
+  document.getElementById('kpi-tko-cnt').textContent    = fmt(totTakeover);
+  document.getElementById('kpi-visitation').textContent = fmtPct(visitPct);
+  document.getElementById('kpi-manres').textContent     = fmtPct(pctManRes);
+  document.getElementById('kpi-manres-cnt').textContent = fmt(totManRes);
+  document.getElementById('kpi-mttr-inc').textContent   = mttrInc > 0 ? mttrInc.toFixed(2) : '—';
+  document.getElementById('kpi-mttr-evt').textContent   = mttrEvt > 0 ? mttrEvt.toFixed(2) : '—';
+
+  // Header badges
+  document.getElementById('hdr-nop').textContent = selNOP === 'all' ? '🏢 All NOP' : '🏢 '+selNOP.replace('NOP ','');
+  document.getElementById('hdr-period').textContent = selMonth === 'all' ? '📅 2026' : '📅 '+(document.getElementById('sl-month').selectedOptions[0]?.text||'2026');
+
   renderTrend(filt);
-  renderSLA(inSLACount, outSLACount, pctInSLA);
-  renderSeverity(filt);
-  renderHeatmap(filt);
-  renderNOP(filt);
-  renderSevSLA(filt);
-  updateTable(filt);
-
-  // badges
-  document.getElementById('hdr-nop').textContent   = selNOP==='all' ? '🏢 All NOP' : '🏢 '+selNOP;
-  document.getElementById('trend-badge').textContent = selNOP==='all' ? 'All NOP' : selNOP.replace('NOP ','');
-  document.getElementById('sev-badge').textContent   = selType==='all' ? 'Event vs Incident' : selType;
-  document.getElementById('nop-compare-badge').textContent = selMonth==='all' ? 'All Period' : (document.getElementById('sl-month').selectedOptions[0]?.text||'');
-  document.getElementById('sevsla-badge').textContent = selType==='all' ? 'All Type' : selType;
-}
-
-function animateBar(id, pct){
-  setTimeout(() => { document.getElementById(id).style.width = Math.min(pct,100)+'%'; }, 100);
-}
-
-// ── UPDATE KPI ──
-function updateKPI({totTicket, pctManRes, pctVisit, pctInSLA, pctOutSLA}){
-  document.getElementById('kpi-ticket').textContent  = fmt(totTicket);
-  document.getElementById('kpi-manres').textContent  = pctManRes.toFixed(1)+'%';
-  document.getElementById('kpi-visit').textContent   = pctVisit.toFixed(1)+'%';
-  document.getElementById('kpi-insla').textContent   = pctInSLA.toFixed(1)+'%';
-  document.getElementById('kpi-outsla').textContent  = pctOutSLA.toFixed(1)+'%';
-
-  animateBar('bar-ticket',  grandTotal ? totTicket/grandTotal*100 : 100);
-  animateBar('bar-manres',  pctManRes);
-  animateBar('bar-visit',   pctVisit);
-  animateBar('bar-insla',   pctInSLA);
-  animateBar('bar-outsla',  pctOutSLA);
-
-  document.getElementById('tr-ticket' ).textContent = fmt(grandTotal)+' Grand Total';
-  document.getElementById('tr-manres' ).textContent = fmt(totTicket)+' ticket';
-  document.getElementById('tr-visit'  ).textContent = 'dr Takeover';
-  document.getElementById('tr-insla'  ).textContent = pctOutSLA.toFixed(1)+'% OUT';
-  document.getElementById('tr-outsla' ).textContent = pctInSLA.toFixed(1)+'% IN';
+  renderSLA(totInSLA, totOutSLA, pctInSLA);
+  renderMTTR(filt);
+  renderVisitation(filt);
+  renderScopeTable(filt);
 }
 
 // ── TREND ──
 function renderTrend(data){
-  const byMonth={};
+  const byM = {};
   data.forEach(d => {
-    const k=d.monthNum;
-    if(!byMonth[k]) byMonth[k]={name:d.monthName,num:k,ticket:0,takeover:0,visit:0,backup:0};
-    byMonth[k].ticket   += d.totalTicket;
-    byMonth[k].takeover += d.totalTakeover;
-    byMonth[k].visit    += d.totalVisit;
-    byMonth[k].backup   += d.totalBackup;
+    const k = d.monthNum;
+    if(!byM[k]) byM[k] = {name:d.monthName, num:k, total:0, closed:0, open:0};
+    byM[k].total  += d.ticketsTotal;
+    byM[k].closed += d.ticketsClosed;
+    byM[k].open   += d.ticketsOpen;
   });
-  const months = Object.values(byMonth).sort((a,b)=>a.num-b.num);
-  const mk=(name,key,color,area)=>({
+  const months = Object.values(byM).sort((a,b) => a.num - b.num);
+  if(!months.length){ charts.trend.clear(); return; }
+  const mk = (name, key, color, area) => ({
     name, type:'line', data:months.map(m=>m[key]),
-    smooth:true, symbol:'circle', symbolSize:7,
+    smooth:true, symbol:'circle', symbolSize:6,
     lineStyle:{width:area?3:2,color}, itemStyle:{color},
-    ...(area?{areaStyle:{color:{type:'linear',x:0,y:0,x2:0,y2:1,
-      colorStops:[{offset:0,color:color+'44'},{offset:1,color:color+'00'}]}}}:{})
+    ...(area?{areaStyle:{color:{type:'linear',x:0,y:0,x2:0,y2:1,colorStops:[{offset:0,color:color+'44'},{offset:1,color:color+'00'}]}}}:{})
   });
   charts.trend.setOption({
     backgroundColor:'transparent',
-    tooltip:{trigger:'axis',backgroundColor:'#13162a',borderColor:'#232640',textStyle:{color:'#e8eaf6'},extraCssText:'border-radius:10px;padding:12px 16px;'},
-    legend:{data:['Ticket','Takeover','Visit','Backup'],textStyle:{color:'#6b7280'},bottom:0,icon:'circle',itemWidth:8},
-    grid:{top:10,bottom:36,left:55,right:16},
+    tooltip:{trigger:'axis',backgroundColor:'#13162a',borderColor:'#232640',textStyle:{color:'#e8eaf6'},extraCssText:'border-radius:10px;padding:10px 14px;'},
+    legend:{data:['Total','Closed','Open'],textStyle:{color:'#6b7280'},bottom:0,icon:'circle',itemWidth:8},
+    grid:{top:8,bottom:34,left:50,right:14},
     xAxis:{type:'category',data:months.map(m=>m.name),axisLine:{lineStyle:{color:'#232640'}},axisTick:{show:false},axisLabel:{color:'#6b7280',fontSize:11}},
     yAxis:{type:'value',splitLine:{lineStyle:{color:'#1a1d2e',type:'dashed'}},axisLabel:{color:'#6b7280',fontSize:11}},
-    series:[mk('Ticket','ticket','#0078D4',true),mk('Takeover','takeover','#f7c948',false),mk('Visit','visit','#00c96e',false),mk('Backup','backup','#ff4d4d',false)]
+    series:[mk('Total','total','#0078D4',true),mk('Closed','closed','#00c96e',false),mk('Open','open','#ff4d4d',false)]
   });
 }
 
@@ -485,188 +579,120 @@ function renderTrend(data){
 function renderSLA(inSLA, outSLA, pctIn){
   charts.sla.setOption({
     backgroundColor:'transparent',
-    tooltip:{trigger:'item',backgroundColor:'#13162a',borderColor:'#232640',textStyle:{color:'#e8eaf6'},formatter:'{b}<br/>{c:.0f} ticket ({d}%)',extraCssText:'border-radius:10px;'},
+    tooltip:{trigger:'item',backgroundColor:'#13162a',borderColor:'#232640',textStyle:{color:'#e8eaf6'},formatter:'{b}: {c} ({d}%)',extraCssText:'border-radius:10px;'},
     legend:{bottom:0,textStyle:{color:'#6b7280'},icon:'circle',itemWidth:8},
-    series:[{type:'pie',radius:['48%','72%'],center:['50%','44%'],avoidLabelOverlap:false,
+    series:[{type:'pie',radius:['46%','70%'],center:['50%','44%'],avoidLabelOverlap:false,
       itemStyle:{borderRadius:8,borderColor:'#0d0f1a',borderWidth:3},
       label:{show:true,formatter:'{d}%',color:'#e8eaf6',fontSize:12,fontWeight:'bold'},
       labelLine:{lineStyle:{color:'#444'}},
       data:[
-        {value:Math.round(inSLA), name:'IN SLA',  itemStyle:{color:{type:'linear',x:0,y:0,x2:1,y2:1,colorStops:[{offset:0,color:'#00c96e'},{offset:1,color:'#00875a'}]}}},
-        {value:Math.round(outSLA),name:'OUT SLA', itemStyle:{color:{type:'linear',x:0,y:0,x2:1,y2:1,colorStops:[{offset:0,color:'#ff4d4d'},{offset:1,color:'#cc0000'}]}}}
+        {value:Math.round(inSLA), name:'In SLA',  itemStyle:{color:{type:'linear',x:0,y:0,x2:1,y2:1,colorStops:[{offset:0,color:'#00c96e'},{offset:1,color:'#00875a'}]}}},
+        {value:Math.round(outSLA),name:'Out SLA', itemStyle:{color:{type:'linear',x:0,y:0,x2:1,y2:1,colorStops:[{offset:0,color:'#ff4d4d'},{offset:1,color:'#cc0000'}]}}}
       ]
     }]
   });
-  document.getElementById('sla-badge').textContent = pctIn.toFixed(1)+'% IN SLA';
+  document.getElementById('sla-badge').textContent = pctIn.toFixed(1)+'% In SLA';
 }
 
-// ── SEVERITY (grouped bar: Event vs Incident) ──
-function renderSeverity(data){
-  const SEV_ORDER = ['Critical','Major','Minor','Low','High','Medium'];
-  const SEV_COLOR = {Critical:'#ff4d4d',Major:'#f7c948',Minor:'#0078D4',Low:'#00c96e',High:'#ff8c00',Medium:'#a259ff'};
-  const byS={};
+// ── MTTR P90 by Severity ──
+function renderMTTR(data){
+  const agg = {};
+  SEV_ORDER.forEach(s => agg[s] = {inc:{sum:0,w:0}, evt:{sum:0,w:0}});
   data.forEach(d => {
-    const s=d.severity;
-    if(!SEV_ORDER.includes(s)) return;
-    if(!byS[s]) byS[s]={Event:0,Incident:0};
-    byS[s][d.typeTicket] = (byS[s][d.typeTicket]||0) + d.totalTicket;
+    const s = d.severity;
+    if(!agg[s] || d.ticketsTotal <= 0) return;
+    if(d.typeTicket === 'Incident'){ agg[s].inc.sum += d.mttrP90*d.ticketsTotal; agg[s].inc.w += d.ticketsTotal; }
+    if(d.typeTicket === 'Event')   { agg[s].evt.sum += d.mttrP90*d.ticketsTotal; agg[s].evt.w += d.ticketsTotal; }
   });
-  const sevs = SEV_ORDER.filter(s => byS[s]);
-  const eventData   = sevs.map(s=>({value:byS[s].Event||0,   itemStyle:{color:SEV_COLOR[s]}}));
-  const incidentData= sevs.map(s=>({value:byS[s].Incident||0,itemStyle:{color:SEV_COLOR[s]+'99'}}));
-  charts.severity.setOption({
+  const sevs = SEV_ORDER.filter(s => agg[s].inc.w > 0 || agg[s].evt.w > 0);
+  if(!sevs.length){ charts.mttr.clear(); return; }
+  const incData = sevs.map(s => +(agg[s].inc.w ? agg[s].inc.sum/agg[s].inc.w : 0).toFixed(2));
+  const evtData = sevs.map(s => +(agg[s].evt.w ? agg[s].evt.sum/agg[s].evt.w : 0).toFixed(2));
+  charts.mttr.setOption({
+    backgroundColor:'transparent',
+    tooltip:{trigger:'axis',backgroundColor:'#13162a',borderColor:'#232640',textStyle:{color:'#e8eaf6'},axisPointer:{type:'shadow'},extraCssText:'border-radius:10px;',
+      formatter:p=>{let s=p[0].axisValueLabel+'<br/>';p.forEach(i=>{if(i.value>0)s+=`${i.marker}${i.seriesName}: <b>${i.value}h</b><br/>`;});return s;}},
+    legend:{data:['Incident','Event'],textStyle:{color:'#6b7280'},bottom:0,icon:'circle',itemWidth:8},
+    grid:{top:8,bottom:34,left:14,right:14},
+    xAxis:{type:'category',data:sevs,axisLine:{lineStyle:{color:'#232640'}},axisTick:{show:false},axisLabel:{color:'#6b7280',fontSize:11}},
+    yAxis:{type:'value',splitLine:{lineStyle:{color:'#1a1d2e',type:'dashed'}},axisLabel:{color:'#6b7280',fontSize:10,formatter:'{value}h'}},
+    series:[
+      {name:'Incident',type:'bar',barMaxWidth:20,data:incData.map((v,i)=>({value:v,itemStyle:{color:SEV_COLOR[sevs[i]]}})),label:{show:true,position:'top',color:'#aaa',fontSize:10,formatter:p=>p.value>0?p.value+'h':''}},
+      {name:'Event',   type:'bar',barMaxWidth:20,data:evtData.map((v,i)=>({value:v,itemStyle:{color:SEV_COLOR[sevs[i]]+'88'}})),label:{show:true,position:'top',color:'#aaa',fontSize:10,formatter:p=>p.value>0?p.value+'h':''}}
+    ]
+  });
+}
+
+// ── % Visitation by Severity ──
+function renderVisitation(data){
+  const agg = {};
+  SEV_ORDER.forEach(s => agg[s] = {inc:{v:0,t:0}, evt:{v:0,t:0}});
+  data.forEach(d => {
+    const s = d.severity;
+    if(!agg[s]) return;
+    if(d.typeTicket === 'Incident'){ agg[s].inc.v += d.visitCount; agg[s].inc.t += d.takeoverCount; }
+    if(d.typeTicket === 'Event')   { agg[s].evt.v += d.visitCount; agg[s].evt.t += d.takeoverCount; }
+  });
+  const sevs = SEV_ORDER.filter(s => agg[s].inc.t > 0 || agg[s].evt.t > 0);
+  if(!sevs.length){ charts.visitation.clear(); return; }
+  const incData = sevs.map(s => +(agg[s].inc.t ? agg[s].inc.v/agg[s].inc.t*100 : 0).toFixed(1));
+  const evtData = sevs.map(s => +(agg[s].evt.t ? agg[s].evt.v/agg[s].evt.t*100 : 0).toFixed(1));
+  charts.visitation.setOption({
     backgroundColor:'transparent',
     tooltip:{trigger:'axis',backgroundColor:'#13162a',borderColor:'#232640',textStyle:{color:'#e8eaf6'},axisPointer:{type:'shadow'},extraCssText:'border-radius:10px;'},
-    legend:{data:['Event','Incident'],textStyle:{color:'#6b7280'},bottom:0,icon:'circle',itemWidth:8},
-    grid:{top:8,bottom:36,left:80,right:70},
-    xAxis:{type:'value',splitLine:{lineStyle:{color:'#1a1d2e',type:'dashed'}},axisLabel:{color:'#6b7280',fontSize:11}},
-    yAxis:{type:'category',data:sevs,axisLabel:{color:'#ccc',fontSize:11},axisLine:{lineStyle:{color:'#232640'}},axisTick:{show:false}},
-    series:[
-      {name:'Event',   type:'bar',barMaxWidth:16,data:eventData,   label:{show:true,position:'right',color:'#aaa',fontSize:10,formatter:p=>p.value>0?p.value.toLocaleString('id-ID'):''}},
-      {name:'Incident',type:'bar',barMaxWidth:16,data:incidentData,label:{show:true,position:'right',color:'#aaa',fontSize:10,formatter:p=>p.value>0?p.value.toLocaleString('id-ID'):''}}
-    ]
-  });
-}
-
-// ── HEATMAP SLA ──
-function renderHeatmap(data){
-  const monthMap=new Map();
-  data.forEach(d=>{ if(!monthMap.has(d.monthNum)) monthMap.set(d.monthNum,d.monthName); });
-  const months=[...monthMap.entries()].sort((a,b)=>a[0]-b[0]);
-  const monthNames=months.map(m=>m[1]);
-  const nops=[...new Set(data.map(d=>d.NOP))].sort();
-
-  const agg={};
-  data.forEach(d => {
-    const nk=d.NOP; const mk=d.monthNum;
-    if(!agg[nk]) agg[nk]={};
-    if(!agg[nk][mk]) agg[nk][mk]={t:0,inSLA:0};
-    agg[nk][mk].t    += d.totalTicket;
-    agg[nk][mk].inSLA += d.totalTicket * d.pctInSLA / 100;
-  });
-
-  const heatData=[];
-  nops.forEach((nop,ni)=>{
-    months.forEach(([mNum],mi)=>{
-      const e=agg[nop]?.[mNum];
-      if(e && e.t>0) heatData.push([mi,ni,+(e.inSLA/e.t*100).toFixed(1)]);
-    });
-  });
-
-  charts.heatmap.setOption({
-    backgroundColor:'transparent',
-    tooltip:{position:'top',formatter:p=>`<b>${nops[p.value[1]]?.replace('NOP ','')}</b> — ${monthNames[p.value[0]]}<br/>% IN SLA: <b>${p.value[2]}%</b>`,backgroundColor:'#13162a',borderColor:'#232640',textStyle:{color:'#e8eaf6'},extraCssText:'border-radius:10px;'},
-    grid:{top:10,bottom:40,left:100,right:80},
-    xAxis:{type:'category',data:monthNames,splitArea:{show:true},axisLabel:{color:'#6b7280',fontSize:11},axisLine:{lineStyle:{color:'#232640'}}},
-    yAxis:{type:'category',data:nops.map(n=>n.replace('NOP ','')),splitArea:{show:true},axisLabel:{color:'#6b7280',fontSize:11},axisLine:{lineStyle:{color:'#232640'}}},
-    visualMap:{min:0,max:100,calculable:true,orient:'horizontal',right:0,bottom:0,
-      inRange:{color:['#ff4d4d','#f7c948','#00c96e']},
-      textStyle:{color:'#6b7280',fontSize:10}},
-    series:[{type:'heatmap',data:heatData,
-      label:{show:true,formatter:p=>p.value[2]+'%',fontSize:10,color:'#fff',fontWeight:'bold'},
-      emphasis:{itemStyle:{shadowBlur:10,shadowColor:'rgba(0,0,0,0.5)'}},
-      itemStyle:{borderRadius:2}
-    }]
-  });
-}
-
-// ── NOP GROUPED BAR ──
-function renderNOP(data){
-  const byNOP={};
-  data.forEach(d=>{
-    const n=d.NOP;
-    if(!byNOP[n]) byNOP[n]={ticket:0,takeover:0,visit:0,backup:0};
-    byNOP[n].ticket   += d.totalTicket;
-    byNOP[n].takeover += d.totalTakeover;
-    byNOP[n].visit    += d.totalVisit;
-    byNOP[n].backup   += d.totalBackup;
-  });
-  const nops=Object.keys(byNOP).sort();
-  charts.nop.setOption({
-    backgroundColor:'transparent',
-    tooltip:{trigger:'axis',backgroundColor:'#13162a',borderColor:'#232640',textStyle:{color:'#e8eaf6'},extraCssText:'border-radius:10px;padding:12px 16px;'},
-    legend:{data:['Ticket','Takeover','Visit','Backup'],textStyle:{color:'#6b7280'},bottom:0,icon:'circle',itemWidth:8},
-    grid:{top:10,bottom:36,left:55,right:16},
-    xAxis:{type:'category',data:nops.map(n=>n.replace('NOP ','')),axisLine:{lineStyle:{color:'#232640'}},axisTick:{show:false},axisLabel:{color:'#6b7280',fontSize:11}},
-    yAxis:{type:'value',splitLine:{lineStyle:{color:'#1a1d2e',type:'dashed'}},axisLabel:{color:'#6b7280',fontSize:11}},
-    series:[
-      {name:'Ticket',  type:'bar',barMaxWidth:14,data:nops.map(n=>byNOP[n].ticket),  itemStyle:{color:'#0078D4',borderRadius:[4,4,0,0]}},
-      {name:'Takeover',type:'bar',barMaxWidth:14,data:nops.map(n=>byNOP[n].takeover),itemStyle:{color:'#f7c948',borderRadius:[4,4,0,0]}},
-      {name:'Visit',   type:'bar',barMaxWidth:14,data:nops.map(n=>byNOP[n].visit),   itemStyle:{color:'#00c96e',borderRadius:[4,4,0,0]}},
-      {name:'Backup',  type:'bar',barMaxWidth:14,data:nops.map(n=>byNOP[n].backup),  itemStyle:{color:'#ff4d4d',borderRadius:[4,4,0,0]}}
-    ]
-  });
-}
-
-// ── % IN SLA per Severity ──
-function renderSevSLA(data){
-  const SEV_ORDER=['Critical','Major','Minor','Low','High','Medium'];
-  const SEV_COLOR={Critical:'#ff4d4d',Major:'#f7c948',Minor:'#0078D4',Low:'#00c96e',High:'#ff8c00',Medium:'#a259ff'};
-  const agg={};
-  data.forEach(d=>{
-    const s=d.severity;
-    if(!SEV_ORDER.includes(s)) return;
-    if(!agg[s]) agg[s]={t:0,inSLA:0};
-    agg[s].t    += d.totalTicket;
-    agg[s].inSLA += d.totalTicket * d.pctInSLA / 100;
-  });
-  const sevs=SEV_ORDER.filter(s=>agg[s]&&agg[s].t>0);
-  const vals=sevs.map(s=>+(agg[s].inSLA/agg[s].t*100).toFixed(1));
-  charts.sevSLA.setOption({
-    backgroundColor:'transparent',
-    tooltip:{trigger:'axis',backgroundColor:'#13162a',borderColor:'#232640',textStyle:{color:'#e8eaf6'},extraCssText:'border-radius:10px;'},
-    grid:{top:30,bottom:36,left:55,right:16},
+    legend:{data:['Incident','Event'],textStyle:{color:'#6b7280'},bottom:0,icon:'circle',itemWidth:8},
+    grid:{top:8,bottom:34,left:14,right:14},
     xAxis:{type:'category',data:sevs,axisLine:{lineStyle:{color:'#232640'}},axisTick:{show:false},axisLabel:{color:'#6b7280',fontSize:11}},
-    yAxis:{type:'value',min:0,max:100,splitLine:{lineStyle:{color:'#1a1d2e',type:'dashed'}},axisLabel:{color:'#6b7280',fontSize:11,formatter:'{value}%'}},
-    series:[{
-      type:'bar',barMaxWidth:40,
-      data:sevs.map((s,i)=>({value:vals[i],itemStyle:{color:SEV_COLOR[s],borderRadius:[6,6,0,0]}})),
-      label:{show:true,position:'top',color:'#aaa',fontSize:11,formatter:p=>p.value+'%'}
-    }]
+    yAxis:{type:'value',min:0,max:100,splitLine:{lineStyle:{color:'#1a1d2e',type:'dashed'}},axisLabel:{color:'#6b7280',fontSize:10,formatter:'{value}%'}},
+    series:[
+      {name:'Incident',type:'bar',barMaxWidth:20,data:incData.map((v,i)=>({value:v,itemStyle:{color:SEV_COLOR[sevs[i]]}})),label:{show:true,position:'top',color:'#aaa',fontSize:10,formatter:p=>p.value>0?p.value+'%':''}},
+      {name:'Event',   type:'bar',barMaxWidth:20,data:evtData.map((v,i)=>({value:v,itemStyle:{color:SEV_COLOR[sevs[i]]+'88'}})),label:{show:true,position:'top',color:'#aaa',fontSize:10,formatter:p=>p.value>0?p.value+'%':''}}
+    ]
   });
 }
 
-// ── TABLE ──
-function updateTable(data){
-  // aggregate by NOP
-  const byNOP={};
-  data.forEach(d=>{
-    const n=d.NOP;
-    if(!byNOP[n]) byNOP[n]={nop:n,ticket:0,takeover:0,visit:0,backup:0,manRes:0,inSLA:0};
-    byNOP[n].ticket   += d.totalTicket;
-    byNOP[n].takeover += d.totalTakeover;
-    byNOP[n].visit    += d.totalVisit;
-    byNOP[n].backup   += d.totalBackup;
-    byNOP[n].manRes   += d.totalManRes;
-    byNOP[n].inSLA    += d.totalTicket * d.pctInSLA / 100;
+// ── SCOPE TABLE ──
+function renderScopeTable(data){
+  const agg = {};
+  data.forEach(d => {
+    const s = d.scope;
+    if(!s) return;
+    if(!agg[s]) agg[s] = {scope:s,tickets:0,closed:0,inSLA:0,takeover:0,visit:0,mttrIncS:0,mttrIncW:0,mttrEvtS:0,mttrEvtW:0};
+    agg[s].tickets  += d.ticketsTotal;
+    agg[s].closed   += d.ticketsClosed;
+    agg[s].inSLA    += d.ticketsInSLA;
+    agg[s].takeover += d.takeoverCount;
+    agg[s].visit    += d.visitCount;
+    if(d.typeTicket==='Incident'&&d.ticketsTotal>0){agg[s].mttrIncS+=d.mttrP90*d.ticketsTotal;agg[s].mttrIncW+=d.ticketsTotal;}
+    if(d.typeTicket==='Event'   &&d.ticketsTotal>0){agg[s].mttrEvtS+=d.mttrP90*d.ticketsTotal;agg[s].mttrEvtW+=d.ticketsTotal;}
   });
-  const rows=Object.values(byNOP).sort((a,b)=>a.nop.localeCompare(b.nop));
-  const tbody=document.getElementById('nop-tbody');
-  tbody.innerHTML=rows.map(r=>{
-    const pctManRes  = r.ticket   ? (r.manRes/r.ticket*100)    : 0;
-    const pctVisit   = r.takeover ? (r.visit/r.takeover*100)   : 0;
-    const pctIn      = r.ticket   ? (r.inSLA/r.ticket*100)     : 0;
-    const pctOut     = 100-pctIn;
-    const pc=pctIn>=95?'pill-green':pctIn>=90?'pill-blue':pctIn>=85?'pill-yellow':'pill-red';
+  const rows = Object.values(agg).filter(r=>r.tickets>0).sort((a,b)=>b.tickets-a.tickets).slice(0,5);
+  document.getElementById('scope-count').textContent = rows.length + ' Scopes';
+  if(!rows.length){ document.getElementById('scope-tbody').innerHTML = '<tr><td colspan="8" class="empty-state">No data for selected filters</td></tr>'; return; }
+  const pc = v => v>=95?'pill-green':v>=90?'pill-blue':v>=80?'pill-yellow':'pill-red';
+  document.getElementById('scope-tbody').innerHTML = rows.map(r => {
+    const closeRate = r.tickets  ? r.closed  /r.tickets  *100 : 0;
+    const pctInSLA  = r.tickets  ? r.inSLA   /r.tickets  *100 : 0;
+    const tkoRate   = r.tickets  ? r.takeover/r.tickets  *100 : 0;
+    const visitPct  = r.takeover ? r.visit   /r.takeover *100 : 0;
+    const mttrInc   = r.mttrIncW ? r.mttrIncS/r.mttrIncW      : 0;
+    const mttrEvt   = r.mttrEvtW ? r.mttrEvtS/r.mttrEvtW      : 0;
     return `<tr>
-      <td><strong>${r.nop}</strong></td>
-      <td>${fmt(r.ticket)}</td>
-      <td>${fmt(r.takeover)}</td>
-      <td>${fmt(r.visit)}</td>
-      <td>${fmt(r.backup)}</td>
-      <td>${pctManRes.toFixed(1)}%</td>
-      <td>${pctVisit.toFixed(1)}%</td>
-      <td><span class="pill ${pc}">${pctIn.toFixed(1)}%</span></td>
-      <td style="color:var(--red);">${pctOut.toFixed(1)}%</td>
+      <td><strong>${r.scope}</strong></td>
+      <td>${fmt(r.tickets)}</td>
+      <td>${closeRate.toFixed(1)}%</td>
+      <td><span class="pill ${pc(pctInSLA)}">${pctInSLA.toFixed(1)}%</span></td>
+      <td>${tkoRate.toFixed(1)}%</td>
+      <td>${visitPct.toFixed(1)}%</td>
+      <td>${mttrInc>0?mttrInc.toFixed(2)+'h':'—'}</td>
+      <td>${mttrEvt>0?mttrEvt.toFixed(2)+'h':'—'}</td>
     </tr>`;
   }).join('');
 }
 
 // ── RESET ──
 function resetFilter(){
-  document.getElementById('sl-nop').value   = 'all';
-  document.getElementById('sl-month').value = 'all';
-  document.getElementById('sl-type').value  = 'all';
+  ['sl-scope','sl-nop','sl-month','sl-type'].forEach(id => document.getElementById(id).value = 'all');
   applyFilter();
 }
 

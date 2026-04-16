@@ -1,84 +1,122 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>SWFM Dashboard — Performance PIC</title>
+<title>SWFM Dashboard — PIC Performance</title>
 <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{
-  --bg-main:#0d0f1a; --bg-card:#13162a; --bg-card2:#1a1d2e;
-  --border:#232640; --blue:#0078D4; --green:#00c96e;
-  --yellow:#f7c948; --red:#ff4d4d; --purple:#a259ff;
-  --orange:#ff8c00; --text-main:#e8eaf6; --text-muted:#6b7280;
+  --bg-main:#0d0f1a;--bg-card:#13162a;--bg-card2:#1a1d2e;
+  --border:#232640;--blue:#0078D4;--green:#00c96e;
+  --yellow:#f7c948;--red:#ff4d4d;--purple:#a259ff;
+  --orange:#ff8c00;--text-main:#e8eaf6;--text-muted:#6b7280;
+  --sb-w:220px;--sb-cw:60px;
 }
 body.light{
-  --bg-main:#f0f2f8; --bg-card:#ffffff; --bg-card2:#f5f7ff;
-  --border:#dde1f0; --text-main:#111827; --text-muted:#6b7280;
+  --bg-main:#f0f2f8;--bg-card:#ffffff;--bg-card2:#f5f7ff;
+  --border:#dde1f0;--text-main:#111827;--text-muted:#6b7280;
 }
-body{font-family:'Segoe UI',sans-serif;background:var(--bg-main);color:var(--text-main);min-height:100vh;}
-.header{background:linear-gradient(135deg,#0a1628 0%,#0d1f3c 50%,#0a1628 100%);padding:16px 28px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(0,120,212,0.3);position:sticky;top:0;z-index:100;}
-.header-left{display:flex;align-items:center;gap:14px;}
-.logo{width:42px;height:42px;background:linear-gradient(135deg,#a259ff,#0078D4);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#fff;box-shadow:0 4px 15px rgba(162,89,255,0.4);}
-.header-title h1{font-size:18px;font-weight:700;background:linear-gradient(90deg,#fff,#a259ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.header-title p{font-size:11px;color:var(--text-muted);margin-top:2px;}
-.header-right{display:flex;gap:8px;align-items:center;}
-.badge{background:rgba(255,255,255,0.05);border:1px solid var(--border);padding:5px 12px;border-radius:20px;font-size:11px;color:#aaa;}
-.live-badge{background:rgba(0,201,110,0.1);border:1px solid rgba(0,201,110,0.3);padding:5px 12px;border-radius:20px;font-size:11px;color:var(--green);display:flex;align-items:center;gap:6px;}
-.live-dot{width:7px;height:7px;background:var(--green);border-radius:50%;animation:pulse 1.5s infinite;}
+body{font-family:'Segoe UI',sans-serif;background:var(--bg-main);color:var(--text-main);min-height:100vh;display:flex;}
+
+/* ── SIDEBAR ── */
+.sidebar{width:var(--sb-w);min-height:100vh;background:var(--bg-card);border-right:1px solid var(--border);position:fixed;left:0;top:0;z-index:200;transition:width .2s ease;display:flex;flex-direction:column;overflow:hidden;flex-shrink:0;}
+.sidebar.collapsed{width:var(--sb-cw);}
+.sb-header{display:flex;align-items:center;padding:15px 13px;border-bottom:1px solid var(--border);gap:11px;min-height:64px;}
+.sb-toggle{background:none;border:none;color:var(--text-main);cursor:pointer;font-size:18px;padding:4px;flex-shrink:0;line-height:1;transition:color .2s;}
+.sb-toggle:hover{color:var(--blue);}
+.sb-logo{width:32px;height:32px;flex-shrink:0;background:linear-gradient(135deg,#a259ff,#0078D4);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;color:#fff;}
+.sb-title{font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;transition:opacity .15s;opacity:1;}
+.sidebar.collapsed .sb-title{opacity:0;width:0;pointer-events:none;}
+.sb-nav{padding:10px 8px;flex:1;display:flex;flex-direction:column;gap:2px;}
+.nav-link{display:flex;align-items:center;gap:11px;padding:9px 10px;border-radius:10px;color:var(--text-muted);text-decoration:none;font-size:12px;transition:all .2s;white-space:nowrap;overflow:hidden;}
+.nav-link:hover{background:rgba(0,120,212,.1);color:var(--text-main);}
+.nav-link.active{background:rgba(162,89,255,.15);color:var(--purple);}
+.nav-icon{font-size:16px;flex-shrink:0;width:20px;text-align:center;}
+.nav-text{opacity:1;transition:opacity .15s;white-space:nowrap;}
+.sidebar.collapsed .nav-text{opacity:0;width:0;pointer-events:none;}
+.sb-footer{padding:11px 12px;border-top:1px solid var(--border);}
+.theme-btn{display:flex;align-items:center;gap:7px;width:100%;background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--text-main);padding:7px 10px;border-radius:8px;font-size:12px;cursor:pointer;transition:all .2s;white-space:nowrap;overflow:hidden;}
+.theme-btn:hover{background:rgba(255,255,255,.1);}
+.sidebar.collapsed .theme-btn .btn-label{display:none;}
+
+/* ── PAGE WRAPPER ── */
+.page-wrapper{margin-left:var(--sb-w);transition:margin-left .2s ease;min-height:100vh;flex:1;display:flex;flex-direction:column;}
+body.sb-col .page-wrapper{margin-left:var(--sb-cw);}
+
+/* ── HEADER ── */
+.header{background:linear-gradient(135deg,#0a1628 0%,#0d1f3c 50%,#0a1628 100%);padding:13px 22px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(0,120,212,.3);position:sticky;top:0;z-index:100;}
+body.light .header{background:linear-gradient(135deg,#e8edf8 0%,#dce6f5 50%,#e8edf8 100%);}
+.hdr-title h1{font-size:17px;font-weight:700;background:linear-gradient(90deg,#fff,#a259ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+body.light .hdr-title h1{background:linear-gradient(90deg,#111,#a259ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hdr-title p{font-size:11px;color:var(--text-muted);margin-top:2px;}
+.hdr-right{display:flex;gap:7px;align-items:center;}
+.badge{background:rgba(255,255,255,.05);border:1px solid var(--border);padding:4px 10px;border-radius:20px;font-size:11px;color:#aaa;}
+.live-badge{background:rgba(0,201,110,.1);border:1px solid rgba(0,201,110,.3);padding:4px 10px;border-radius:20px;font-size:11px;color:var(--green);display:flex;align-items:center;gap:5px;}
+.live-dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 1.5s infinite;}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(1.5);}}
-.theme-toggle{background:rgba(255,255,255,0.06);border:1px solid var(--border);color:var(--text-main);padding:5px 10px;border-radius:20px;font-size:14px;cursor:pointer;transition:all .2s;}
-.theme-toggle:hover{background:rgba(255,255,255,0.12);}
-.nav-pages{background:var(--bg-main);padding:0 28px;display:flex;gap:4px;border-bottom:1px solid var(--border);}
-.nav-btn{padding:12px 20px;font-size:12px;color:var(--text-muted);cursor:pointer;border:none;background:none;border-bottom:2px solid transparent;transition:all .2s;text-decoration:none;display:flex;align-items:center;gap:6px;}
-.nav-btn:hover{color:var(--text-main);}
-.nav-btn.active{color:var(--blue);border-bottom-color:var(--blue);}
-.slicer-bar{background:rgba(19,22,42,0.98);padding:10px 28px;display:flex;gap:10px;align-items:center;border-bottom:1px solid var(--border);flex-wrap:wrap;position:sticky;top:57px;z-index:99;}
-body.light .slicer-bar{background:rgba(240,242,248,0.98);}
-.slicer-group{display:flex;align-items:center;gap:6px;}
-.slicer-group label{font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.8px;}
-select{background:var(--bg-card2);color:var(--text-main);border:1px solid var(--border);border-radius:8px;padding:5px 24px 5px 10px;font-size:12px;cursor:pointer;outline:none;transition:all .2s;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 6px center;}
-select:hover,select:focus{border-color:var(--blue);box-shadow:0 0 0 2px rgba(0,120,212,.2);}
-.slicer-divider{width:1px;height:24px;background:var(--border);margin:0 4px;}
-.btn-reset{background:rgba(255,77,77,0.1);border:1px solid rgba(255,77,77,0.3);color:var(--red);padding:5px 12px;border-radius:8px;font-size:11px;cursor:pointer;transition:all .2s;}
-.btn-reset:hover{background:rgba(255,77,77,0.2);}
-.sort-group{display:flex;gap:6px;margin-left:auto;flex-wrap:wrap;}
-.sort-btn{background:var(--bg-card2);border:1px solid var(--border);color:var(--text-muted);padding:5px 12px;border-radius:8px;font-size:11px;cursor:pointer;transition:all .2s;}
-.sort-btn.active,.sort-btn:hover{background:rgba(0,120,212,.15);border-color:var(--blue);color:var(--blue);}
-.main{padding:20px 28px;display:flex;flex-direction:column;gap:16px;}
-.kpi-row{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;}
-.kpi-card{background:var(--bg-card);border-radius:14px;padding:16px 18px;border:1px solid var(--border);position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s;}
+.print-btn{background:rgba(162,89,255,.12);border:1px solid rgba(162,89,255,.3);color:var(--purple);padding:5px 11px;border-radius:8px;font-size:11px;cursor:pointer;transition:all .2s;}
+.print-btn:hover{background:rgba(162,89,255,.25);}
+
+/* ── SLICER BAR ── */
+.slicer-bar{background:rgba(19,22,42,.98);padding:8px 22px;display:flex;gap:8px;align-items:center;border-bottom:1px solid var(--border);flex-wrap:wrap;position:sticky;top:51px;z-index:99;}
+body.light .slicer-bar{background:rgba(240,242,248,.98);}
+.sl-group{display:flex;align-items:center;gap:5px;}
+.sl-group label{font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.7px;white-space:nowrap;}
+select{background:var(--bg-card2);color:var(--text-main);border:1px solid var(--border);border-radius:7px;padding:4px 22px 4px 9px;font-size:12px;cursor:pointer;outline:none;transition:border-color .2s;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 5px center;}
+select:hover,select:focus{border-color:var(--purple);}
+.sl-div{width:1px;height:20px;background:var(--border);margin:0 2px;}
+.btn-reset{background:rgba(255,77,77,.1);border:1px solid rgba(255,77,77,.3);color:var(--red);padding:4px 10px;border-radius:7px;font-size:11px;cursor:pointer;transition:all .2s;}
+.btn-reset:hover{background:rgba(255,77,77,.2);}
+.sort-group{display:flex;gap:5px;margin-left:auto;flex-wrap:wrap;}
+.sort-btn{background:var(--bg-card2);border:1px solid var(--border);color:var(--text-muted);padding:4px 10px;border-radius:7px;font-size:11px;cursor:pointer;transition:all .2s;}
+.sort-btn.active,.sort-btn:hover{background:rgba(162,89,255,.15);border-color:var(--purple);color:var(--purple);}
+
+/* ── MAIN ── */
+.main{padding:16px 22px;display:flex;flex-direction:column;gap:13px;}
+
+/* ── KPI CARDS ── */
+.kpi-row{display:grid;grid-template-columns:repeat(6,1fr);gap:11px;}
+.kpi-card{background:var(--bg-card);border-radius:12px;padding:14px 16px;border:1px solid var(--border);position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s;}
 .kpi-card:hover{transform:translateY(-3px);}
-.kpi-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;border-radius:14px 14px 0 0;}
+.kpi-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;border-radius:12px 12px 0 0;}
 .kpi-card.blue::before  {background:var(--blue);}
 .kpi-card.yellow::before{background:var(--yellow);}
 .kpi-card.green::before {background:var(--green);}
 .kpi-card.red::before   {background:var(--red);}
 .kpi-card.purple::before{background:var(--purple);}
 .kpi-card.orange::before{background:var(--orange);}
-.kpi-icon{font-size:22px;margin-bottom:8px;}
-.kpi-value{font-size:24px;font-weight:800;line-height:1;margin-bottom:4px;}
-.kpi-card.blue   .kpi-value{color:#4da6ff;}
-.kpi-card.yellow .kpi-value{color:var(--yellow);}
-.kpi-card.green  .kpi-value{color:var(--green);}
-.kpi-card.red    .kpi-value{color:var(--red);}
-.kpi-card.purple .kpi-value{color:var(--purple);}
-.kpi-card.orange .kpi-value{color:var(--orange);}
-.kpi-label{font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.8px;}
-.kpi-sub{font-size:10px;color:var(--text-muted);margin-top:4px;}
-.chart-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-.chart-card{background:var(--bg-card);border-radius:14px;padding:20px 22px;border:1px solid var(--border);}
-.card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;}
-.card-title{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.8px;font-weight:600;}
-.card-dot{width:8px;height:8px;border-radius:50%;}
-.card-badge{font-size:10px;padding:3px 8px;border-radius:6px;background:rgba(255,255,255,.05);color:var(--text-muted);border:1px solid var(--border);}
-.leaderboard{display:flex;flex-direction:column;gap:6px;max-height:340px;overflow-y:auto;}
+.kpi-icon{font-size:20px;margin-bottom:7px;}
+.kpi-value{font-size:24px;font-weight:800;line-height:1;margin-bottom:3px;}
+.blue   .kpi-value{color:#4da6ff;}
+.yellow .kpi-value{color:var(--yellow);}
+.green  .kpi-value{color:var(--green);}
+.red    .kpi-value{color:var(--red);}
+.purple .kpi-value{color:var(--purple);}
+.orange .kpi-value{color:var(--orange);}
+.kpi-label{font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.7px;}
+.kpi-sub{font-size:10px;color:var(--text-muted);margin-top:3px;}
+
+/* ── CHARTS ── */
+.chart-row{display:grid;grid-template-columns:1fr 1fr;gap:13px;}
+.chart-card{background:var(--bg-card);border-radius:12px;padding:17px 19px;border:1px solid var(--border);}
+.chart-card.full{grid-column:1/-1;}
+.card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:13px;}
+.card-title{display:flex;align-items:center;gap:7px;font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.7px;font-weight:600;}
+.card-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.card-badge{font-size:10px;padding:2px 8px;border-radius:6px;background:rgba(255,255,255,.04);color:var(--text-muted);border:1px solid var(--border);}
+.echart   {width:100%;height:260px;}
+.echart-sm{width:100%;height:220px;}
+.echart-lg{width:100%;height:300px;}
+
+/* ── LEADERBOARD ── */
+.leaderboard{display:flex;flex-direction:column;gap:5px;max-height:300px;overflow-y:auto;}
 .leaderboard::-webkit-scrollbar{width:4px;}
 .leaderboard::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px;}
-.lb-item{display:flex;align-items:center;gap:10px;background:var(--bg-card2);border-radius:10px;padding:8px 12px;border:1px solid var(--border);transition:all .2s;}
-.lb-item:hover{border-color:var(--blue);background:rgba(0,120,212,.08);}
-.lb-rank{width:26px;height:26px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;}
+.lb-item{display:flex;align-items:center;gap:9px;background:var(--bg-card2);border-radius:9px;padding:7px 11px;border:1px solid var(--border);transition:all .2s;}
+.lb-item:hover{border-color:var(--purple);background:rgba(162,89,255,.08);}
+.lb-rank{width:24px;height:24px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0;}
 .rank-1{background:rgba(247,201,72,.2);color:var(--yellow);}
 .rank-2{background:rgba(189,189,189,.15);color:#bdbdbd;}
 .rank-3{background:rgba(205,127,50,.15);color:#cd7f32;}
@@ -88,224 +126,242 @@ select:hover,select:focus{border-color:var(--blue);box-shadow:0 0 0 2px rgba(0,1
 .lb-bar-wrap{flex:1;height:5px;background:var(--border);border-radius:3px;overflow:hidden;min-width:40px;}
 .lb-bar{height:100%;border-radius:3px;transition:width 1s ease;}
 .lb-val{font-size:11px;font-weight:700;min-width:55px;text-align:right;}
-.pic-table-wrap{overflow-x:auto;}
-.pic-table{width:100%;border-collapse:collapse;font-size:11px;}
-.pic-table th{padding:9px 10px;text-align:left;font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.8px;border-bottom:1px solid var(--border);white-space:nowrap;cursor:pointer;transition:color .2s;user-select:none;}
-.pic-table th:hover{color:var(--blue);}
-.pic-table td{padding:7px 10px;border-bottom:1px solid rgba(35,38,64,.5);transition:background .15s;white-space:nowrap;}
-.pic-table tr:hover td{background:rgba(0,120,212,.06);}
-.pic-table tr:last-child td{border-bottom:none;}
+
+/* ── PILLS ── */
 .pill{padding:2px 7px;border-radius:10px;font-size:10px;font-weight:600;}
 .pill-blue  {background:rgba(0,120,212,.15);color:#4da6ff;}
 .pill-green {background:rgba(0,201,110,.15);color:var(--green);}
 .pill-yellow{background:rgba(247,201,72,.15);color:var(--yellow);}
-.pill-red   {background:rgba(255,77,77,.15);color:var(--red);}
-.pill-orange{background:rgba(255,140,0,.15);color:var(--orange);}
-.pill-purple{background:rgba(162,89,255,.15);color:var(--purple);}
-.pill-gray  {background:rgba(107,114,128,.15);color:var(--text-muted);}
-.score-bar-wrap{display:flex;align-items:center;gap:6px;}
-.score-bar-bg{flex:1;height:4px;background:var(--border);border-radius:2px;min-width:50px;}
-.score-bar-fill{height:100%;border-radius:2px;background:var(--purple);transition:width 1s;}
-.echart   {width:100%;height:260px;}
-.echart-md{width:100%;height:220px;}
+.pill-red   {background:rgba(255,77,77,.15); color:var(--red);}
+.pill-orange{background:rgba(255,140,0,.15); color:var(--orange);}
+
+/* ── FOOTER ── */
+.footer{text-align:center;padding:12px;color:var(--text-muted);font-size:11px;border-top:1px solid var(--border);margin-top:4px;}
+
+/* ── RESPONSIVE ── */
 @media(max-width:1400px){.kpi-row{grid-template-columns:repeat(3,1fr);}}
 @media(max-width:1000px){.kpi-row{grid-template-columns:repeat(2,1fr);}.chart-row{grid-template-columns:1fr;}}
-@media(max-width:700px){.main{padding:14px;}}
-.footer{text-align:center;padding:14px;color:var(--text-muted);font-size:11px;border-top:1px solid var(--border);margin-top:4px;}
+@media(max-width:700px){.main{padding:10px;}.kpi-row{grid-template-columns:repeat(2,1fr);}}
+
+/* ── PRINT A4 ── */
+@media print{
+  @page{size:A4 portrait;margin:12mm 15mm;}
+  .sidebar,.slicer-bar,.print-btn,.btn-reset,.sb-footer,.live-badge,.sort-group{display:none!important;}
+  .page-wrapper{margin-left:0!important;}
+  .header{position:static!important;background:#fff!important;border-bottom:1px solid #ccc!important;padding:10px 15px!important;}
+  .hdr-title h1{background:none!important;-webkit-text-fill-color:#000!important;}
+  body{background:#fff!important;color:#000!important;}
+  .main{padding:10px 0!important;}
+  .kpi-card{break-inside:avoid;background:#f8f9fa!important;border:1px solid #ddd!important;}
+  .kpi-value{color:#000!important;}
+  .chart-card{break-inside:avoid;background:#f8f9fa!important;border:1px solid #ddd!important;}
+  .echart,.echart-sm,.echart-lg{height:180px!important;}
+  .kpi-row{grid-template-columns:repeat(3,1fr)!important;}
+  .chart-row{grid-template-columns:1fr 1fr!important;}
+}
 </style>
 </head>
 <body>
 
-<div class="header">
-  <div class="header-left">
-    <div class="logo">P2</div>
-    <div class="header-title">
-      <h1>Performance PIC</h1>
-      <p>Smart Workforce Management — Analisis Kinerja Petugas</p>
-    </div>
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+  <div class="sb-header">
+    <button class="sb-toggle" onclick="toggleSidebar()" title="Toggle Sidebar">☰</button>
+    <div class="sb-logo">P2</div>
+    <div class="sb-title">SWFM</div>
   </div>
-  <div class="header-right">
-    <span class="live-badge"><span class="live-dot"></span>Live Data</span>
-    <span class="badge">📅 2026</span>
-    <span class="badge" id="hdr-nop">🏢 All NOP</span>
-    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">🌙</button>
-  </div>
-</div>
-
-<div class="nav-pages">
-  <a href="index.html" class="nav-btn">📊 Overview &amp; KPI</a>
-  <a href="page2.html" class="nav-btn active">👤 Performance PIC</a>
-  <a href="page3.html" class="nav-btn">🗺️ Peta Sebaran</a>
-</div>
-
-<div class="slicer-bar">
-  <div class="slicer-group">
-    <label>NOP</label>
-    <select id="sl-nop" onchange="applyFilter()">
-      <option value="all">Semua NOP</option>
-    </select>
-  </div>
-  <div class="slicer-divider"></div>
-  <div class="slicer-group">
-    <label>Bulan</label>
-    <select id="sl-month" onchange="applyFilter()">
-      <option value="all">Semua Bulan</option>
-    </select>
-  </div>
-  <div class="slicer-divider"></div>
-  <div class="slicer-group">
-    <label>Tampilkan</label>
-    <select id="sl-top" onchange="applyFilter()">
-      <option value="10">Top 10</option>
-      <option value="20">Top 20</option>
-      <option value="50">Top 50</option>
-      <option value="9999">Semua</option>
-    </select>
-  </div>
-  <div class="slicer-divider"></div>
-  <div class="slicer-group">
-    <label>Min. Takeover</label>
-    <select id="sl-min" onchange="applyFilter()">
-      <option value="0">Semua</option>
-      <option value="50">&ge; 50</option>
-      <option value="100">&ge; 100</option>
-      <option value="200">&ge; 200</option>
-      <option value="500">&ge; 500</option>
-    </select>
-  </div>
-  <div class="slicer-divider"></div>
-  <button class="btn-reset" onclick="resetFilter()">&#8634; Reset</button>
-  <div class="sort-group">
-    <span style="font-size:10px;color:var(--text-muted);margin-right:2px;line-height:28px;">SORT:</span>
-    <button class="sort-btn active" id="sort-takeover"   onclick="setSort('takeover')">Takeover</button>
-    <button class="sort-btn"        id="sort-visit"      onclick="setSort('visit')">Visit</button>
-    <button class="sort-btn"        id="sort-backup"     onclick="setSort('backup')">Backup</button>
-    <button class="sort-btn"        id="sort-score"      onclick="setSort('score')">Score</button>
-    <button class="sort-btn"        id="sort-visitation" onclick="setSort('visitation')">% Visitation</button>
-    <button class="sort-btn"        id="sort-backVis"    onclick="setSort('backVis')">% Backup vs Visit</button>
+  <nav class="sb-nav">
+    <a href="index.html" class="nav-link">
+      <span class="nav-icon">📊</span>
+      <span class="nav-text">Overview &amp; KPI</span>
+    </a>
+    <a href="page2.html" class="nav-link active">
+      <span class="nav-icon">👤</span>
+      <span class="nav-text">PIC Performance</span>
+    </a>
+    <a href="page3.html" class="nav-link">
+      <span class="nav-icon">🏆</span>
+      <span class="nav-text">Score Team</span>
+    </a>
+  </nav>
+  <div class="sb-footer">
+    <button class="theme-btn" id="themeToggle" onclick="toggleTheme()">
+      🌙 <span class="btn-label">Dark Mode</span>
+    </button>
   </div>
 </div>
 
-<div class="main" id="mainContent" style="display:none;">
+<!-- PAGE WRAPPER -->
+<div class="page-wrapper" id="pageWrapper">
 
-  <!-- KPI -->
-  <div class="kpi-row">
-    <div class="kpi-card blue">
-      <div class="kpi-icon">👥</div>
-      <div class="kpi-value" id="kpi-pic">—</div>
-      <div class="kpi-label">Total PIC</div>
-      <div class="kpi-sub">Petugas terfilter</div>
+  <!-- HEADER -->
+  <div class="header">
+    <div class="hdr-title">
+      <h1>PIC Performance</h1>
+      <p>Smart Workforce Management — Field Officer Analytics</p>
     </div>
-    <div class="kpi-card yellow">
-      <div class="kpi-icon">🔄</div>
-      <div class="kpi-value" id="kpi-takeover">—</div>
-      <div class="kpi-label">Total Takeover</div>
-      <div class="kpi-sub">Avg: <span id="avg-takeover">—</span>/PIC</div>
-    </div>
-    <div class="kpi-card green">
-      <div class="kpi-icon">📍</div>
-      <div class="kpi-value" id="kpi-visit">—</div>
-      <div class="kpi-label">Total Visit</div>
-      <div class="kpi-sub">Avg: <span id="avg-visit">—</span>/PIC</div>
-    </div>
-    <div class="kpi-card red">
-      <div class="kpi-icon">🔋</div>
-      <div class="kpi-value" id="kpi-backup">—</div>
-      <div class="kpi-label">Total Backup</div>
-      <div class="kpi-sub">Avg: <span id="avg-backup">—</span>/PIC</div>
-    </div>
-    <div class="kpi-card purple">
-      <div class="kpi-icon">📊</div>
-      <div class="kpi-value" id="kpi-visitation">—</div>
-      <div class="kpi-label">Avg % Visitation</div>
-      <div class="kpi-sub">Visit / Takeover</div>
-    </div>
-    <div class="kpi-card orange">
-      <div class="kpi-icon">🗃️</div>
-      <div class="kpi-value" id="kpi-backvis">—</div>
-      <div class="kpi-label">Avg % Backup vs Visit</div>
-      <div class="kpi-sub">Backup / Visit</div>
+    <div class="hdr-right">
+      <span class="live-badge"><span class="live-dot"></span>Live Data</span>
+      <span class="badge">📅 2026</span>
+      <span class="badge" id="hdr-nop">🏢 All NOP</span>
+      <button class="print-btn" onclick="window.print()">🖨️ Print A4</button>
     </div>
   </div>
 
-  <!-- ROW 1: Leaderboard + Donut NOP -->
-  <div class="chart-row">
-    <div class="chart-card">
-      <div class="card-header">
-        <div class="card-title"><span class="card-dot" style="background:var(--yellow)"></span>🏆 Leaderboard PIC</div>
-        <span class="card-badge" id="lb-badge">Top 10 Takeover</span>
-      </div>
-      <div class="leaderboard" id="leaderboard"></div>
+  <!-- SLICER BAR -->
+  <div class="slicer-bar">
+    <div class="sl-group">
+      <label>NOP</label>
+      <select id="sl-nop" onchange="applyFilter()">
+        <option value="all">All NOP</option>
+      </select>
     </div>
-    <div class="chart-card">
-      <div class="card-header">
-        <div class="card-title"><span class="card-dot" style="background:var(--blue)"></span>Distribusi Takeover per NOP</div>
-      </div>
-      <div id="chartNOP" class="echart"></div>
+    <div class="sl-div"></div>
+    <div class="sl-group">
+      <label>Month</label>
+      <select id="sl-month" onchange="applyFilter()">
+        <option value="all">All Months</option>
+      </select>
     </div>
-  </div>
-
-  <!-- ROW 2: Scatter Visit vs Backup + Bar % Visitation per NOP -->
-  <div class="chart-row">
-    <div class="chart-card">
-      <div class="card-header">
-        <div class="card-title"><span class="card-dot" style="background:var(--purple)"></span>Scatter Visit vs Backup per PIC</div>
-        <span class="card-badge">Bubble = Takeover</span>
-      </div>
-      <div id="chartScatter" class="echart"></div>
+    <div class="sl-div"></div>
+    <div class="sl-group">
+      <label>Min. Takeover</label>
+      <select id="sl-min" onchange="applyFilter()">
+        <option value="0">All</option>
+        <option value="50">&ge; 50</option>
+        <option value="100">&ge; 100</option>
+        <option value="200">&ge; 200</option>
+      </select>
     </div>
-    <div class="chart-card">
-      <div class="card-header">
-        <div class="card-title"><span class="card-dot" style="background:var(--green)"></span>% Visitation &amp; % Backup vs Visit per NOP</div>
-        <span class="card-badge">Grouped Bar</span>
-      </div>
-      <div id="chartNOPBar" class="echart"></div>
-    </div>
-  </div>
-
-  <!-- TABLE -->
-  <div class="chart-card">
-    <div class="card-header">
-      <div class="card-title"><span class="card-dot" style="background:var(--blue)"></span>Detail Semua PIC</div>
-      <span class="card-badge" id="tbl-count">— PIC</span>
-    </div>
-    <div class="pic-table-wrap">
-      <table class="pic-table">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th onclick="setSort('name')">Nama PIC ↕</th>
-            <th onclick="setSort('nop')">NOP ↕</th>
-            <th onclick="setSort('takeover')">Takeover ↕</th>
-            <th onclick="setSort('visit')">Visit ↕</th>
-            <th onclick="setSort('backup')">Backup ↕</th>
-            <th onclick="setSort('score')">Score ↕</th>
-            <th onclick="setSort('visitation')">% Visitation ↕</th>
-            <th onclick="setSort('backVis')">% Backup vs Visit ↕</th>
-            <th onclick="setSort('manRes')">% Manual Resolved ↕</th>
-            <th>Grade</th>
-          </tr>
-        </thead>
-        <tbody id="pic-tbody"></tbody>
-      </table>
+    <div class="sl-div"></div>
+    <button class="btn-reset" onclick="resetFilter()">↺ Reset</button>
+    <div class="sort-group">
+      <span style="font-size:10px;color:var(--text-muted);line-height:28px;">SORT:</span>
+      <button class="sort-btn active" id="sort-takeover" onclick="setSort('takeover')">Takeover</button>
+      <button class="sort-btn" id="sort-visit"      onclick="setSort('visit')">Visit</button>
+      <button class="sort-btn" id="sort-backup"     onclick="setSort('backup')">Backup</button>
+      <button class="sort-btn" id="sort-score"      onclick="setSort('score')">Score</button>
+      <button class="sort-btn" id="sort-visitation" onclick="setSort('visitation')">% Visitation</button>
+      <button class="sort-btn" id="sort-backVis"    onclick="setSort('backVis')">% Backup vs Visit</button>
     </div>
   </div>
 
+  <!-- MAIN CONTENT -->
+  <div class="main" id="mainContent" style="display:none;">
+
+    <!-- KPI ROW -->
+    <div class="kpi-row">
+      <div class="kpi-card blue">
+        <div class="kpi-icon">👥</div>
+        <div class="kpi-value" id="kpi-pic">—</div>
+        <div class="kpi-label">Total PIC</div>
+        <div class="kpi-sub">Filtered officers</div>
+      </div>
+      <div class="kpi-card yellow">
+        <div class="kpi-icon">🔄</div>
+        <div class="kpi-value" id="kpi-takeover">—</div>
+        <div class="kpi-label">Total Takeover</div>
+        <div class="kpi-sub">Avg: <span id="avg-takeover">—</span>/PIC</div>
+      </div>
+      <div class="kpi-card green">
+        <div class="kpi-icon">📍</div>
+        <div class="kpi-value" id="kpi-visit">—</div>
+        <div class="kpi-label">Total Visit</div>
+        <div class="kpi-sub">Avg: <span id="avg-visit">—</span>/PIC</div>
+      </div>
+      <div class="kpi-card red">
+        <div class="kpi-icon">🔋</div>
+        <div class="kpi-value" id="kpi-backup">—</div>
+        <div class="kpi-label">Total Backup</div>
+        <div class="kpi-sub">Avg: <span id="avg-backup">—</span>/PIC</div>
+      </div>
+      <div class="kpi-card purple">
+        <div class="kpi-icon">📊</div>
+        <div class="kpi-value" id="kpi-visitation">—</div>
+        <div class="kpi-label">Avg % Visitation</div>
+        <div class="kpi-sub">Visit / Takeover</div>
+      </div>
+      <div class="kpi-card orange">
+        <div class="kpi-icon">🗃️</div>
+        <div class="kpi-value" id="kpi-backvis">—</div>
+        <div class="kpi-label">Avg % Backup vs Visit</div>
+        <div class="kpi-sub">Backup / Visit</div>
+      </div>
+    </div>
+
+    <!-- ROW 1: Leaderboard + NOP Donut -->
+    <div class="chart-row">
+      <div class="chart-card">
+        <div class="card-header">
+          <div class="card-title"><span class="card-dot" style="background:var(--yellow)"></span>🏆 PIC Leaderboard</div>
+          <span class="card-badge" id="lb-badge">Top 10 Takeover</span>
+        </div>
+        <div class="leaderboard" id="leaderboard"></div>
+      </div>
+      <div class="chart-card">
+        <div class="card-header">
+          <div class="card-title"><span class="card-dot" style="background:var(--blue)"></span>Takeover Distribution by NOP</div>
+        </div>
+        <div id="chartNOP" class="echart"></div>
+      </div>
+    </div>
+
+    <!-- ROW 2: % Visitation per NOP + Scatter -->
+    <div class="chart-row">
+      <div class="chart-card">
+        <div class="card-header">
+          <div class="card-title"><span class="card-dot" style="background:var(--green)"></span>% Visitation &amp; % Backup vs Visit per NOP</div>
+          <span class="card-badge">Grouped Bar</span>
+        </div>
+        <div id="chartNOPBar" class="echart-sm"></div>
+      </div>
+      <div class="chart-card">
+        <div class="card-header">
+          <div class="card-title"><span class="card-dot" style="background:var(--purple)"></span>Scatter Visit vs Backup per PIC</div>
+          <span class="card-badge">Bubble = Takeover</span>
+        </div>
+        <div id="chartScatter" class="echart-sm"></div>
+      </div>
+    </div>
+
+    <!-- ROW 3: Full-width Stacked Workload by NOP -->
+    <div class="chart-card">
+      <div class="card-header">
+        <div class="card-title"><span class="card-dot" style="background:var(--orange)"></span>Workload by NOP — Stacked</div>
+        <span class="card-badge">Takeover + Visit + Backup</span>
+      </div>
+      <div id="chartWorkload" class="echart-lg"></div>
+    </div>
+
+  </div>
+
+  <div class="footer">SWFM Dashboard &copy; 2026 &mdash; PIC Performance | Data: Jan–Apr 2026</div>
 </div>
-
-<div class="footer">SWFM Dashboard &copy; 2026 &mdash; Performance PIC | Data: Jan&ndash;Apr 2026</div>
 
 <script>
 let rawPIC = [], charts = {}, sortKey = 'takeover', sortDir = -1;
+const fmt = n => Math.round(n).toLocaleString('en-US');
+const n0 = v => (v === '' || v === null || v === undefined) ? 0 : (+v || 0);
 
-// ── NUM COERCE ──
-const fmt = n => Math.round(n).toLocaleString('id-ID');
+// ── SIDEBAR ──
+function toggleSidebar(){
+  const col = document.getElementById('sidebar').classList.toggle('collapsed');
+  document.body.classList.toggle('sb-col', col);
+  localStorage.setItem('sidebarCollapsed', col);
+}
+(function(){
+  if(localStorage.getItem('sidebarCollapsed') === 'true'){
+    document.getElementById('sidebar').classList.add('collapsed');
+    document.body.classList.add('sb-col');
+  }
+})();
 
 // ── THEME ──
 function toggleTheme(){
   const isLight = document.body.classList.toggle('light');
   localStorage.setItem('theme', isLight ? 'light' : 'dark');
-  document.getElementById('themeToggle').textContent = isLight ? '☀️' : '🌙';
+  const btn = document.getElementById('themeToggle');
+  btn.innerHTML = isLight ? '☀️ <span class="btn-label">Light Mode</span>' : '🌙 <span class="btn-label">Dark Mode</span>';
   applyChartTheme(isLight);
 }
 function applyChartTheme(isLight){
@@ -314,62 +370,52 @@ function applyChartTheme(isLight){
   const ac = isLight ? '#9ca3af' : '#232640';
   Object.values(charts).forEach(c => {
     if(!c) return;
-    c.setOption({
-      legend:  { textStyle:{ color:tc } },
-      xAxis:   [{ axisLabel:{color:tc}, axisLine:{lineStyle:{color:ac}}, splitLine:{lineStyle:{color:sc}} }],
-      yAxis:   [{ axisLabel:{color:tc}, axisLine:{lineStyle:{color:ac}}, splitLine:{lineStyle:{color:sc}} }],
-      tooltip: { backgroundColor:isLight?'#ffffff':'#13162a', borderColor:isLight?'#dde1f0':'#232640', textStyle:{color:tc} }
-    }, false);
+    c.setOption({legend:{textStyle:{color:tc}},tooltip:{backgroundColor:isLight?'#fff':'#13162a',borderColor:isLight?'#dde1f0':'#232640',textStyle:{color:tc}}},false);
     c.resize();
   });
 }
 (function(){
-  const saved = localStorage.getItem('theme');
-  if(saved === 'light'){
+  const s = localStorage.getItem('theme');
+  if(s === 'light'){
     document.body.classList.add('light');
-    document.getElementById('themeToggle').textContent = '☀️';
+    document.getElementById('themeToggle').innerHTML = '☀️ <span class="btn-label">Light Mode</span>';
   }
 })();
 
-// ── CLEAN PIC ──
+// ── PARSE PIC DATA ──
 function cleanPIC(raw){
   return raw
-    .filter(d => d['PIC Take Over Ticket'] && d['PIC Take Over Ticket'].trim() !== '')
+    .filter(d => d['PIC Name'] && String(d['PIC Name']).trim() !== '')
     .map(d => ({
-      name     : d['PIC Take Over Ticket'].trim(),
+      name     : String(d['PIC Name']).trim(),
       nop      : d['NOP'] || '',
-      month    : parseInt(d['Month Number']) || 0,
+      month    : n0(d['Month Number']),
       monthName: d['Month Name'] || '',
-      takeover : +d['Total Takeover']  || 0,
-      visit    : +d['Total Visit']     || 0,
-      backup   : +d['Total Backup']    || 0,
-      manRes   : (d['% Manual Resolved'] !== '' && d['% Manual Resolved'] !== null && d['% Manual Resolved'] !== undefined) ? (+d['% Manual Resolved'] || 0) : null,
-      backVis  : (d['% Backup vs Visit'] !== '' && d['% Backup vs Visit'] !== null && d['% Backup vs Visit'] !== undefined) ? (+d['% Backup vs Visit'] || 0) : null,
-      score    : +d['Sum of Score Ticket'] || 0,
+      takeover : n0(d['Takeover Count']),
+      visit    : n0(d['Visit Count']),
+      backup   : n0(d['Backup Count']),
+      score    : n0(d['Score Total']),
+      visitation: d['Visitation %']     !== '' && d['Visitation %']     != null ? n0(d['Visitation %'])     : null,
+      backVis  : d['Backup vs Visit %'] !== '' && d['Backup vs Visit %']!= null ? n0(d['Backup vs Visit %']): null,
     }))
-    .filter(d => d.takeover > 0);
+    .filter(d => d.takeover > 0 || d.visit > 0 || d.backup > 0);
 }
 
-// ── AGGREGATE per PIC x NOP (all months) ──
 function aggregateByPIC(data){
   const map = {};
   data.forEach(d => {
     const key = d.name + '||' + d.nop;
-    if(!map[key]) map[key] = { name:d.name, nop:d.nop, month:0, monthName:'All',
-      takeover:0, visit:0, backup:0, score:0,
-      manResSum:0, manResCnt:0, backVisSum:0, backVisCnt:0 };
+    if(!map[key]) map[key] = {name:d.name,nop:d.nop,month:0,monthName:'All',takeover:0,visit:0,backup:0,score:0,bvSum:0,bvCnt:0};
     map[key].takeover += d.takeover;
     map[key].visit    += d.visit;
     map[key].backup   += d.backup;
     map[key].score    += d.score;
-    if(d.manRes !== null){ map[key].manResSum += d.manRes; map[key].manResCnt++; }
-    if(d.backVis !== null){ map[key].backVisSum += d.backVis; map[key].backVisCnt++; }
+    if(d.backVis !== null){ map[key].bvSum += d.backVis; map[key].bvCnt++; }
   });
   return Object.values(map).map(d => ({
     ...d,
-    visitation: d.takeover > 0 ? (d.visit / d.takeover * 100) : 0,
-    manRes:  d.manResCnt  > 0 ? d.manResSum  / d.manResCnt  : null,
-    backVis: d.backVisCnt > 0 ? d.backVisSum / d.backVisCnt : null,
+    visitation: d.takeover > 0 ? d.visit / d.takeover * 100 : 0,
+    backVis   : d.bvCnt   > 0 ? d.bvSum / d.bvCnt          : null,
   }));
 }
 
@@ -379,15 +425,14 @@ async function loadData(){
     const raw = await fetch('data/pic_raw.json').then(r => r.json());
     rawPIC = cleanPIC(raw);
   } catch(e){
-    console.warn('Fetch pic_raw.json gagal:', e);
+    console.warn('Fetch pic_raw.json failed:', e);
     rawPIC = [];
   }
   initSlicers();
   initCharts();
   applyFilter();
   document.getElementById('mainContent').style.display = 'flex';
-  const isLight = document.body.classList.contains('light');
-  applyChartTheme(isLight);
+  applyChartTheme(document.body.classList.contains('light'));
 }
 
 // ── INIT SLICERS ──
@@ -405,9 +450,10 @@ function initSlicers(){
 
 // ── INIT CHARTS ──
 function initCharts(){
-  charts.nop     = echarts.init(document.getElementById('chartNOP'));
-  charts.scatter = echarts.init(document.getElementById('chartScatter'));
-  charts.nopBar  = echarts.init(document.getElementById('chartNOPBar'));
+  charts.nop      = echarts.init(document.getElementById('chartNOP'));
+  charts.nopBar   = echarts.init(document.getElementById('chartNOPBar'));
+  charts.scatter  = echarts.init(document.getElementById('chartScatter'));
+  charts.workload = echarts.init(document.getElementById('chartWorkload'));
 }
 
 // ── SET SORT ──
@@ -424,44 +470,35 @@ function setSort(key){
 function applyFilter(){
   const selNOP   = document.getElementById('sl-nop').value;
   const selMonth = document.getElementById('sl-month').value;
-  const selTop   = parseInt(document.getElementById('sl-top').value);
   const selMin   = parseInt(document.getElementById('sl-min').value) || 0;
 
   let data = [...rawPIC];
   if(selNOP   !== 'all') data = data.filter(d => d.nop === selNOP);
   if(selMonth !== 'all') data = data.filter(d => d.month == selMonth);
 
-  // Aggregate if all months
   if(selMonth === 'all'){
     data = aggregateByPIC(data);
   } else {
-    // Compute visitation for single month rows
-    data = data.map(d => ({ ...d, visitation: d.takeover > 0 ? (d.visit/d.takeover*100) : 0 }));
+    data = data.map(d => ({...d, visitation: d.takeover > 0 ? d.visit/d.takeover*100 : 0}));
   }
 
   data = data.filter(d => d.takeover >= selMin);
-
-  // sort
   data.sort((a,b) => {
     const vA = a[sortKey], vB = b[sortKey];
-    if(vA === null && vB === null) return 0;
-    if(vA === null) return 1;
-    if(vB === null) return -1;
-    if(typeof vA === 'string') return vA.localeCompare(vB) * sortDir;
-    return (vA - vB) * sortDir;
+    if(vA===null&&vB===null) return 0;
+    if(vA===null) return 1; if(vB===null) return -1;
+    if(typeof vA==='string') return vA.localeCompare(vB)*sortDir;
+    return (vA-vB)*sortDir;
   });
 
-  const topData = data.slice(0, selTop);
-
-  // KPI
   const n = data.length || 1;
   const totTko = data.reduce((s,d) => s+d.takeover, 0);
   const totVis = data.reduce((s,d) => s+d.visit, 0);
   const totBak = data.reduce((s,d) => s+d.backup, 0);
-  const visPics = data.filter(d => d.takeover > 0);
-  const avgVis  = visPics.length ? visPics.reduce((s,d) => s+d.visitation,0) / visPics.length : 0;
-  const bvPics  = data.filter(d => d.backVis !== null);
-  const avgBV   = bvPics.length ? bvPics.reduce((s,d) => s+d.backVis,0) / bvPics.length : 0;
+  const visPics= data.filter(d => d.takeover > 0);
+  const avgVis = visPics.length ? visPics.reduce((s,d)=>s+d.visitation,0)/visPics.length : 0;
+  const bvPics = data.filter(d => d.backVis !== null);
+  const avgBV  = bvPics.length ? bvPics.reduce((s,d)=>s+d.backVis,0)/bvPics.length : 0;
 
   document.getElementById('kpi-pic').textContent        = n;
   document.getElementById('kpi-takeover').textContent   = fmt(totTko);
@@ -472,30 +509,28 @@ function applyFilter(){
   document.getElementById('avg-takeover').textContent   = fmt(Math.round(totTko/n));
   document.getElementById('avg-visit').textContent      = fmt(Math.round(totVis/n));
   document.getElementById('avg-backup').textContent     = fmt(Math.round(totBak/n));
-  document.getElementById('hdr-nop').textContent        = selNOP==='all'?'🏢 All NOP':'🏢 '+selNOP;
+  document.getElementById('hdr-nop').textContent        = selNOP==='all'?'🏢 All NOP':'🏢 '+selNOP.replace('NOP ','');
+  document.getElementById('lb-badge').textContent       = `Top 10 ${sortKey.charAt(0).toUpperCase()+sortKey.slice(1)}`;
 
-  renderLeaderboard(topData);
+  renderLeaderboard(data.slice(0,10));
   renderNOP(data);
-  renderScatter(data.filter(d=>d.visit>0&&d.backup>0));
   renderNOPBar(data);
-  renderTable(data);
+  renderScatter(data.filter(d=>d.visit>0||d.backup>0));
+  renderWorkload(data);
 }
 
 // ── LEADERBOARD ──
-function renderLeaderboard(data){
-  const top = data.slice(0,10);
-  const pctKeys = ['visitation','backVis'];
+function renderLeaderboard(top){
   const colorMap = {takeover:'#f7c948',visit:'#00c96e',backup:'#ff4d4d',score:'#a259ff',visitation:'#00c96e',backVis:'#ff8c00'};
   const color = colorMap[sortKey] || '#f7c948';
-  const isPct = pctKeys.includes(sortKey);
+  const isPct = ['visitation','backVis'].includes(sortKey);
   const vals = top.map(d => d[sortKey] ?? 0);
   const maxV = Math.max(...vals, 1);
-
   document.getElementById('leaderboard').innerHTML = top.map((d,i) => {
     const v = d[sortKey] ?? 0;
     const pct = (v/maxV)*100;
     const rankC = i===0?'rank-1':i===1?'rank-2':i===2?'rank-3':'rank-n';
-    const fmtV = isPct ? (v===null?'—':v.toFixed(1)+'%') : fmt(v);
+    const fmtV  = isPct ? (v===null?'—':v.toFixed(1)+'%') : fmt(v);
     const medal = i===0?'🥇':i===1?'🥈':i===2?'🥉':'';
     return `<div class="lb-item">
       <div class="lb-rank ${rankC}">${medal||i+1}</div>
@@ -503,14 +538,10 @@ function renderLeaderboard(data){
         <div class="lb-name" title="${d.name}">${d.name}</div>
         <div class="lb-nop">${d.nop.replace('NOP ','')}</div>
       </div>
-      <div class="lb-bar-wrap">
-        <div class="lb-bar" style="width:${Math.max(pct,5)}%;background:${color};"></div>
-      </div>
+      <div class="lb-bar-wrap"><div class="lb-bar" style="width:${Math.max(pct,5)}%;background:${color};"></div></div>
       <div class="lb-val" style="color:${color};">${fmtV}</div>
     </div>`;
   }).join('');
-  document.getElementById('lb-badge').textContent =
-    `Top ${Math.min(10,top.length)} ${sortKey.charAt(0).toUpperCase()+sortKey.slice(1)}`;
 }
 
 // ── NOP DONUT ──
@@ -532,6 +563,32 @@ function renderNOP(data){
   });
 }
 
+// ── % Visitation & % Backup vs Visit per NOP ──
+function renderNOPBar(data){
+  const byNOP = {};
+  data.forEach(d => {
+    if(!byNOP[d.nop]) byNOP[d.nop] = {takeover:0, visit:0, bvSum:0, bvCnt:0};
+    byNOP[d.nop].takeover += d.takeover;
+    byNOP[d.nop].visit    += d.visit;
+    if(d.backVis !== null){ byNOP[d.nop].bvSum += d.backVis; byNOP[d.nop].bvCnt++; }
+  });
+  const nops = Object.keys(byNOP).sort();
+  const visVals = nops.map(n => byNOP[n].takeover>0 ? +(byNOP[n].visit/byNOP[n].takeover*100).toFixed(1) : 0);
+  const bvVals  = nops.map(n => byNOP[n].bvCnt>0    ? +(byNOP[n].bvSum/byNOP[n].bvCnt).toFixed(1)       : 0);
+  charts.nopBar.setOption({
+    backgroundColor:'transparent',
+    tooltip:{trigger:'axis',backgroundColor:'#13162a',borderColor:'#232640',textStyle:{color:'#e8eaf6'},extraCssText:'border-radius:10px;'},
+    legend:{data:['% Visitation','% Backup vs Visit'],textStyle:{color:'#6b7280'},bottom:0,icon:'circle',itemWidth:8},
+    grid:{top:8,bottom:34,left:50,right:14},
+    xAxis:{type:'category',data:nops.map(n=>n.replace('NOP ','')),axisLine:{lineStyle:{color:'#232640'}},axisTick:{show:false},axisLabel:{color:'#6b7280',fontSize:11}},
+    yAxis:{type:'value',min:0,splitLine:{lineStyle:{color:'#1a1d2e',type:'dashed'}},axisLabel:{color:'#6b7280',fontSize:11,formatter:'{value}%'}},
+    series:[
+      {name:'% Visitation',     type:'bar',barMaxWidth:18,data:visVals,itemStyle:{color:'#00c96e',borderRadius:[5,5,0,0]},label:{show:true,position:'top',color:'#aaa',fontSize:10,formatter:p=>p.value+'%'}},
+      {name:'% Backup vs Visit',type:'bar',barMaxWidth:18,data:bvVals, itemStyle:{color:'#ff8c00',borderRadius:[5,5,0,0]},label:{show:true,position:'top',color:'#aaa',fontSize:10,formatter:p=>p.value>0?p.value+'%':''}}
+    ]
+  });
+}
+
 // ── SCATTER Visit vs Backup ──
 function renderScatter(data){
   const NOP_COLORS = {'NOP MAGELANG':'#0078D4','NOP PEKALONGAN':'#f7c948','NOP PURWOKERTO':'#00c96e','NOP SEMARANG':'#ff4d4d','NOP SURAKARTA':'#a259ff','NOP YOGYAKARTA':'#ff8c00'};
@@ -542,100 +599,53 @@ function renderScatter(data){
   });
   const series = Object.entries(byNOP).map(([nop,pts]) => ({
     name: nop.replace('NOP ',''), type:'scatter', data:pts,
-    symbolSize: v => Math.max(6, Math.min(35, v[2]/60)),
-    itemStyle: {color: NOP_COLORS[nop]||'#0078D4', opacity:.8},
+    symbolSize: v => Math.max(6, Math.min(32, v[2]/60)),
+    itemStyle:{color:NOP_COLORS[nop]||'#0078D4',opacity:.8},
   }));
   charts.scatter.setOption({
     backgroundColor:'transparent',
     tooltip:{trigger:'item',backgroundColor:'#13162a',borderColor:'#232640',textStyle:{color:'#e8eaf6'},
       formatter:p=>`<b>${p.data[3]}</b><br/>Visit: ${fmt(p.data[0])}<br/>Backup: ${fmt(p.data[1])}<br/>Takeover: ${fmt(p.data[2])}<br/>% Visitation: ${p.data[4].toFixed(1)}%`,
-      extraCssText:'border-radius:10px;padding:10px;'},
+      extraCssText:'border-radius:10px;'},
     legend:{textStyle:{color:'#6b7280',fontSize:10},bottom:0,icon:'circle',itemWidth:8},
-    grid:{top:10,bottom:36,left:55,right:16},
-    xAxis:{name:'Total Visit',nameTextStyle:{color:'#6b7280',fontSize:10},nameLocation:'middle',nameGap:22,
+    grid:{top:8,bottom:34,left:50,right:14},
+    xAxis:{name:'Visit',nameTextStyle:{color:'#6b7280',fontSize:10},nameLocation:'middle',nameGap:20,
       splitLine:{lineStyle:{color:'#1a1d2e',type:'dashed'}},axisLabel:{color:'#6b7280',fontSize:10},axisLine:{lineStyle:{color:'#232640'}}},
-    yAxis:{name:'Total Backup',nameTextStyle:{color:'#6b7280',fontSize:10},nameLocation:'middle',nameGap:38,
+    yAxis:{name:'Backup',nameTextStyle:{color:'#6b7280',fontSize:10},nameLocation:'middle',nameGap:36,
       splitLine:{lineStyle:{color:'#1a1d2e',type:'dashed'}},axisLabel:{color:'#6b7280',fontSize:10},axisLine:{lineStyle:{color:'#232640'}}},
     series
   });
 }
 
-// ── % Visitation & % Backup vs Visit per NOP ──
-function renderNOPBar(data){
+// ── STACKED WORKLOAD by NOP ──
+function renderWorkload(data){
   const byNOP = {};
   data.forEach(d => {
-    if(!byNOP[d.nop]) byNOP[d.nop] = { takeover:0, visit:0, bvSum:0, bvCnt:0 };
+    if(!byNOP[d.nop]) byNOP[d.nop] = {takeover:0, visit:0, backup:0};
     byNOP[d.nop].takeover += d.takeover;
     byNOP[d.nop].visit    += d.visit;
-    if(d.backVis !== null){ byNOP[d.nop].bvSum += d.backVis; byNOP[d.nop].bvCnt++; }
+    byNOP[d.nop].backup   += d.backup;
   });
   const nops = Object.keys(byNOP).sort();
-  const visVals = nops.map(n => byNOP[n].takeover>0 ? +(byNOP[n].visit/byNOP[n].takeover*100).toFixed(1) : 0);
-  const bvVals  = nops.map(n => byNOP[n].bvCnt>0    ? +(byNOP[n].bvSum/byNOP[n].bvCnt).toFixed(1) : 0);
-  charts.nopBar.setOption({
+  charts.workload.setOption({
     backgroundColor:'transparent',
-    tooltip:{trigger:'axis',backgroundColor:'#13162a',borderColor:'#232640',textStyle:{color:'#e8eaf6'},extraCssText:'border-radius:10px;'},
-    legend:{data:['% Visitation','% Backup vs Visit'],textStyle:{color:'#6b7280'},bottom:0,icon:'circle',itemWidth:8},
-    grid:{top:30,bottom:36,left:55,right:16},
-    xAxis:{type:'category',data:nops.map(n=>n.replace('NOP ','')),axisLine:{lineStyle:{color:'#232640'}},axisTick:{show:false},axisLabel:{color:'#6b7280',fontSize:11}},
-    yAxis:{type:'value',min:0,splitLine:{lineStyle:{color:'#1a1d2e',type:'dashed'}},axisLabel:{color:'#6b7280',fontSize:11,formatter:'{value}%'}},
+    tooltip:{trigger:'axis',backgroundColor:'#13162a',borderColor:'#232640',textStyle:{color:'#e8eaf6'},axisPointer:{type:'shadow'},extraCssText:'border-radius:10px;'},
+    legend:{data:['Takeover','Visit','Backup'],textStyle:{color:'#6b7280'},bottom:0,icon:'circle',itemWidth:8},
+    grid:{top:10,bottom:36,left:100,right:20},
+    xAxis:{type:'value',splitLine:{lineStyle:{color:'#1a1d2e',type:'dashed'}},axisLabel:{color:'#6b7280',fontSize:11}},
+    yAxis:{type:'category',data:nops.map(n=>n.replace('NOP ','')),axisLabel:{color:'#ccc',fontSize:12},axisLine:{lineStyle:{color:'#232640'}},axisTick:{show:false}},
     series:[
-      {name:'% Visitation',     type:'bar',barMaxWidth:20,data:visVals,itemStyle:{color:'#00c96e',borderRadius:[6,6,0,0]},label:{show:true,position:'top',color:'#aaa',fontSize:10,formatter:p=>p.value+'%'}},
-      {name:'% Backup vs Visit',type:'bar',barMaxWidth:20,data:bvVals, itemStyle:{color:'#ff8c00',borderRadius:[6,6,0,0]},label:{show:true,position:'top',color:'#aaa',fontSize:10,formatter:p=>p.value>0?p.value+'%':''}}
+      {name:'Takeover',type:'bar',stack:'workload',data:nops.map(n=>byNOP[n].takeover),itemStyle:{color:'#f7c948'},label:{show:true,color:'#000',fontSize:10,formatter:p=>p.value>0?fmt(p.value):''}},
+      {name:'Visit',   type:'bar',stack:'workload',data:nops.map(n=>byNOP[n].visit),   itemStyle:{color:'#00c96e'},label:{show:true,color:'#000',fontSize:10,formatter:p=>p.value>0?fmt(p.value):''}},
+      {name:'Backup',  type:'bar',stack:'workload',data:nops.map(n=>byNOP[n].backup),  itemStyle:{color:'#ff4d4d',borderRadius:[0,5,5,0]},label:{show:true,color:'#fff',fontSize:10,formatter:p=>p.value>0?fmt(p.value):''}}
     ]
   });
-}
-
-// ── TABLE ──
-function renderTable(data){
-  const maxSco = Math.max(...data.map(d=>d.score), 1);
-  document.getElementById('tbl-count').textContent = data.length+' PIC';
-  const grade = d => {
-    const p = (d.score/maxSco)*100;
-    if(p>=80) return ['S 🌟','pill-green'];
-    if(p>=60) return ['A','pill-blue'];
-    if(p>=40) return ['B','pill-yellow'];
-    return ['C','pill-red'];
-  };
-  const visColor  = v => v>=80?'pill-green':v>=50?'pill-yellow':'pill-red';
-  const bvColor   = v => v>=60?'pill-green':v>=30?'pill-yellow':'pill-orange';
-  const manColor  = v => v>=95?'pill-green':v>=80?'pill-yellow':'pill-red';
-
-  document.getElementById('pic-tbody').innerHTML = data.map((d,i) => {
-    const [g,gc] = grade(d);
-    const scPct = (d.score/maxSco*100).toFixed(0);
-    const visStr  = ((d.visitation ?? 0).toFixed(1))+'%';
-    const bvStr   = d.backVis  !== null ? d.backVis.toFixed(1)+'%'  : '—';
-    const manStr  = d.manRes   !== null ? d.manRes.toFixed(1)+'%'   : '—';
-    const visCls  = visColor(d.visitation);
-    const bvCls   = d.backVis !== null ? bvColor(d.backVis)   : 'pill-gray';
-    const manCls  = d.manRes  !== null ? manColor(d.manRes)   : 'pill-gray';
-    return `<tr>
-      <td style="color:var(--text-muted);font-size:10px;">${i+1}</td>
-      <td><strong style="font-size:11px;">${d.name}</strong></td>
-      <td><span class="pill pill-blue" style="font-size:9px;">${d.nop.replace('NOP ','')}</span></td>
-      <td style="color:var(--yellow);font-weight:700;">${fmt(d.takeover)}</td>
-      <td style="color:var(--green);">${fmt(d.visit)}</td>
-      <td style="color:var(--red);">${fmt(d.backup)}</td>
-      <td>
-        <div class="score-bar-wrap">
-          <div class="score-bar-bg"><div class="score-bar-fill" style="width:${scPct}%"></div></div>
-          <span style="color:var(--purple);font-size:11px;min-width:36px;">${d.score.toFixed(1)}</span>
-        </div>
-      </td>
-      <td><span class="pill ${visCls}">${visStr}</span></td>
-      <td><span class="pill ${bvCls}">${bvStr}</span></td>
-      <td><span class="pill ${manCls}">${manStr}</span></td>
-      <td><span class="pill ${gc}">${g}</span></td>
-    </tr>`;
-  }).join('');
 }
 
 // ── RESET ──
 function resetFilter(){
   document.getElementById('sl-nop').value   = 'all';
   document.getElementById('sl-month').value = 'all';
-  document.getElementById('sl-top').value   = '10';
   document.getElementById('sl-min').value   = '0';
   sortKey = 'takeover'; sortDir = -1;
   document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
